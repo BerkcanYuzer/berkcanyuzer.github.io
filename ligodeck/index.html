@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LigoDeck Desktop — Windows Masaüstü Ajanı İndir | Yuzeracc</title>
+    <meta name="description" content="LigoDeck Windows masaüstü ajanını indirin. Telefon veya tabletinizden PC'nizi sıfır gecikmeyle kontrol edin. Makrolar, kısayollar ve özel sahneler.">
+    <link rel="canonical" href="https://berkcanyuzer.github.io/ligodeck.html">
+    <meta name="theme-color" content="#07070e">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://berkcanyuzer.github.io/ligodeck.html">
+    <meta property="og:title" content="LigoDeck Desktop — Windows Masaüstü Ajanı İndir">
+    <meta property="og:description" content="Telefon veya tabletinizi güçlü bir mekanik stream deck'e dönüştürün. Windows PC kontrolü, makrolar ve sıfır gecikmeli LAN bağlantısı.">
+    <meta property="og:image" content="https://berkcanyuzer.github.io/app-icons/ligodeck.png">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="app-icons/ligodeck.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .ligodeck-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ligodeck-logo-box {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 1.75rem;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(132, 94, 247, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            background: #090B14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .ligodeck-logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .badge-pill-row {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(132, 94, 247, 0.15);
+            color: #b197fc;
+            border: 1px solid rgba(132, 94, 247, 0.3);
+        }
+        .badge-pill.green {
+            background: rgba(44, 216, 166, 0.15);
+            color: #2CD8A6;
+            border-color: rgba(44, 216, 166, 0.3);
+        }
+        .badge-pill.blue {
+            background: rgba(59, 153, 252, 0.15);
+            color: #3B99FC;
+            border-color: rgba(59, 153, 252, 0.3);
+        }
+        .hero-action-box {
+            background: rgba(22, 27, 46, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.25rem 2rem;
+            max-width: 620px;
+            margin: 2.5rem auto 1rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        .download-primary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: 420px;
+            background: linear-gradient(135deg, #3B99FC 0%, #20C997 100%);
+            color: #FFFFFF !important;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 1.1rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(32, 201, 151, 0.35), 0 4px 0 #13775a;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+        .download-primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px rgba(32, 201, 151, 0.45), 0 4px 0 #13775a;
+        }
+        .download-primary-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 6px 16px rgba(32, 201, 151, 0.3), 0 1px 0 #13775a;
+        }
+        .download-alt-links {
+            margin-top: 1.25rem;
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            font-size: 0.88rem;
+        }
+        .download-alt-links a {
+            color: #9494a8;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.2s;
+        }
+        .download-alt-links a:hover {
+            color: #FFFFFF;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 960px;
+            margin: 3.5rem auto 0;
+            text-align: left;
+        }
+        .step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .step-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(132, 94, 247, 0.4);
+        }
+        .step-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #845EF7, #3B99FC);
+            color: #FFFFFF;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+        }
+        .step-desc {
+            font-size: 0.9rem;
+            color: #9494a8;
+            line-height: 1.5;
+        }
+        .features-section {
+            padding: 4rem 2rem;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.25rem;
+        }
+        .feature-card h3 {
+            font-size: 1.15rem;
+            color: #FFFFFF;
+        }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #9494a8;
+            line-height: 1.55;
+        }
+        .toy-badge-row {
+            display: flex;
+            gap: 6px;
+            margin-top: 0.5rem;
+        }
+        .toy-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="nav-logo-icon" width="32" height="32">
+                Yuzeracc
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#apps">Tüm Uygulamalar</a></li>
+                <li><a href="ligodeck.html" style="color: #b197fc; font-weight: 700;">LigoDeck</a></li>
+                <li><a href="index.html#contact">İletişim</a></li>
+                <li><button id="theme-toggle" aria-label="Tema değiştir"></button></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Menü">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="ligodeck-hero">
+        <div class="hero-bg">
+            <div class="orb"></div>
+            <div class="orb"></div>
+            <div class="orb"></div>
+        </div>
+
+        <div class="ligodeck-logo-box">
+            <img src="app-icons/ligodeck.png" alt="LigoDeck Logo">
+        </div>
+
+        <div class="badge-pill-row">
+            <span class="badge-pill green">● v1.0.0 Resmi Sürüm</span>
+            <span class="badge-pill blue">Windows 10 / 11 (64-bit)</span>
+            <span class="badge-pill">Sıfır Gecikme LAN</span>
+        </div>
+
+        <h1 style="font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem;">
+            LigoDeck Desktop Agent
+        </h1>
+        <p style="font-size: 1.15rem; color: #9494a8; max-width: 640px; margin: 0 auto; line-height: 1.6;">
+            Telefon veya tabletinizi güçlü bir mekanik makro kumandasına dönüştürün. Windows bilgisayarınızı tek dokunuşla yönetin.
+        </p>
+
+        <!-- Download Action Box -->
+        <div class="hero-action-box">
+            <h2 style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif;">
+                Masaüstü Kurulumunu Başlat
+            </h2>
+            <p style="font-size: 0.95rem; color: #9494a8; margin-bottom: 1.75rem;">
+                İndirilen kurulum dosyasını çalıştırın; LigoDeck saniyeler içinde otomatik olarak kurulur ve PC'niz mobilden bağlanmaya hazır olur.
+            </p>
+
+            <a href="downloads/LigoDeck-Setup.exe" class="download-primary-btn" id="downloadBtn" download>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" x2="12" y1="15" y2="3"/>
+                </svg>
+                <span>Hemen İndir & Kur (Windows)</span>
+            </a>
+
+            <div class="download-alt-links">
+                <a href="downloads/LigoDeck-portable.exe" download title="Kurulum gerektirmeyen taşınabilir sürüm">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6"/></svg>
+                    Taşınabilir Sürüm (.exe)
+                </a>
+                <span style="color: #444;">•</span>
+                <span style="color: #845EF7; font-weight: 600;">%100 Ücretsiz & Reklamsız</span>
+            </div>
+        </div>
+
+        <!-- 3 Adımda Hızlı Kurulum -->
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <div class="step-title">İndir ve Çalıştır</div>
+                <div class="step-desc">
+                    <code>LigoDeck-Setup.exe</code> dosyasını indirin ve açın. Tek tıkla otomatik kurulur ve masaüstü kısayolu oluşturulur.
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <div class="step-title">Arka Planda Hazır</div>
+                <div class="step-desc">
+                    Uygulama açılır açılmaz sistem tepsisinde (sağ altta) sessizce çalışmaya başlar ve yerel Wi-Fi ağını dinler.
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <div class="step-title">Mobilden Tek Dokunuşla Bağlan</div>
+                <div class="step-desc">
+                    Telefon veya tabletinizdeki LigoDeck uygulamasını açın. Bilgisayarınız otomatik görünür, dokunun ve kumanda hazır!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section">
+        <h2 style="text-align: center; font-size: 2rem; color: #FFFFFF; font-weight: 800;">Neden LigoDeck?</h2>
+        <p style="text-align: center; color: #9494a8; margin-top: 0.5rem;">Touch Portal ve pahalı donanım konsollarına modern, açık ve güçlü alternatif.</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(255, 75, 99, 0.15); color: #FF4B63;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                </div>
+                <h3>Toy Blast & Canlı Pastel Tasarım</h3>
+                <p>Mekanik 3D tuş basış derinliği, yumuşak pastel renk paleti ve yüksek çözünürlüklü vektör simgelerle parlamasız, oyuncak gibi şık arayüz.</p>
+                <div class="toy-badge-row">
+                    <div class="toy-dot" style="background: #FF4B63;"></div>
+                    <div class="toy-dot" style="background: #FFA726;"></div>
+                    <div class="toy-dot" style="background: #00D68F;"></div>
+                    <div class="toy-dot" style="background: #00B4D8;"></div>
+                    <div class="toy-dot" style="background: #845EF7;"></div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(44, 216, 166, 0.15); color: #2CD8A6;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <h3>Sıfır Gecikme & Kesintisiz mDNS</h3>
+                <p>Bulut sunucularına veya internete ihtiyaç duymaz. Yerel ağınız üzerinden ultra-düşük gecikmeli güvenli WebSocket iletişimi sağlar.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(132, 94, 247, 0.15); color: #845EF7;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/></svg>
+                </div>
+                <h3>Sonsuz Senaryo & Makro Özgürlüğü</h3>
+                <p>Tek tuşla karmaşık tuş kombinasyonları (Hold, Tap, Release), ses kontrolü, uygulama başlatma, if/else mantığı ve çoklu sayfalar.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(59, 153, 252, 0.15); color: #3B99FC;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3>Dahili Görsel GUI Düzenleyici</h3>
+                <p>Masaüstü ajanı yerleşik Bento düzenleyici ile gelir. Profillerinizi, tuşlarınızı, renklerinizi ve makrolarınızı fareyle sürükleyip yapılandırın.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 3rem 2rem; border-top: 1px solid var(--border); text-align: center; color: #5e5e74; font-size: 0.9rem;">
+        <p>© 2026 <strong>Yuzeracc</strong>. Tüm hakları saklıdır. LigoDeck bir Yuzeracc ürünüdür.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
