@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Wonder: Pastel Blast — 3B Bulmaca & Eşleştirme Macerası | YuzerAcc</title>
+    <meta name="description" content="Toy Wonder: Pastel Blast (com.yuzeracc.pastelblast) — Kurmalı oyuncak dünyasında geçen, 6 Saga diyarı, 3B Zeka Küpü yıldırım fırtınaları, Kurmalı Mıknatıs girdabı ve 44.1 kHz ASMR oyuncak akustiğiyle donatılmış yeni nesil 3B bulmaca oyunu.">
+    <link rel="canonical" href="https://berkcanyuzer.github.io/pastel-blast.html">
+    <meta name="theme-color" content="#07070e">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://berkcanyuzer.github.io/pastel-blast.html">
+    <meta property="og:title" content="Toy Wonder: Pastel Blast — 3B Bulmaca & Eşleştirme Oyunu | YuzerAcc">
+    <meta property="og:description" content="Kurmalı oyuncak dünyasında geçen, 1.000.000+ çözülebilir seviye, 3B Zeka Küpü yıldırım fırtınaları ve ASMR oyuncak ses efektleriyle donatılmış 3B tap-to-blast bulmaca macerası.">
+    <meta property="og:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/01_main_menu.png">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Toy Wonder: Pastel Blast — YuzerAcc">
+    <meta name="twitter:description" content="Kurmalı oyuncak dünyasında geçen yeni nesil 3B tap-to-blast bulmaca macerası (com.yuzeracc.pastelblast).">
+    <meta name="twitter:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/01_main_menu.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/pastel-blast/icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --pb-pink: #FF6B9D;
+            --pb-coral: #FF8E53;
+            --pb-gold: #FFD166;
+            --pb-mint: #2CD8A6;
+            --pb-cyan: #38BDF8;
+            --pb-purple: #A78BFA;
+            --pb-glass: rgba(24, 18, 43, 0.72);
+            --pb-border: rgba(255, 209, 102, 0.24);
+        }
+
+        .pb-hero {
+            padding: 7.5rem 2rem 4.5rem;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 18% 22%, rgba(255, 107, 157, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 82% 25%, rgba(255, 209, 102, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(167, 139, 250, 0.2) 0%, transparent 50%),
+                var(--gradient-hero);
+        }
+
+        .pb-hero-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pb-brand-pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pb-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.38rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            backdrop-filter: blur(10px);
+        }
+
+        .pb-pill.studio {
+            background: rgba(255, 255, 255, 0.09);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .pb-pill.pink {
+            background: rgba(255, 107, 157, 0.18);
+            color: #FF85AD;
+            border: 1px solid rgba(255, 107, 157, 0.4);
+        }
+
+        .pb-pill.gold {
+            background: rgba(255, 209, 102, 0.16);
+            color: #FFD166;
+            border: 1px solid rgba(255, 209, 102, 0.4);
+        }
+
+        .pb-pill.mint {
+            background: rgba(44, 216, 166, 0.15);
+            color: #2CD8A6;
+            border: 1px solid rgba(44, 216, 166, 0.35);
+        }
+
+        .pb-hero-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pb-app-icon-hero {
+            width: 88px;
+            height: 88px;
+            border-radius: 22px;
+            object-fit: cover;
+            box-shadow: 0 14px 36px rgba(255, 107, 157, 0.35), 0 0 0 2px rgba(255, 209, 102, 0.55);
+            flex-shrink: 0;
+        }
+
+        .pb-title {
+            font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+        }
+
+        .pb-title span {
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF8E53 45%, #FFD166 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pb-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+            max-width: 620px;
+        }
+
+        .pb-package-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.9rem;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #FFD166;
+            margin-bottom: 1.75rem;
+        }
+
+        .pb-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .pb-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF8E53 50%, #FFD166 100%);
+            color: #181026 !important;
+            box-shadow: 0 12px 30px rgba(255, 107, 157, 0.4), 0 4px 0 #c94b76;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .pb-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px rgba(255, 107, 157, 0.55), 0 4px 0 #c94b76;
+        }
+
+        .pb-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            padding: 1rem 1.65rem;
+            border-radius: 16px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.08);
+            color: #FFFFFF !important;
+            border: 1.5px solid rgba(255, 209, 102, 0.4);
+            backdrop-filter: blur(12px);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .pb-btn-secondary:hover {
+            background: rgba(255, 209, 102, 0.16);
+            border-color: #FFD166;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Right Showcase */
+        .pb-hero-showcase {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pb-phone-hero {
+            width: 300px;
+            border-radius: 36px;
+            padding: 10px;
+            background: linear-gradient(145deg, rgba(255, 209, 102, 0.55), rgba(255, 107, 157, 0.45), rgba(132, 94, 247, 0.45));
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65), 0 0 40px rgba(255, 107, 157, 0.25);
+            position: relative;
+            z-index: 2;
+        }
+
+        .pb-phone-hero img {
+            width: 100%;
+            border-radius: 28px;
+            display: block;
+        }
+
+        .pb-mascot-floating {
+            position: absolute;
+            bottom: -20px;
+            left: -35px;
+            width: 150px;
+            z-index: 3;
+            filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.6));
+            animation: pbFloat 4s ease-in-out infinite;
+        }
+
+        .pb-logo-floating {
+            position: absolute;
+            top: -28px;
+            right: -20px;
+            width: 165px;
+            z-index: 3;
+            filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.65));
+            animation: pbFloat 5s ease-in-out infinite reverse;
+        }
+
+        @keyframes pbFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        /* Toy Cubes Strip */
+        .pb-cubes-strip {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-top: 1rem;
+            padding: 0.65rem 0.9rem;
+            background: rgba(0, 0, 0, 0.28);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            flex-wrap: wrap;
+        }
+
+        .pb-cube-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.25rem 0.55rem;
+            border-radius: 8px;
+        }
+
+        .pb-cube-mini img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* Features Grid (6 Cards) */
+        .pb-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .pb-feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 1.85rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pb-feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 209, 102, 0.45);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35), 0 0 25px rgba(255, 107, 157, 0.12);
+        }
+
+        .pb-feature-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .pb-feature-icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.6rem;
+            background: rgba(255, 107, 157, 0.14);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+        }
+
+        .pb-feature-icon-box img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+        }
+
+        .pb-feature-card h3 {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .pb-feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* 6 Saga Worlds Strip */
+        .pb-worlds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .pb-world-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            transition: all 0.25s;
+        }
+
+        .pb-world-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--pb-gold);
+        }
+
+        .pb-world-num {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 209, 102, 0.15);
+            color: #FFD166;
+        }
+
+        .pb-world-card h4 {
+            font-size: 1.02rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .pb-world-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Screenshot Mockup Gallery */
+        .pb-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .pb-mockup-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 0.85rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pb-mockup-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 107, 157, 0.5);
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45), 0 0 24px rgba(255, 107, 157, 0.18);
+        }
+
+        .pb-phone-frame {
+            border-radius: 18px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.12);
+            background: #090812;
+            aspect-ratio: 9 / 16;
+            position: relative;
+        }
+
+        .pb-phone-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .pb-mockup-card:hover .pb-phone-frame img {
+            transform: scale(1.04);
+        }
+
+        .pb-mockup-caption {
+            padding: 0.85rem 0.35rem 0.25rem;
+            text-align: center;
+        }
+
+        .pb-mockup-caption h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+
+        .pb-mockup-caption p {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Tech & Security Badges */
+        .pb-tech-badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .pb-security-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .pb-security-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: rgba(255, 209, 102, 0.14);
+            color: #FFD166;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+        }
+
+        .pb-security-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .pb-security-card p {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Lightbox Modal */
+        .pb-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(5, 5, 12, 0.92);
+            backdrop-filter: blur(16px);
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            flex-direction: column;
+        }
+
+        .pb-lightbox.open {
+            display: flex;
+        }
+
+        .pb-lightbox img {
+            max-height: 82vh;
+            max-width: 92vw;
+            border-radius: 22px;
+            border: 2px solid rgba(255, 209, 102, 0.45);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
+        }
+
+        .pb-lightbox-caption {
+            margin-top: 1rem;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-align: center;
+        }
+
+        .pb-lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .pb-hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .pb-brand-pill-row,
+            .pb-hero-logo-row,
+            .pb-cta-group {
+                justify-content: center;
+            }
+            .pb-hero-logo-row {
+                flex-direction: column;
+            }
+            .pb-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .pb-mascot-floating {
+                left: -10px;
+                width: 115px;
+            }
+            .pb-logo-floating {
+                right: -10px;
+                width: 130px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="nav-logo-icon" width="32" height="32">
+                Yuzeracc
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#apps">Uygulamalar</a></li>
+                <li><a href="pastel-blast.html" style="background: linear-gradient(135deg, #FF6B9D, #FFD166); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Pastel Blast</a></li>
+                <li><a href="ligodeck.html" style="color: #b197fc; font-weight: 700;">LigoDeck</a></li>
+                <li><a href="pastel-blast-privacy.html">Gizlilik Politikası</a></li>
+                <li><button id="theme-toggle" aria-label="Tema değiştir"></button></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Menü">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pb-hero" id="top">
+        <div class="hero-bg">
+            <div class="orb" style="background: #FF6B9D;"></div>
+            <div class="orb" style="background: #FFD166;"></div>
+            <div class="orb" style="background: #845EF7;"></div>
+        </div>
+
+        <div class="pb-hero-inner">
+            <div>
+                <div class="pb-brand-pill-row">
+                    <span class="pb-pill studio">YuzerAcc &nbsp;|&nbsp; &#611;</span>
+                    <span class="pb-pill pink">★ YENİ 3B BULMACA OYUNU</span>
+                    <span class="pb-pill gold">1.000.000+ Çözülebilir Seviye</span>
+                    <span class="pb-pill mint">60 FPS • Çevrimdışı Oynanabilir</span>
+                </div>
+
+                <div class="pb-hero-logo-row">
+                    <img src="assets/pastel-blast/icon.png" alt="Toy Wonder: Pastel Blast İkon" class="pb-app-icon-hero" width="88" height="88">
+                    <h1 class="pb-title">
+                        Toy Wonder:<br><span>Pastel Blast</span>
+                    </h1>
+                </div>
+
+                <p class="pb-subtitle">
+                    Kurmalı oyuncak dünyasında geçen, <strong>6 büyülü Saga diyarı</strong>, <strong>3B Zeka Küpü yıldırım fırtınaları</strong>, <strong>Kurmalı Mıknatıs girdabı</strong> ve gerçek zamanlı <strong>44.1 kHz ASMR oyuncak akustiğiyle</strong> donatılmış yeni nesil 3B tap-to-blast bulmaca macerası! Maskotumuz <strong>Barnaby</strong> ile milyonlarca bulmacayı patlatmaya hazır mısın?
+                </p>
+
+                <div class="pb-package-tag">
+                    <span>📦 Paket Kimliği:</span>
+                    <strong>com.yuzeracc.pastelblast</strong>
+                    <span>•</span>
+                    <span>v1.0.0 (Android 8.0+)</span>
+                </div>
+
+                <div class="pb-cta-group" id="download">
+                    <a href="https://github.com/BerkcanYuzer/berkcanyuzer.github.io/releases/download/v1.0.0/ToyWonderPastelBlast.apk" class="pb-btn-primary" download>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" x2="12" y1="15" y2="3"/>
+                        </svg>
+                        Android APK İndir (v1.0.0)
+                    </a>
+                    <a href="https://play.google.com/store/apps/developer?id=YuzerAcc&hl=tr" target="_blank" rel="noopener" class="pb-btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.726.558-.92h.052zm10.89 10.89l2.302 2.302-10.937 6.333 8.635-8.635zm3.196-3.196l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.394 12l2.302-2.492zM5.864 3.477L16.8 9.81l-2.302 2.302L5.864 3.477z"/></svg>
+                        Google Play
+                    </a>
+                    <a href="#features" class="pb-btn-secondary">
+                        ✨ Özellikleri Keşfet
+                    </a>
+                    <a href="#gallery" class="pb-btn-secondary">
+                        📸 Ekran Görüntüleri
+                    </a>
+                </div>
+            </div>
+
+            <div class="pb-hero-showcase">
+                <img src="assets/pastel-blast/logo_toy_wonder.png" alt="Toy Wonder Logo" class="pb-logo-floating">
+                <div class="pb-phone-hero">
+                    <img src="assets/pastel-blast/01_main_menu.png" alt="Toy Wonder: Pastel Blast Ana Menü">
+                </div>
+                <img src="assets/pastel-blast/barnaby_victory_pose.png" alt="Barnaby Maskot" class="pb-mascot-floating">
+            </div>
+        </div>
+    </section>
+
+    <!-- Öne Çıkan Mekanikler (6 Kart) -->
+    <section class="section" id="features">
+        <h2 class="section-title animate-on-scroll">Öne Çıkan Oyun Mekanikleri</h2>
+        <p class="section-subtitle animate-on-scroll">
+            Geleneksel eşleştirme oyunlarının ötesinde; 3B fiziksel oyuncak dokusu, patlayıcı süper güçlendiriciler ve deterministik bulmaca mimarisi.
+        </p>
+
+        <div class="pb-features-grid">
+
+            <!-- 1. 3B Karakter Kabartmalı Oyuncak Küpler -->
+            <div class="pb-feature-card animate-on-scroll">
+                <div>
+                    <div class="pb-feature-header">
+                        <div class="pb-feature-icon-box" style="background: rgba(255, 107, 157, 0.15); border-color: rgba(255, 107, 157, 0.35);">
+                            <img src="assets/pastel-blast/toy_red.png" alt="Kırmızı Ayıcık Küpü">
+                        </div>
+                        <h3>1. 3B Karakter Kabartmalı Oyuncak Küpler</h3>
+                    </div>
+                    <p>
+                        Parlak 3B vinil-plastik yüzeyli, dokunulduğunda esneyip zıplayan (squash &amp; stretch) 5 sevimli oyuncak bloğu: <strong>Kırmızı Ayıcık</strong>, <strong>Mavi Robot</strong>, <strong>Yeşil Dinozor</strong>, <strong>Sarı Ördek</strong> ve <strong>Mor Kedi</strong>.
+                    </p>
+                </div>
+                <div class="pb-cubes-strip">
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/toy_red.png" alt="Kırmızı Ayıcık"> Ayıcık</span>
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/toy_blue.png" alt="Mavi Robot"> Robot</span>
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/toy_green.png" alt="Yeşil Dinozor"> Dinozor</span>
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/toy_yellow.png" alt="Sarı Ördek"> Ördek</span>
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/toy_purple.png" alt="Mor Kedi"> Kedi</span>
+                </div>
+            </div>
+
+            <!-- 2. 3B Zeka Küpü Yıldırım Fırtınası & Kurmalı Mıknatıs Girdabı -->
+            <div class="pb-feature-card animate-on-scroll">
+                <div>
+                    <div class="pb-feature-header">
+                        <div class="pb-feature-icon-box" style="background: rgba(167, 139, 250, 0.16); border-color: rgba(167, 139, 250, 0.4);">
+                            <img src="assets/pastel-blast/booster_puzzle_cube.png" alt="3B Zeka Küpü">
+                        </div>
+                        <h3>2. 3B Zeka Küpü Yıldırım Fırtınası &amp; Kurmalı Mıknatıs</h3>
+                    </div>
+                    <p>
+                        9+ küp eşleşmesinde doğan <strong>3B Zeka Küpü (Rubik's Cube)</strong> tahtadaki en yoğun rengi elektrik arklarıyla (chain lightning) yok ederken; <strong>Kurmalı Mıknatıs (Clockwork Magnet)</strong> 5×5 elmas alanı merkeze çekip girdapla parçalar!
+                    </p>
+                </div>
+                <div class="pb-cubes-strip">
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/booster_puzzle_cube.png" alt="Zeka Küpü"> Zeka Küpü Fırtınası</span>
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/booster_magnet_3d.png" alt="Kurmalı Mıknatıs"> 5×5 Mıknatıs Girdabı</span>
+                </div>
+            </div>
+
+            <!-- 3. 4 Yöne 3B Roket Filosu & Parti TNT Şok Dalgası -->
+            <div class="pb-feature-card animate-on-scroll">
+                <div>
+                    <div class="pb-feature-header">
+                        <div class="pb-feature-icon-box" style="background: rgba(255, 209, 102, 0.16); border-color: rgba(255, 209, 102, 0.4);">
+                            <img src="assets/pastel-blast/booster_tnt.png" alt="Parti TNT">
+                        </div>
+                        <h3>3. 4 Yöne 3B Roket Filosu &amp; Parti TNT Şok Dalgası</h3>
+                    </div>
+                    <p>
+                        5–6 küple tüm satır veya sütunu duman izleriyle süpüren <strong>3B Pervaneli Roketler</strong>, 7–8 küple alanı sarsan <strong>Parti TNT Varili</strong>. İkisini birleştirerek 3 satır ve 3 sütunu aynı anda silen devasa <strong>Süper Nova</strong> kombosunu ateşleyin!
+                    </p>
+                </div>
+                <div class="pb-cubes-strip">
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/booster_rocket_h.png" alt="3B Roket"> 4 Yöne Jet Roket</span>
+                    <span class="pb-cube-mini"><img src="assets/pastel-blast/booster_tnt.png" alt="Parti TNT"> Parti TNT + Süper Nova</span>
+                </div>
+            </div>
+
+            <!-- 4. 1.000.000+ Çözülebilir Deterministik Seviye & 6 Saga Diyarı -->
+            <div class="pb-feature-card animate-on-scroll">
+                <div>
+                    <div class="pb-feature-header">
+                        <div class="pb-feature-icon-box" style="background: rgba(44, 216, 166, 0.15); border-color: rgba(44, 216, 166, 0.35);">
+                            🗺️
+                        </div>
+                        <h3>4. 1.000.000+ Çözülebilir Seviye &amp; 6 Saga Diyarı</h3>
+                    </div>
+                    <p>
+                        <strong>Tersine Oynama (Reverse-Play)</strong> tohum algoritması sayesinde rastgele sıkışmalar olmadan, matematiksel olarak %100 çözülebilirliği kanıtlanmış <strong>1.000.000+ deterministik seviye</strong> ve 6 benzersiz temalı Saga diyarı.
+                    </p>
+                </div>
+                <div class="app-tags" style="margin-bottom: 0;">
+                    <span class="tag" style="background: rgba(44, 216, 166, 0.15); color: #2CD8A6;">Reverse-Play Garantili</span>
+                    <span class="tag">Ahşap Sandık, Kasa, Zincir &amp; Baloncuk Engelleri</span>
+                </div>
+            </div>
+
+            <!-- 5. Gerçek Zamanlı Prosedürel ASMR Oyuncak Akustiği (44.1 kHz) -->
+            <div class="pb-feature-card animate-on-scroll">
+                <div>
+                    <div class="pb-feature-header">
+                        <div class="pb-feature-icon-box" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.35);">
+                            🎵
+                        </div>
+                        <h3>5. Prosedürel ASMR Oyuncak Akustiği (44.1 kHz)</h3>
+                    </div>
+                    <p>
+                        Gerçek zamanlı <strong>44.1 kHz PCM ses sentezleyicisi</strong> ile üretilen tatmin edici oyuncak balon patlamaları, ahşap kırılma tınıları, kurmalı çark sesleri ve her zincirleme komboda yükselen <strong>Pentatonik müzik gamları</strong>.
+                    </p>
+                </div>
+                <div class="app-tags" style="margin-bottom: 0;">
+                    <span class="tag" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8;">44.1 kHz PCM Sentezleyici</span>
+                    <span class="tag">Pentatonik Kombo Armonisi</span>
+                </div>
+            </div>
+
+            <!-- 6. Renk Körlüğü Erişilebilirlik Modları -->
+            <div class="pb-feature-card animate-on-scroll">
+                <div>
+                    <div class="pb-feature-header">
+                        <div class="pb-feature-icon-box" style="background: rgba(255, 142, 83, 0.15); border-color: rgba(255, 142, 83, 0.35);">
+                            👁️
+                        </div>
+                        <h3>6. Renk Körlüğü Erişilebilirlik Modları</h3>
+                    </div>
+                    <p>
+                        Ayarlar menüsünden tek dokunuşla etkinleştirilebilen <strong>Protanopia</strong>, <strong>Deuteranopia</strong> ve <strong>Tritanopia</strong> renk filtreleri ile her küpün üzerindeki yüksek kontrastlı 3B karakter kabartmaları sayesinde herkes için erişilebilir oyun deneyimi.
+                    </p>
+                </div>
+                <div class="app-tags" style="margin-bottom: 0;">
+                    <span class="tag" style="background: rgba(255, 209, 102, 0.16); color: #FFD166;">Protanopia • Deuteranopia • Tritanopia</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 6 Saga Diyarı Şeridi -->
+        <div style="margin-top: 4rem;">
+            <h3 style="text-align: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">6 Büyülü Saga Diyarında Yolculuk</h3>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 0.95rem;">Seviye haritasında ilerledikçe açılan 6 masalsı kurmalı oyuncak bölgesi:</p>
+            <div class="pb-worlds-grid">
+                <div class="pb-world-card animate-on-scroll">
+                    <span class="pb-world-num">1. Diyar</span>
+                    <h4>🏡 Oyuncak Köyü</h4>
+                    <p>Renkli bloklar ve neşeli başlangıç bulmacaları</p>
+                </div>
+                <div class="pb-world-card animate-on-scroll">
+                    <span class="pb-world-num">2. Diyar</span>
+                    <h4>🍭 Şeker Nehri</h4>
+                    <p>Pastel köprüler ve köpük baloncuk engelleri</p>
+                </div>
+                <div class="pb-world-card animate-on-scroll">
+                    <span class="pb-world-num">3. Diyar</span>
+                    <h4>🎡 Lunapark Vadisi</h4>
+                    <p>Dönen roketler ve havai fişek şöleni</p>
+                </div>
+                <div class="pb-world-card animate-on-scroll">
+                    <span class="pb-world-num">4. Diyar</span>
+                    <h4>🏰 Kurmalı Kale</h4>
+                    <p>Zırhlı çelik kasalar ve zincir kilitler</p>
+                </div>
+                <div class="pb-world-card animate-on-scroll">
+                    <span class="pb-world-num">5. Diyar</span>
+                    <h4>🌟 Yıldız Atölyesi</h4>
+                    <p>Zeka küpü fırtınaları ve mıknatıs girdapları</p>
+                </div>
+                <div class="pb-world-card animate-on-scroll">
+                    <span class="pb-world-num">6. Diyar</span>
+                    <h4>🌈 Gökkuşağı Adası</h4>
+                    <p>Usta oyuncular için destansı kombo bölümleri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oyun İçi Ekran Görüntüsü Galerisi (10 Mockup) -->
+    <section class="section" id="gallery" style="padding-top: 2rem;">
+        <h2 class="section-title animate-on-scroll">Oyun İçi Ekran Görüntüleri</h2>
+        <p class="section-subtitle animate-on-scroll">
+            Toy Wonder: Pastel Blast dünyasından gerçek oyun içi kareler. Tam ekran incelemek için herhangi bir görsele dokunun.
+        </p>
+
+        <div class="pb-gallery-grid">
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/01_main_menu.png', 'Ana Menü &amp; Barnaby Karşılama Ekranı')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/01_main_menu.png" alt="Ana Menü" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>Ana Menü &amp; Barnaby</h4>
+                    <p>3B oyuncak odası atmosferi ve hızlı başlangıç</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/03_level_map.png', '6 Saga Diyarı &amp; Seviye Haritası')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/03_level_map.png" alt="Seviye Haritası" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>Saga Seviye Haritası</h4>
+                    <p>Yıldız sandıkları, taç serisi ve diyar ilerlemesi</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/05_board_gameplay.png', '3B Karakter Kabartmalı Oyuncak Küpler')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/05_board_gameplay.png" alt="Oyun Tahtası" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>3B Oyuncak Küpler</h4>
+                    <p>Ayıcık, Robot, Dinozor, Ördek ve Kedi blokları</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/07_rocket_cross_beam.png', '4 Yöne 3B Roket Filosu &amp; Çapraz Lazer')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/07_rocket_cross_beam.png" alt="Roket Çapraz Patlama" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>4 Yöne Roket Filosu</h4>
+                    <p>Satır ve sütunları süpüren yüksek hızlı jet izleri</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/08_super_nova_combo.png', 'Roket + Parti TNT: Süper Nova Kombosu')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/08_super_nova_combo.png" alt="Süper Nova Kombosu" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>Süper Nova Kombosu</h4>
+                    <p>3 satır ve 3 sütunu aynı anda sarsan dev patlama</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/17_rubik_cube_lightning_storm.png', '3B Zeka Küpü (Rubik\'s Cube) Yıldırım Fırtınası')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/17_rubik_cube_lightning_storm.png" alt="3B Zeka Küpü Yıldırım Fırtınası" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>3B Zeka Küpü Fırtınası</h4>
+                    <p>Hedef renkteki tüm küpleri vuran elektrik arkları</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/18_clockwork_magnet_vortex_pull.png', 'Kurmalı Mıknatıs (Clockwork Magnet) 5×5 Girdabı')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/18_clockwork_magnet_vortex_pull.png" alt="Kurmalı Mıknatıs Girdabı" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>Kurmalı Mıknatıs Girdabı</h4>
+                    <p>5×5 elmas alanı merkeze çeken manyetik vorteks</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/13_obstacle_wood_crack_and_shatter.png', 'Ahşap Oyuncak Sandığı &amp; Çelik Kasa Kırılması')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/13_obstacle_wood_crack_and_shatter.png" alt="Ahşap Sandık Parçalanması" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>3B Ahşap &amp; Kasa Engelleri</h4>
+                    <p>Kıymık parçacıklarıyla kırılan çok katmanlı engeller</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/14_chain_lock_and_bubble_pop.png', '3B Zincir Kilitler &amp; Sabun Baloncuğu')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/14_chain_lock_and_bubble_pop.png" alt="Zincir Kilit ve Baloncuk" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>Zincir Kilit &amp; Baloncuk</h4>
+                    <p>Stratejik eşleştirmelerle kırılan metal halkalar</p>
+                </div>
+            </div>
+
+            <div class="pb-mockup-card animate-on-scroll" onclick="openLightbox('assets/pastel-blast/10_victory_blast_time.png', 'Blast Time! &amp; 3 Yıldızlı Zafer Kutlaması')">
+                <div class="pb-phone-frame">
+                    <img src="assets/pastel-blast/10_victory_blast_time.png" alt="Zafer Kutlaması" loading="lazy">
+                </div>
+                <div class="pb-mockup-caption">
+                    <h4>Blast Time &amp; Zafer!</h4>
+                    <p>Kalan hamlelerin ekstra roketlere dönüştüğü şölen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teknik & Güvenlik Rozetleri -->
+    <section class="section" id="tech-security" style="padding-top: 2rem;">
+        <h2 class="section-title animate-on-scroll">Teknik Mükemmeliyet &amp; Güvenlik</h2>
+        <p class="section-subtitle animate-on-scroll">
+            Modern mobil donanımlar için sıfırdan optimize edilmiş motor mimarisi ve oyuncu dostu güvenlik standartları.
+        </p>
+
+        <div class="pb-tech-badges-grid">
+            <div class="pb-security-card animate-on-scroll">
+                <div class="pb-security-icon">⚡</div>
+                <div>
+                    <h4>Godot 4.7 Vulkan Mobile</h4>
+                    <p>Modern Vulkan &amp; OpenGL ES3 grafik hattı, 3B perspektif shader'lar ve GPU hızlandırmalı parçacık efektleri.</p>
+                </div>
+            </div>
+
+            <div class="pb-security-card animate-on-scroll">
+                <div class="pb-security-icon">🎯</div>
+                <div>
+                    <h4>60 FPS Akıcı Performans</h4>
+                    <p>Nesne havuzlama (Object Pooling) ve sıfır-tahsisli (zero-allocation) 44.1 kHz ses tamponu ile takılmasız 60 FPS.</p>
+                </div>
+            </div>
+
+            <div class="pb-security-card animate-on-scroll">
+                <div class="pb-security-icon">🔐</div>
+                <div>
+                    <h4>HMAC-SHA256 Kayıt Güvenliği</h4>
+                    <p>Cihaz içi seviye, altın ve yıldız ilerlemeniz kriptografik HMAC-SHA256 bütünlük imzası ve otomatik yedeklemeyle korunur.</p>
+                </div>
+            </div>
+
+            <div class="pb-security-card animate-on-scroll">
+                <div class="pb-security-icon">👨‍👩‍👧‍👦</div>
+                <div>
+                    <h4>COPPA &amp; Aile Dostu</h4>
+                    <p>Kişisel veri toplamaz, hesap kaydı zorunlu tutmaz ve uçak modunda %100 çevrimdışı oynanabilir. <a href="pastel-blast-privacy.html">Gizlilik Politikasını İncele &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="pb-lightbox" id="pbLightbox" onclick="closeLightbox(event)">
+        <button class="pb-lightbox-close" aria-label="Kapat" onclick="closeLightbox(event)">&times;</button>
+        <img id="pbLightboxImg" src="" alt="Ekran Görüntüsü">
+        <div class="pb-lightbox-caption" id="pbLightboxCaption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="footer-logo" width="24" height="24">
+                <p class="footer-copy">&copy; 2026 Yuzeracc (Berkcan Yüzer). Toy Wonder: Pastel Blast (<code>com.yuzeracc.pastelblast</code>) tüm hakları saklıdır.</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#apps">Uygulamalar</a></li>
+                <li><a href="pastel-blast-privacy.html">Gizlilik Politikası (Privacy Policy)</a></li>
+                <li><a href="https://play.google.com/store/apps/developer?id=YuzerAcc&hl=tr" target="_blank" rel="noopener">Google Play</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openLightbox(src, caption) {
+            var lb = document.getElementById('pbLightbox');
+            var img = document.getElementById('pbLightboxImg');
+            var cap = document.getElementById('pbLightboxCaption');
+            img.src = src;
+            cap.innerHTML = caption;
+            lb.classList.add('open');
+        }
+        function closeLightbox(e) {
+            if (e.target.id === 'pbLightbox' || e.target.classList.contains('pb-lightbox-close')) {
+                document.getElementById('pbLightbox').classList.remove('open');
+            }
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('pbLightbox').classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
