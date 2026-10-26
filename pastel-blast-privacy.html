@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toy Wonder: Pastel Blast — Gizlilik Politikası / Privacy Policy | YuzerAcc</title>
-    <meta name="description" content="Toy Wonder: Pastel Blast resmi Google Play Gizlilik Politikası (Türkçe & English Privacy Policy).">
+    <title>Pofi Toybox: Plush Puzzle — Gizlilik Politikası &amp; Veri Silme | YuzerAcc</title>
+    <meta name="description" content="Pofi Toybox: Plush Puzzle (com.yuzeracc.pastelblast) resmi Google Play Gizlilik Politikası ve Veri Silme Yönergesi (Türkçe &amp; English Privacy Policy &amp; Data Deletion).">
     <link rel="canonical" href="https://berkcanyuzer.github.io/pastel-blast-privacy.html">
     <link rel="icon" type="image/png" href="assets/pastel-blast/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .privacy-wrapper {
-            max-width: 860px;
+            max-width: 880px;
             margin: 0 auto;
             padding: 7rem 1.5rem 4rem;
         }
         .privacy-header-card {
-            background: linear-gradient(135deg, rgba(255, 107, 157, 0.12), rgba(255, 209, 102, 0.08));
-            border: 1px solid rgba(255, 209, 102, 0.35);
-            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(255, 209, 102, 0.12), rgba(255, 107, 157, 0.10));
+            border: 1px solid rgba(255, 209, 102, 0.38);
+            border-radius: 24px;
             padding: 2rem;
             margin-bottom: 2rem;
             display: flex;
@@ -29,10 +29,11 @@
             flex-wrap: wrap;
         }
         .privacy-header-card img {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+            border: 2px solid rgba(255, 209, 102, 0.5);
         }
         .lang-switch-bar {
             display: flex;
@@ -45,13 +46,14 @@
             align-items: center;
             gap: 0.4rem;
             padding: 0.55rem 1.15rem;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 0.88rem;
             font-weight: 700;
             background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text);
             text-decoration: none;
+            transition: all 0.2s ease;
         }
         .lang-btn:hover {
             border-color: #FFD166;
@@ -60,7 +62,7 @@
         .policy-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 2.25rem;
             margin-bottom: 2.5rem;
         }
@@ -86,16 +88,28 @@
             font-size: 0.95rem;
             line-height: 1.7;
         }
-        .policy-box ul {
+        .policy-box ul, .policy-box ol {
             margin: 0.5rem 0 1rem 1.5rem;
         }
         .policy-box li {
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.45rem;
         }
         .policy-meta {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 1rem;
+        }
+        .deletion-card {
+            background: linear-gradient(135deg, rgba(44, 216, 166, 0.12), rgba(56, 189, 248, 0.08));
+            border: 1.5px solid rgba(44, 216, 166, 0.45);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .deletion-card h2 {
+            color: #2CD8A6;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
         }
         .contact-callout {
             background: rgba(167, 139, 250, 0.08);
@@ -117,7 +131,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="pastel-blast.html" style="background: linear-gradient(135deg, #FF6B9D, #FFD166); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Pastel Blast</a></li>
+                <li><a href="pastel-blast.html" style="background: linear-gradient(135deg, #FF6B9D, #FFD166); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Pofi Toybox</a></li>
                 <li><a href="ligodeck.html" style="color: #b197fc; font-weight: 700;">LigoDeck</a></li>
                 <li><button id="theme-toggle" aria-label="Tema değiştir"></button></li>
             </ul>
@@ -129,78 +143,96 @@
 
     <main class="privacy-wrapper">
         <div class="privacy-header-card">
-            <img src="assets/pastel-blast/icon.png" alt="Toy Wonder: Pastel Blast">
+            <img src="assets/pastel-blast/icon.png" alt="Pofi Toybox: Plush Puzzle">
             <div>
                 <h1 style="font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 800; margin-bottom: 0.25rem;">
-                    Toy Wonder: Pastel Blast — Gizlilik Politikası &amp; Privacy Policy
+                    Pofi Toybox: Plush Puzzle — Gizlilik Politikası &amp; Veri Silme
                 </h1>
                 <p style="color: var(--text-secondary); font-size: 0.92rem;">
-                    Geliştirici: <strong>YuzerAcc (Berkcan Yüzer)</strong>
+                    Paket Kimliği: <code>com.yuzeracc.pastelblast</code> &nbsp;|&nbsp; Geliştirici: <strong>YuzerAcc (Berkcan Yüzer)</strong>
                 </p>
             </div>
         </div>
 
         <div class="lang-switch-bar">
             <a href="#tr" class="lang-btn">🇹🇷 Türkçe Gizlilik Politikası</a>
+            <a href="#data-deletion" class="lang-btn" style="border-color: rgba(44, 216, 166, 0.5); color: #2CD8A6;">🗑️ Veri Silme Yönergesi (Data Deletion)</a>
             <a href="#en" class="lang-btn">🇬🇧 English Privacy Policy</a>
             <a href="pastel-blast.html" class="lang-btn" style="margin-left: auto;">&larr; Oyun Sayfasına Dön</a>
         </div>
 
+        <!-- RESMİ VERİ SİLME BÖLÜMÜ (GOOGLE PLAY DATA SAFETY DATA DELETION URL HEDEFİ) -->
+        <section class="deletion-card" id="data-deletion">
+            <span class="tag" style="background: rgba(44, 216, 166, 0.2); color: #2CD8A6; font-weight: 800;">🗑️ VERİ SİLME YÖNERGESİ / DATA DELETION INSTRUCTIONS (GOOGLE PLAY)</span>
+            <h2 style="margin-top: 0.65rem;">Kullanıcı Verilerinin Silinmesi (Pofi Toybox: Plush Puzzle)</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                <strong>Pofi Toybox: Plush Puzzle</strong> (<code>com.yuzeracc.pastelblast</code>), kullanıcı hesabı oluşturmaz ve sunucularımızda hiçbir kişisel veri, e-posta veya profil bilgisi <strong>saklamaz</strong>. Tüm oyun ilerlemeniz yalnızca kendi cihazınızda yerel olarak (<code>user://player_save.dat</code>) tutulur.
+            </p>
+            <h3 style="color: #FFD166; font-size: 1.02rem; margin-top: 1rem;">🇹🇷 Verilerinizi Cihazınızdan Anında Silme Adımları:</h3>
+            <ol style="color: var(--text-secondary); font-size: 0.93rem; line-height: 1.65;">
+                <li><strong>Cihaz İçi Oyun Kayıtlarını Silme:</strong> Android cihazınızda <strong>Ayarlar &rarr; Uygulamalar &rarr; Pofi Toybox: Plush Puzzle &rarr; Depolama &rarr; Verileri Temizle</strong> adımını uygulayarak veya oyunu cihazınızdan kaldırarak tüm seviye, yıldız ve güçlendirici kayıtlarınızı anında ve kalıcı olarak silebilirsiniz.</li>
+                <li><strong>Google Reklam Kimliğini (AAID) Sıfırlama / Silme:</strong> Android cihazınızda <strong>Ayarlar &rarr; Google &rarr; Tüm Hizmetler &rarr; Reklamlar &rarr; Reklam kimliğini sil</strong> (veya <em>Reklam kimliğini sıfırla</em>) seçeneğiyle AdMob reklam tanımlayıcınızı dilediğiniz an silebilirsiniz.</li>
+                <li><strong>E-posta ile Silme / Bilgi Talebi:</strong> Herhangi bir veri silme veya doğrulama talebiniz için <a href="mailto:yuzeracc@gmail.com?subject=Pofi%20Toybox%20Veri%20Silme%20Talebi">yuzeracc@gmail.com</a> adresine e-posta gönderebilirsiniz (Talepler en geç 7 iş günü içinde yanıtlanır).</li>
+            </ol>
+            <h3 style="color: #38BDF8; font-size: 1.02rem; margin-top: 1rem;">🇬🇧 How to Delete Your Data Immediately (English):</h3>
+            <ol style="color: var(--text-secondary); font-size: 0.93rem; line-height: 1.65; margin-bottom: 0;">
+                <li><strong>Delete Local Save Data:</strong> On your Android device, navigate to <strong>Settings &rarr; Apps &rarr; Pofi Toybox: Plush Puzzle &rarr; Storage &rarr; Clear Data</strong>, or simply uninstall the app to permanently erase all local level progress, stars, and settings.</li>
+                <li><strong>Delete / Reset Google Advertising ID:</strong> Navigate to <strong>Settings &rarr; Google &rarr; Ads &rarr; Delete advertising ID</strong> on your Android device to immediately unlink any AdMob advertising identifier.</li>
+                <li><strong>Support Request via Email:</strong> For any questions or manual deletion verification requests, contact us at <a href="mailto:yuzeracc@gmail.com?subject=Pofi%20Toybox%20Data%20Deletion%20Request">yuzeracc@gmail.com</a>.</li>
+            </ol>
+        </section>
+
         <!-- TÜRKÇE BÖLÜM -->
         <section class="policy-box" id="tr">
             <span class="tag" style="background: rgba(255, 107, 157, 0.18); color: #FF85AD; font-weight: 700;">🇹🇷 TÜRKÇE (RESMİ METİN)</span>
-            <p class="policy-meta" style="margin-top: 0.6rem;">Son Güncelleme Tarihi: 17 Ekim 2026 &nbsp;|&nbsp; Yürürlük Tarihi: 17 Ekim 2026</p>
+            <p class="policy-meta" style="margin-top: 0.6rem;">Son Güncelleme Tarihi: 27 Ekim 2026 &nbsp;|&nbsp; Yürürlük Tarihi: 27 Ekim 2026</p>
 
             <p>
-                Bu Gizlilik Politikası, <strong>YuzerAcc (Berkcan Yüzer)</strong> tarafından geliştirilen ve yayımlanan <strong>Toy Wonder: Pastel Blast</strong> mobil oyununun ("Oyun" veya "Uygulama") kullanıcı verilerini nasıl işlediğini, koruduğunu ve gizliliğinize nasıl saygı duyduğunu açıklar.
+                Bu Gizlilik Politikası, <strong>YuzerAcc (Berkcan Yüzer)</strong> tarafından geliştirilen ve yayımlanan <strong>Pofi Toybox: Plush Puzzle</strong> (paket adı: <code>com.yuzeracc.pastelblast</code>, geliştirme kod adı: <em>Toy Wonder: Pastel Blast</em>) mobil oyununun ("Oyun" veya "Uygulama") kullanıcı verilerini nasıl işlediğini, koruduğunu ve gizliliğinize nasıl saygı duyduğunu açıklar.
             </p>
 
-            <h2>1. Toplanan ve Cihazda Saklanan Veriler</h2>
+            <h2>1. Toplanan ve Cihazda Saklanan Veriler (Sıfır Kişisel Veri)</h2>
             <p>
-                <strong>Toy Wonder: Pastel Blast</strong>, oyuncuların ad, soyad, TC kimlik numarası, telefon numarası, fiziksel adres veya konum gibi kişisel kimlik bilgilerini <strong>doğrudan toplamaz ve harici bir sunucuya göndermez</strong>. Oyun içi ilerlemeniz tamamen cihazınızda yerel olarak (<code>user://save_data.cfg</code>) saklanır:
+                <strong>Pofi Toybox: Plush Puzzle</strong>, oyuncuların ad, soyad, TC kimlik numarası, e-posta adresi, telefon numarası, fotoğraf/kamera veya konum gibi kişisel kimlik bilgilerini <strong>doğrudan toplamaz ve harici bir sunucuya göndermez</strong>. Oyun içi ilerlemeniz tamamen cihazınızda yerel olarak (<code>user://player_save.dat</code>) saklanır:
             </p>
             <ul>
-                <li>Tamamlanan seviyeler, yıldız sayıları, altın (coin) bakiyesi ve kazanılan güçlendiriciler (Roket, Parti TNT, 3B Zeka Küpü, Kurmalı Mıknatıs),</li>
-                <li>Can (kalp) yenilenme zamanlayıcısı ve günlük ödül serisi (streak) durumu,</li>
-                <li>Ses, müzik, titreşim (haptic), dil (TR/EN) ve renk körlüğü erişilebilirlik tercihleri (Protanopia, Deuteranopia, Tritanopia).</li>
+                <li>Tamamlanan seviyeler (1–5.000+ harita ilerlemesi), yıldız sayıları ve kazanılan güçlendiriciler (Çekiç, Boks Eldiveni, Ağır Örs, Sihirli Zar, Roket, Parti TNT, 3B Zeka Küpü),</li>
+                <li>Can (kalp) yenilenme zamanlayıcısı, Sürpriz Kutusu günlük hakları ve taç serisi (streak) durumu,</li>
+                <li>Ses, müzik, titreşim (haptic), dil (11 dil) ve renk körlüğü erişilebilirlik tercihleri (Protanopia, Deuteranopia, Tritanopia).</li>
             </ul>
 
             <h2>2. Veri Güvenliği ve Kriptografik Bütünlük (HMAC-SHA256)</h2>
             <p>
-                Cihazınızda tutulan oyun kayıt dosyaları, veri bozulmalarına ve yetkisiz müdahalelere karşı <strong>HMAC-SHA256 kriptografik imza doğrulaması</strong> ve otomatik yedekleme (<code>.bak</code>) mekanizması ile korunmaktadır.
+                Cihazınızda tutulan oyun kayıt dosyaları, veri bozulmalarına ve yetkisiz müdahalelere karşı <strong>HMAC-SHA256 kriptografik imza doğrulaması</strong> ve çift kopyalı otomatik yedekleme (<code>.bak</code>) mekanizması ile korunmaktadır. Harici bir analitik sunucusuna veri aktarımı yapılmaz.
             </p>
 
-            <h2>3. Üçüncü Taraf Hizmetler (Google Play &amp; AdMob)</h2>
-            <p>Oyun, mağaza dağıtımı, isteğe bağlı ödüllü reklamlar ve uygulama içi satın alımlar için yalnızca güvenilir resmi platform altyapılarını kullanabilir:</p>
-            <h3>a) Google Play Hizmetleri &amp; Google Play Faturalandırma (In-App Billing)</h3>
+            <h2>3. Üçüncü Taraf Hizmetler (Yalnızca Google AdMob)</h2>
+            <p>Oyun içinde paralı satış (Uygulama İçi Satın Alma / IAP) veya zorunlu tam ekran geçiş reklamı (forced interstitial) <strong>bulunmamaktadır</strong>. Yalnızca oyuncunun kendi isteğiyle ödül kazanmak için izlediği ödüllü reklamlar ve alt bilgi çubuğu (adaptive banner) için Google AdMob kullanılır:</p>
+            <h3>Google AdMob ("Reklam = Ödül" Sistemi &amp; UMP Rıza Yönetimi)</h3>
             <ul>
-                <li>İsteğe bağlı altın paketleri veya başlangıç paketleri satın alındığında, ödeme işlemi doğrudan <strong>Google Play Store</strong> üzerinden güvenli bir şekilde gerçekleştirilir. Kredi kartı veya finansal bilgileriniz tarafımızca görülmez ve saklanmaz.</li>
-                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a></li>
-            </ul>
-            <h3>b) Google AdMob (Ödüllü Reklamlar)</h3>
-            <ul>
-                <li>Oyuncunun kendi isteğiyle "+5 Hamle" veya ücretsiz ödül kazanmak için izlediği ödüllü reklamlarda Google AdMob SDK'sı kullanılabilir. Aile ve çocuk güvenliği kapsamında kişiselleştirilmemiş (non-personalized) reklam politikaları desteklenir.</li>
-                <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Gizlilik Bilgileri</a></li>
+                <li>Oyuncu kendi isteğiyle "+5 Hamle", "+3 Hamle", "Sürpriz Kutusu", "+1 Can" veya "+1 Güçlendirici" kazanmak için ödüllü reklam izlediğinde Google AdMob SDK'sı cihaz reklam kimliğini (Advertising ID) ve temel reklam etkileşim verilerini işleyebilir.</li>
+                <li>Avrupa Ekonomik Alanı (GDPR) ve ilgili bölgelerde Google User Messaging Platform (UMP) rıza tercihi uygulanır; rıza verilmediğinde yalnızca kişiselleştirilmemiş reklamlar (<code>npa=1</code>) gösterilir.</li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a> &nbsp;|&nbsp; <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Gizlilik Bilgileri</a></li>
             </ul>
 
-            <h2>4. Çocukların Gizliliği (COPPA &amp; Aile Dostu Politika)</h2>
+            <h2>4. Yaş Derecelendirmesi ve Hedef Kitle (13+ / PG)</h2>
             <p>
-                <strong>Toy Wonder: Pastel Blast</strong> her yaştan oyuncuya uygun, aile dostu bir 3B bulmaca oyunudur. 13 yaşın altındaki çocuklardan (veya ilgili yargı bölgesindeki yaş sınırının altındaki bireylerden) bilerek hiçbir kişisel veri toplamıyoruz. Ebeveynler veya yasal vasiler herhangi bir soruda bizimle doğrudan iletişime geçebilirler.
+                <strong>Pofi Toybox: Plush Puzzle</strong> genel izleyici ve 13+ yaş grubuna yönelik olarak yapılandırılmıştır (maksimum reklam içerik derecelendirmesi: <strong>PG</strong>). 13 yaşın altındaki çocuklardan bilerek hiçbir kişisel veri toplamıyoruz. Ebeveynler veya yasal vasiler herhangi bir soruda bizimle doğrudan iletişime geçebilirler.
             </p>
 
             <h2>5. Kullanıcı Hakları ve Verilerin Silinmesi (KVKK &amp; GDPR)</h2>
-            <ul>
-                <li>Tüm oyun ilerlemeniz cihazınızda yerel olarak tutulduğundan, Android cihazınızın <strong>Ayarlar &rarr; Uygulamalar &rarr; Toy Wonder: Pastel Blast &rarr; Depolama &rarr; Verileri Temizle</strong> adımından veya oyunu cihazınızdan kaldırarak tüm yerel verilerinizi anında ve kalıcı olarak silebilirsiniz.</li>
-                <li>Cihaz ayarlarınızdan Google Reklam Kimliği (Advertising ID) tercihlerinizi istediğiniz zaman sıfırlayabilirsiniz.</li>
-            </ul>
+            <p>
+                Yukarıdaki <a href="#data-deletion"><strong>Veri Silme Yönergesi (#data-deletion)</strong></a> bölümünde açıklandığı üzere, cihaz ayarlarından uygulama verilerini temizleyerek veya oyunu kaldırarak tüm yerel verilerinizi anında silebilir, Google ayarlarından reklam kimliğinizi sıfırlayabilirsiniz.
+            </p>
 
             <div class="contact-callout">
                 <h3 style="margin-top: 0; color: #FFFFFF;">6. İletişim Bilgileri</h3>
-                <p style="margin-bottom: 0.25rem;">Bu Gizlilik Politikası veya <strong>Toy Wonder: Pastel Blast</strong> ile ilgili her türlü soru ve talebiniz için:</p>
+                <p style="margin-bottom: 0.25rem;">Bu Gizlilik Politikası veya <strong>Pofi Toybox: Plush Puzzle</strong> ile ilgili her türlü soru ve talebiniz için:</p>
                 <p style="margin-bottom: 0;">
                     <strong>Geliştirici:</strong> YuzerAcc (Berkcan Yüzer)<br>
                     <strong>E-posta:</strong> <a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a> / <a href="mailto:berkcanacc@gmail.com">berkcanacc@gmail.com</a><br>
-                    <strong>Resmi Web Sitesi:</strong> <a href="https://berkcanyuzer.github.io/pastel-blast.html">https://berkcanyuzer.github.io/pastel-blast.html</a>
+                    <strong>Resmi Web Sitesi:</strong> <a href="https://berkcanyuzer.github.io/pastel-blast.html">https://berkcanyuzer.github.io/pastel-blast.html</a><br>
+                    <strong>Veri Silme Bağlantısı:</strong> <a href="https://berkcanyuzer.github.io/pastel-blast-privacy.html#data-deletion">https://berkcanyuzer.github.io/pastel-blast-privacy.html#data-deletion</a>
                 </p>
             </div>
         </section>
@@ -208,77 +240,58 @@
         <!-- ENGLISH SECTION -->
         <section class="policy-box" id="en">
             <span class="tag" style="background: rgba(56, 189, 248, 0.18); color: #38BDF8; font-weight: 700;">🇬🇧 ENGLISH (OFFICIAL PRIVACY POLICY)</span>
-            <p class="policy-meta" style="margin-top: 0.6rem;">Last Updated: October 17, 2026 &nbsp;|&nbsp; Effective Date: October 17, 2026</p>
+            <p class="policy-meta" style="margin-top: 0.6rem;">Last Updated: October 27, 2026 &nbsp;|&nbsp; Effective Date: October 27, 2026</p>
 
             <p>
-                This Privacy Policy explains how <strong>Toy Wonder: Pastel Blast</strong>, developed and published by <strong>YuzerAcc (Berkcan Yüzer)</strong> ("we", "us", or "our"), handles and protects user data when you install and play the mobile application ("Game" or "App").
+                This Privacy Policy explains how <strong>Pofi Toybox: Plush Puzzle</strong> (package ID: <code>com.yuzeracc.pastelblast</code>, formerly codenamed <em>Toy Wonder: Pastel Blast</em>), developed and published by <strong>YuzerAcc (Berkcan Yüzer)</strong> ("we", "us", or "our"), handles and protects user data when you install and play the mobile application ("Game" or "App").
             </p>
 
-            <h2>1. Information We Collect &amp; Local Storage</h2>
+            <h2>1. Information We Collect &amp; Local Storage (Zero PII)</h2>
             <p>
-                <strong>Toy Wonder: Pastel Blast</strong> does <strong>not</strong> directly collect, store, or transmit personally identifiable information (such as your name, email address, phone number, or precise GPS location) to any external server. All gameplay progress is stored strictly locally on your device (<code>user://save_data.cfg</code>):
+                <strong>Pofi Toybox: Plush Puzzle</strong> does <strong>not</strong> directly collect, store, or transmit personally identifiable information (such as your name, email address, phone number, camera/photos, or precise GPS location) to any external server. All gameplay progress is stored strictly locally on your device (<code>user://player_save.dat</code>):
             </p>
             <ul>
-                <li>Completed levels, star ratings, coin balances, and booster inventory (Rockets, Party TNT, 3D Rubik's Cube, Clockwork Magnet),</li>
-                <li>Heart/life regeneration timestamps and daily login streak progress,</li>
-                <li>Audio, haptics, language (EN/TR), and colorblind accessibility settings (Protanopia, Deuteranopia, Tritanopia).</li>
+                <li>Completed levels (1–5,000+ map progression), star ratings, and booster inventory (Hammer, Boxing Glove, Heavy Anvil, Magic Dice, Rockets, Party TNT, 3D Rubik's Cube),</li>
+                <li>Heart/life regeneration timestamps, daily Surprise Box claims, and streak progress,</li>
+                <li>Audio, haptics, language (11 languages), and colorblind accessibility settings (Protanopia, Deuteranopia, Tritanopia).</li>
             </ul>
 
             <h2>2. Data Security &amp; Cryptographic Integrity (HMAC-SHA256)</h2>
             <p>
-                All local save data on your device is protected against corruption and unauthorized tampering using <strong>HMAC-SHA256 cryptographic signature verification</strong> alongside automated local backup recovery (<code>.bak</code>).
+                All local save data on your device is protected against corruption and unauthorized tampering using <strong>HMAC-SHA256 cryptographic signature verification</strong> alongside automated local backup recovery (<code>.bak</code>). No external analytics server is used.
             </p>
 
-            <h2>3. Third-Party Services (Google Play &amp; AdMob)</h2>
-            <p>The Game may integrate standard platform services strictly for app distribution, optional rewarded ads, and in-app purchases:</p>
-            <h3>a) Google Play Services &amp; Google Play Billing</h3>
+            <h2>3. Third-Party Services (Google AdMob Only)</h2>
+            <p>The Game features <strong>zero in-app purchases (no IAP)</strong> and <strong>zero forced interstitial ads</strong>. It integrates Google AdMob strictly for bottom adaptive banners and optional, player-initiated rewarded ads ("Ad = Reward"):</p>
+            <h3>Google AdMob (Optional Rewarded Ads &amp; UMP Consent)</h3>
             <ul>
-                <li>All optional in-app purchases (such as coin bundles or starter packs) are processed securely by <strong>Google Play Billing</strong>. We never access or store your credit card or payment details.</li>
-                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-            </ul>
-            <h3>b) Google AdMob (Optional Rewarded Ads)</h3>
-            <ul>
-                <li>When players voluntarily choose to watch a rewarded video ad (e.g., to earn +5 extra moves or bonus rewards), Google AdMob may process device identifiers in compliance with Google Play Families and non-personalized ad standards.</li>
-                <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Privacy Policy</a></li>
+                <li>When players voluntarily choose to watch a rewarded ad (e.g., to earn +5/+3 extra moves, Surprise Box rewards, +1 life, or +1 tactical booster), Google AdMob may process device advertising identifiers in compliance with Google User Messaging Platform (UMP) consent standards.</li>
+                <li>When personalized ad consent is declined, AdMob serves strictly non-personalized ads (<code>npa=1</code>).</li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> &nbsp;|&nbsp; <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Privacy Policy</a></li>
             </ul>
 
-            <h2>4. Children's Privacy (COPPA Compliance)</h2>
+            <h2>4. Audience &amp; Content Rating (13+ / PG)</h2>
             <p>
-                <strong>Toy Wonder: Pastel Blast</strong> is a family-friendly 3D puzzle game suitable for all ages. We do not knowingly collect any personal information from children under the age of 13 (or the applicable age of digital consent in your jurisdiction). If you are a parent or guardian and have any questions, please contact us directly.
+                <strong>Pofi Toybox: Plush Puzzle</strong> is configured for a general 13+ audience with a maximum ad content rating of <strong>PG</strong>. We do not knowingly collect any personal information from children under the age of 13.
             </p>
 
-            <h2>5. Your Rights &amp; Data Deletion (GDPR &amp; CCPA)</h2>
-            <ul>
-                <li>Because your game progress is stored locally on your device, you can permanently delete all game data at any time by clearing the app's storage in your Android device settings or by uninstalling the App.</li>
-                <li>You can reset or opt out of personalized advertising identifiers at any time via your Android device's Google Settings.</li>
-            </ul>
+            <h2>5. Your Rights &amp; Data Deletion (GDPR, CCPA &amp; Google Play Data Safety)</h2>
+            <p>
+                As detailed in our <a href="#data-deletion"><strong>Data Deletion Instructions (#data-deletion)</strong></a> section above, you can permanently erase all local game data at any time by clearing the app storage or uninstalling the app on your device, and you can reset or delete your Google Advertising ID in your Android device settings.
+            </p>
 
             <div class="contact-callout">
                 <h3 style="margin-top: 0; color: #FFFFFF;">6. Contact Us</h3>
-                <p style="margin-bottom: 0.25rem;">If you have any questions regarding this Privacy Policy or <strong>Toy Wonder: Pastel Blast</strong>, please contact us:</p>
+                <p style="margin-bottom: 0.25rem;">If you have any questions regarding this Privacy Policy or data deletion for <strong>Pofi Toybox: Plush Puzzle</strong>:</p>
                 <p style="margin-bottom: 0;">
                     <strong>Developer:</strong> YuzerAcc (Berkcan Yüzer)<br>
                     <strong>Email:</strong> <a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a> / <a href="mailto:berkcanacc@gmail.com">berkcanacc@gmail.com</a><br>
-                    <strong>Website:</strong> <a href="https://berkcanyuzer.github.io/pastel-blast.html">https://berkcanyuzer.github.io/pastel-blast.html</a>
+                    <strong>Official Website:</strong> <a href="https://berkcanyuzer.github.io/pastel-blast.html">https://berkcanyuzer.github.io/pastel-blast.html</a><br>
+                    <strong>Data Deletion URL:</strong> <a href="https://berkcanyuzer.github.io/pastel-blast-privacy.html#data-deletion">https://berkcanyuzer.github.io/pastel-blast-privacy.html#data-deletion</a>
                 </p>
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="footer-logo" width="24" height="24">
-                <p class="footer-copy">&copy; 2026 Yuzeracc. Tüm hakları saklıdır.</p>
-            </div>
-            <ul class="footer-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="pastel-blast.html">Toy Wonder: Pastel Blast</a></li>
-                <li><a href="ligodeck.html">LigoDeck</a></li>
-            </ul>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
