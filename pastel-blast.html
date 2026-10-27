@@ -528,15 +528,15 @@
                 </p>
 
                 <div class="pofi-actions">
-                    <a href="#bento" class="pofi-btn-main">
+                    <a href="#trailer" class="pofi-btn-main">
+                        🎬 Tanıtım Videosunu İzle
+                    </a>
+                    <a href="#bento" class="pofi-btn-ghost">
                         Oyunu Keşfet
                     </a>
                     <a href="#gallery" class="pofi-btn-ghost">
-                        Oyun İçi Görseller
+                        Mağaza Görselleri
                     </a>
-                    <span class="pofi-btn-ghost" style="cursor: default; border-color: rgba(255, 209, 102, 0.35); color: #FFD166 !important;">
-                        ✨ Çok Yakında Google Play'de
-                    </span>
                 </div>
             </div>
 
@@ -544,18 +544,42 @@
                 <img src="assets/pastel-blast/logo_toy_wonder.png" alt="Pofi Toybox Logo" class="pofi-float-logo">
                 <div class="pofi-device">
                     <div class="pofi-device-screen">
-                        <img id="heroScreen" src="assets/pastel-blast/01_main_menu.png" alt="Pofi Toybox">
+                        <video id="heroVideo" src="assets/pastel-blast/pofi_toybox_promo_10s_9x16.mp4" poster="assets/pastel-blast/01_screen_plush_puzzle_hero.png" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+                        <img id="heroScreen" src="assets/pastel-blast/01_screen_plush_puzzle_hero.png" alt="Pofi Toybox" style="display:none;">
                     </div>
                 </div>
                 <img src="assets/pastel-blast/pofi_crown.png" alt="Peluş Pofi" class="pofi-float-cat">
                 <img src="assets/pastel-blast/golden_pofi_cheer.png" alt="Altın Pofi" class="pofi-float-gold">
 
                 <div class="pofi-dots">
-                    <button class="pofi-dot-btn active" onclick="setScreen('assets/pastel-blast/01_main_menu.png', this)">Menü</button>
-                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/05_board_gameplay.png', this)">Bulmaca</button>
-                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/17_rubik_cube_lightning_storm.png', this)">Kombo</button>
-                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/03_level_map.png', this)">Harita</button>
+                    <button class="pofi-dot-btn active" onclick="showHeroVideo(this)">🎬 Fragman</button>
+                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/01_screen_plush_puzzle_hero.png', this)">Menü</button>
+                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/02_screen_super_combos_board.png', this)">Kombo</button>
+                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/05_screen_endless_saga_map.png', this)">Harita</button>
+                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/08_screen_global_languages.png', this)">20+ Dil</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFICIAL 10-SECOND PROMO TRAILER -->
+    <section class="pofi-bento-wrap" id="trailer" style="padding-bottom: 1rem;">
+        <div class="pofi-card span-12 animate-on-scroll" style="padding: 2.2rem;">
+            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.25rem;">
+                <div>
+                    <span style="display:inline-block; font-size:0.76rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#FFD166; margin-bottom:0.35rem;">RESMİ TANITIM FİLMİ • 10 SANİYE</span>
+                    <h2 style="margin-bottom:0.25rem;">Pofi Toybox: Plush Puzzle — Oynanış Fragmanı</h2>
+                    <p style="margin-bottom:0; max-width:680px;">Peluş kedi Pofi, 3x3 Roket+TNT süper kombosu, Altın Pofi Jackpot, 5.000+ bölümlük macera haritası ve 20+ dil desteği tek bir 10 saniyelik fragmanda.</p>
+                </div>
+                <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+                    <a href="assets/pastel-blast/pofi_toybox_promo_10s_16x9.mp4" download class="pofi-btn-ghost" style="padding:0.65rem 1.15rem; font-size:0.85rem;">⬇ 16:9 Yatay MP4</a>
+                    <a href="assets/pastel-blast/pofi_toybox_promo_10s_9x16.mp4" download class="pofi-btn-ghost" style="padding:0.65rem 1.15rem; font-size:0.85rem;">⬇ 9:16 Dikey MP4</a>
+                </div>
+            </div>
+            <div style="border-radius:24px; overflow:hidden; border:1.5px solid rgba(255,209,102,0.35); background:#050711; box-shadow:0 24px 64px rgba(0,0,0,0.65);">
+                <video controls autoplay muted loop playsinline poster="assets/pastel-blast/00_feature_graphic_1024x500.png" style="width:100%; height:auto; display:block; aspect-ratio:16/9;">
+                    <source src="assets/pastel-blast/pofi_toybox_promo_10s_16x9.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
@@ -569,7 +593,7 @@
                     <h2>En Sevimli Oyun Arkadaşın: Pofi</h2>
                     <p>Her kombona sevinen Peluş Pofi ve zafer anlarında tahtayı altına çeviren Altın Pofi her an yanında.</p>
                 </div>
-                <img src="assets/pastel-blast/pofi_feature_banner.png" alt="Pofi Toybox" class="pofi-banner-preview" loading="lazy">
+                <img src="assets/pastel-blast/00_feature_graphic_1024x500.png" alt="Pofi Toybox" class="pofi-banner-preview" loading="lazy">
             </div>
 
             <div class="pofi-card span-5 animate-on-scroll">
@@ -592,30 +616,36 @@
         </div>
     </section>
 
-    <!-- CLEAN 6-SCREEN GALLERY -->
+    <!-- CLEAN 8-SCREEN GALLERY -->
     <section class="pofi-showcase-section" id="gallery">
         <div class="pofi-section-head animate-on-scroll">
             <h2>Oyunun İçinden</h2>
         </div>
 
         <div class="pofi-shots">
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/01_main_menu.png')">
-                <img src="assets/pastel-blast/01_main_menu.png" alt="Pofi Toybox Ana Ekran" loading="lazy">
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/01_screen_plush_puzzle_hero.png')">
+                <img src="assets/pastel-blast/01_screen_plush_puzzle_hero.png" alt="Pofi Toybox Ana Ekran" loading="lazy">
             </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/05_board_gameplay.png')">
-                <img src="assets/pastel-blast/05_board_gameplay.png" alt="Elmas Tahta" loading="lazy">
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/02_screen_super_combos_board.png')">
+                <img src="assets/pastel-blast/02_screen_super_combos_board.png" alt="Süper Kombolar" loading="lazy">
             </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/pofi_donut_conveyor.png')">
-                <img src="assets/pastel-blast/pofi_donut_conveyor.png" alt="Simit Tahta" loading="lazy">
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/03_screen_plush_obstacles.png')">
+                <img src="assets/pastel-blast/03_screen_plush_obstacles.png" alt="Peluş Engeller" loading="lazy">
             </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/08_super_nova_combo.png')">
-                <img src="assets/pastel-blast/08_super_nova_combo.png" alt="Süper Nova" loading="lazy">
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/04_screen_golden_pofi_jackpot.png')">
+                <img src="assets/pastel-blast/04_screen_golden_pofi_jackpot.png" alt="Altın Pofi Jackpot" loading="lazy">
             </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/17_rubik_cube_lightning_storm.png')">
-                <img src="assets/pastel-blast/17_rubik_cube_lightning_storm.png" alt="Zeka Küpü" loading="lazy">
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/05_screen_endless_saga_map.png')">
+                <img src="assets/pastel-blast/05_screen_endless_saga_map.png" alt="5.000+ Bölüm Haritası" loading="lazy">
             </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/03_level_map.png')">
-                <img src="assets/pastel-blast/03_level_map.png" alt="Macera Haritası" loading="lazy">
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/06_screen_tactical_boosters.png')">
+                <img src="assets/pastel-blast/06_screen_tactical_boosters.png" alt="Taktik Güçlendiriciler" loading="lazy">
+            </div>
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/07_screen_surprise_chests.png')">
+                <img src="assets/pastel-blast/07_screen_surprise_chests.png" alt="Sürpriz Sandıklar" loading="lazy">
+            </div>
+            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/08_screen_global_languages.png')">
+                <img src="assets/pastel-blast/08_screen_global_languages.png" alt="20+ Dil Desteği" loading="lazy">
             </div>
         </div>
     </section>
@@ -643,9 +673,27 @@
 
     <script src="script.js"></script>
     <script>
-        function setScreen(src, btn) {
+        function showHeroVideo(btn) {
+            var vid = document.getElementById('heroVideo');
             var img = document.getElementById('heroScreen');
+            if (img) img.style.display = 'none';
+            if (vid) {
+                vid.style.display = 'block';
+                vid.play().catch(function(){});
+            }
+            document.querySelectorAll('.pofi-dot-btn').forEach(function(b) { b.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+        }
+
+        function setScreen(src, btn) {
+            var vid = document.getElementById('heroVideo');
+            var img = document.getElementById('heroScreen');
+            if (vid) {
+                vid.pause();
+                vid.style.display = 'none';
+            }
             if (img) {
+                img.style.display = 'block';
                 img.style.opacity = '0.3';
                 setTimeout(function() {
                     img.src = src;
