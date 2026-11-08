@@ -1,87 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FLUXION — Privacy Policy</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #e0e0e0; background: #0a0a0f; padding: 24px; max-width: 720px; margin: 0 auto; }
-    h1 { color: #ffffff; font-size: 28px; margin-bottom: 8px; }
-    h2 { color: #a78bfa; font-size: 20px; margin-top: 32px; margin-bottom: 12px; border-bottom: 1px solid #1a1a2e; padding-bottom: 8px; }
-    h3 { color: #c4b5fd; font-size: 16px; margin-top: 16px; margin-bottom: 8px; }
-    p { margin-bottom: 12px; }
-    ul { margin: 8px 0 16px 24px; }
-    li { margin-bottom: 6px; }
-    .updated { color: #888; font-size: 13px; margin-bottom: 32px; }
-    .contact { background: #1a1a2e; border-radius: 12px; padding: 16px; margin-top: 24px; }
-    .contact a { color: #a78bfa; }
-    a { color: #a78bfa; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="fx.meta.title">FLUXION — Gizlilik Politikası | YuzerAcc</title>
+    <link rel="canonical" href="https://berkcanyuzer.github.io/privacy-policy-fluxion.html">
+    <meta name="theme-color" content="#06060c">
+    <link rel="icon" type="image/png" href="app-icons/fluxion.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root, [data-theme="light"] { --accent: #a855f7; --accent-2: #6366f1; --accent-3: #22d3ee; }
+        .legal { padding: calc(var(--nav-h) + 3rem) 0 4rem; }
+        .legal-head { display: flex; gap: 1.25rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; }
+        .legal-head img { width: 72px; height: 72px; border-radius: 20px; box-shadow: var(--shadow-md); }
+        .contact-box { margin-top: 2rem; padding: 1.4rem; border-radius: var(--radius-md); background: var(--surface-strong); border: 1px solid var(--border); }
+    </style>
 </head>
 <body>
+    <div class="ambient" aria-hidden="true"><div class="grid"></div><div class="grain"></div></div>
 
-<h1>FLUXION Privacy Policy</h1>
-<p class="updated">Last updated: May 2, 2025</p>
+    <nav class="navbar" aria-label="Ana menü" data-i18n-aria="nav.aria">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="YuzerAcc">
+                <img src="sora-brand-icon-app.jpg" alt="" width="34" height="34">
+                <span>Yuzer<span class="acc">Acc</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#apps" data-i18n="nav.allApps">Tüm uygulamalar</a></li>
+            </ul>
+            <div class="nav-tools">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Tema değiştir" data-i18n-aria="nav.theme"></button>
+                <button type="button" class="icon-btn menu-toggle" aria-label="Menü" aria-expanded="false" data-i18n-aria="nav.menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
 
-<p>This privacy policy describes how FLUXION mobile application ("App") handles your data when you download and use it. This policy applies to all users of the App.</p>
+    <main class="legal">
+        <div class="container">
+            <header class="legal-head reveal">
+                <img src="app-icons/fluxion.png" alt="FLUXION" width="72" height="72">
+                <div>
+                    <h1 class="h-1" style="font-size:clamp(1.8rem,4vw,2.6rem)" data-i18n="fx.title">FLUXION Gizlilik Politikası</h1>
+                    <p class="muted" style="margin-top:0.3rem" data-i18n="fx.updated">Son güncelleme: 2 Mayıs 2025</p>
+                </div>
+            </header>
 
-<h2>1. Data We Collect</h2>
-<p>The App does not collect personal information directly. The following data is stored locally on your device and is not transmitted to third-party servers:</p>
-<ul>
-  <li>Game progress (completed levels, scores)</li>
-  <li>In-app settings (language, sound preferences)</li>
-  <li>Energy and streak information</li>
-</ul>
+            <section class="card card-pad prose reveal" data-lang-block="tr">
+                <p>Bu gizlilik politikası, FLUXION mobil uygulamasının ("Uygulama") indirip kullandığınızda verilerinizi nasıl işlediğini açıklar ve Uygulamanın tüm kullanıcıları için geçerlidir.</p>
+                <h2>1. Topladığımız veriler</h2>
+                <p>Uygulama doğrudan kişisel bilgi toplamaz. Aşağıdaki veriler yalnızca cihazınızda saklanır ve üçüncü taraf sunuculara gönderilmez:</p>
+                <ul><li>Oyun ilerlemesi (tamamlanan seviyeler, skorlar)</li><li>Uygulama içi ayarlar (dil, ses tercihleri)</li><li>Enerji ve seri bilgileri</li></ul>
+                <h2>2. Üçüncü taraf hizmetler</h2>
+                <h3>Google AdMob</h3>
+                <ul><li>Kişiselleştirilmemiş reklamlar göstermek için kullanılır</li><li>Reklam tanımlayıcıları ve cihaz bilgilerini toplayabilir</li><li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob gizlilik politikası</a></li></ul>
+                <h3>RevenueCat</h3>
+                <ul><li>Uygulama içi abonelik yönetimi için kullanılır</li><li>Satın almalar Google Play Store üzerinden işlenir</li><li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat gizlilik politikası</a></li></ul>
+                <h3>Google Play Store</h3>
+                <ul><li>Abonelik ödemeleri ve satın alma doğrulaması</li><li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google gizlilik politikası</a></li></ul>
+                <h2>3. Veri paylaşımı</h2>
+                <p>Kişisel verilerinizi satmaz, kiralamaz veya üçüncü taraflarla paylaşmayız. Veriler yalnızca yukarıdaki hizmetlerin çalışması için işlenir.</p>
+                <h2>4. Veri güvenliği</h2>
+                <p>Tüm oyun verileri cihazınızda şifreli bir veritabanında (MMKV) saklanır. Abonelik bilgileri Google Play ve RevenueCat altyapısı üzerinden güvenle işlenir.</p>
+                <h2>5. Çocukların gizliliği</h2>
+                <p>Uygulama 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamaz. Çocuğunuzun verilerinin yanlışlıkla toplandığını düşünüyorsanız lütfen bizimle iletişime geçin.</p>
+                <h2>6. Haklarınız</h2>
+                <ul><li>Uygulamayı kaldırarak tüm yerel verileri istediğiniz zaman silebilirsiniz</li><li>Satın alma geçmişinizi Google Play üzerinden yönetebilirsiniz</li><li>AdMob reklam kişiselleştirme tercihlerinizi cihaz ayarlarından değiştirebilirsiniz</li></ul>
+                <h2>7. Politika değişiklikleri</h2>
+                <p>Bu politikayı zaman zaman güncelleyebiliriz. Değişiklikler bu sayfada yayımlandığı anda yürürlüğe girer.</p>
+                <div class="contact-box"><h3 style="margin-top:0">8. İletişim</h3><p>E-posta: <a href="mailto:berkcanacc@gmail.com">berkcanacc@gmail.com</a><br>Geliştirici: Berkcan Yüzer (YuzerAcc)</p></div>
+            </section>
 
-<h2>2. Third-Party Services</h2>
-<p>The App uses the following third-party services:</p>
+            <section class="card card-pad prose reveal" data-lang-block="en">
+                <p>This privacy policy describes how the FLUXION mobile application ("App") handles your data when you download and use it. This policy applies to all users of the App.</p>
+                <h2>1. Data we collect</h2>
+                <p>The App does not collect personal information directly. The following data is stored locally on your device and is not transmitted to third-party servers:</p>
+                <ul><li>Game progress (completed levels, scores)</li><li>In-app settings (language, sound preferences)</li><li>Energy and streak information</li></ul>
+                <h2>2. Third-party services</h2>
+                <h3>Google AdMob</h3>
+                <ul><li>Used to display non-personalized advertisements</li><li>May collect advertising identifiers and device information</li><li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Privacy Policy</a></li></ul>
+                <h3>RevenueCat</h3>
+                <ul><li>Used for in-app subscription management</li><li>Purchases are processed through the Google Play Store</li><li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></li></ul>
+                <h3>Google Play Store</h3>
+                <ul><li>Subscription payments and purchase verification</li><li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li></ul>
+                <h2>3. Data sharing</h2>
+                <p>We do not sell, rent, or share your personal data with third parties. Data is processed solely for the operation of the services listed above.</p>
+                <h2>4. Data security</h2>
+                <p>All game data is stored locally on your device and protected using an encrypted database (MMKV). Subscription information is processed securely through the Google Play and RevenueCat infrastructure.</p>
+                <h2>5. Children's privacy</h2>
+                <p>The App does not knowingly collect personal information from children under the age of 13. If you believe your child's data has been inadvertently collected, please contact us.</p>
+                <h2>6. Your rights</h2>
+                <ul><li>You can delete all local data at any time by uninstalling the App</li><li>You can manage your purchase history through Google Play</li><li>You can change your AdMob ad personalization preferences in your device settings</li></ul>
+                <h2>7. Policy changes</h2>
+                <p>We may update this privacy policy from time to time. Changes will take effect upon publication on this page.</p>
+                <div class="contact-box"><h3 style="margin-top:0">8. Contact</h3><p>Email: <a href="mailto:berkcanacc@gmail.com">berkcanacc@gmail.com</a><br>Developer: Berkcan Yüzer (YuzerAcc)</p></div>
+            </section>
+        </div>
+    </main>
 
-<h3>Google AdMob</h3>
-<ul>
-  <li>Used to display non-personalized advertisements</li>
-  <li>May collect advertising identifiers and device information</li>
-  <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob Privacy Policy</a></li>
-</ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+                <span>&copy; <span data-year>2026</span> YuzerAcc.</span>
+                <span><a href="index.html">berkcanyuzer.github.io</a></span>
+            </div>
+        </div>
+    </footer>
 
-<h3>RevenueCat</h3>
-<ul>
-  <li>Used for in-app subscription management</li>
-  <li>Purchases are processed through the Google Play Store</li>
-  <li><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
-</ul>
-
-<h3>Google Play Store</h3>
-<ul>
-  <li>Subscription payments and purchase verification</li>
-  <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
-</ul>
-
-<h2>3. Data Sharing</h2>
-<p>We do not sell, rent, or share your personal data with third parties. Data is processed solely for the operation of the services listed above.</p>
-
-<h2>4. Data Security</h2>
-<p>All game data is stored locally on your device and protected using an encrypted database (MMKV). Subscription information is processed securely through the Google Play and RevenueCat infrastructure.</p>
-
-<h2>5. Children's Privacy</h2>
-<p>The App does not knowingly collect personal information from children under the age of 13. If you believe your child's data has been inadvertently collected, please contact us.</p>
-
-<h2>6. Your Rights</h2>
-<ul>
-  <li>You can delete all local data at any time by uninstalling the App</li>
-  <li>You can manage your purchase history through Google Play</li>
-  <li>You can change your AdMob ad personalization preferences in your device settings</li>
-</ul>
-
-<h2>7. Policy Changes</h2>
-<p>We may update this privacy policy from time to time. Changes will take effect upon publication on this page.</p>
-
-<div class="contact">
-  <h2>8. Contact</h2>
-  <p>For questions about this privacy policy:</p>
-  <p>Email: <a href="mailto:berkcanacc@gmail.com">berkcanacc@gmail.com</a></p>
-  <p>Developer: Berkcan Yüzer</p>
-</div>
-
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,723 +1,402 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pofi Toybox: Plush Puzzle | YuzerAcc</title>
-    <meta name="description" content="Pofi Toybox: Plush Puzzle — Peluş Pofi'nin büyülü oyuncak dünyasında renkli blokları patlat, süper komboları ateşle.">
+    <title data-i18n="pofi.meta.title">Pofi Toybox: Plush Puzzle — Peluş Bulmaca Oyunu | YuzerAcc</title>
+    <meta name="description" data-i18n-content="pofi.meta.desc" content="Pofi Toybox: Plush Puzzle — Peluş kedi Pofi ile renkli oyuncak küplerini patlat, roket ve TNT kombolarını birleştir, Fare Kral'ı devir ve 5.000'den fazla seviyede ilerle.">
     <link rel="canonical" href="https://berkcanyuzer.github.io/pastel-blast.html">
-    <meta name="theme-color" content="#050711">
+    <link rel="alternate" hreflang="tr" href="https://berkcanyuzer.github.io/pastel-blast.html?lang=tr">
+    <link rel="alternate" hreflang="en" href="https://berkcanyuzer.github.io/pastel-blast.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://berkcanyuzer.github.io/pastel-blast.html">
+    <meta name="theme-color" content="#06060c">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="YuzerAcc">
     <meta property="og:url" content="https://berkcanyuzer.github.io/pastel-blast.html">
     <meta property="og:title" content="Pofi Toybox: Plush Puzzle">
-    <meta property="og:description" content="Dokun. Patlat. Gülümse. Peluş Pofi ile büyülü oyuncak kutusu bulmacası.">
-    <meta property="og:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/pofi_feature_banner.png">
+    <meta property="og:description" data-i18n-content="pofi.meta.og" content="Dokun. Patlat. Gülümse. Peluş kedi Pofi ile oyuncak kutusu bulmacası.">
+    <meta property="og:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/feature_graphic.png">
     <meta property="og:locale" content="tr_TR">
-
-    <!-- Twitter Card -->
+    <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pofi Toybox: Plush Puzzle">
-    <meta name="twitter:description" content="Dokun. Patlat. Gülümse. Peluş Pofi ile büyülü oyuncak kutusu bulmacası.">
-    <meta name="twitter:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/pofi_feature_banner.png">
+    <meta name="twitter:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/feature_graphic.png">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/pastel-blast/icon.png">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
     <style>
-        :root {
-            --pofi-bg: #050711;
-            --pofi-blue: #3B82F6;
-            --pofi-gold: #FFD166;
-            --pofi-amber: #FF9F1C;
-            --pofi-pink: #FF6B9D;
-        }
+        :root, [data-theme="light"] { --accent: #ffad3b; --accent-2: #ff5fa2; --accent-3: #5b9dff; }
+        .toy-title { font-family: 'Fredoka', var(--font-display); letter-spacing: -0.02em; }
 
-        body {
-            background: var(--pofi-bg);
-            color: #FFFFFF;
-            overflow-x: hidden;
-        }
+        /* Hero */
+        .p-hero { min-height: 100svh; display: flex; align-items: center; padding: calc(var(--nav-h) + 2.5rem) 0 4rem; }
+        .p-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        .app-pill { display: inline-flex; align-items: center; gap: 0.85rem; padding: 0.5rem 1.1rem 0.5rem 0.5rem; border-radius: 22px; background: var(--surface); border: 1px solid var(--border); backdrop-filter: blur(14px); margin-bottom: 1.6rem; }
+        .app-pill img { width: 50px; height: 50px; border-radius: 14px; box-shadow: var(--shadow-md); }
+        .app-pill small { display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+        .app-pill strong { font-size: 1rem; }
+        .p-hero h1 { font-size: clamp(3.2rem, 8vw, 6.4rem); line-height: 0.95; }
+        .p-hero .lead { max-width: 520px; margin: 1.5rem 0 2.2rem; }
+        .store-badge { text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.25rem 0.7rem 1rem; border-radius: 16px; background: #000; color: #fff; border: 1px solid rgba(255,255,255,0.22); }
+        [data-theme="light"] .store-badge { background: #0c0c1a; }
+        .store-badge small { display: block; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; line-height: 1.2; }
+        .store-badge strong { font-size: 1.05rem; line-height: 1.2; }
 
-        /* Ultra-Clean Apple Arcade / Supercell Style Hero */
-        .pofi-hero {
-            min-height: 92vh;
-            padding: 8rem 2rem 5rem;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 20% 25%, rgba(59, 130, 246, 0.28) 0%, transparent 45%),
-                radial-gradient(circle at 80% 30%, rgba(255, 184, 48, 0.22) 0%, transparent 45%),
-                radial-gradient(circle at 50% 85%, rgba(255, 107, 157, 0.16) 0%, transparent 50%),
-                #050711;
-        }
+        .stage { position: relative; display: flex; justify-content: center; }
+        .stage-glow { position: absolute; width: 90%; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from 90deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent)); filter: blur(70px); opacity: 0.38; top: 8%; animation: spin 18s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .device { position: relative; z-index: 2; width: min(320px, 78vw); aspect-ratio: 9 / 16; border-radius: 46px; padding: 10px; background: linear-gradient(150deg, rgba(255,255,255,0.55), rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.3)); box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255,255,255,0.08); }
+        .device::after { content: ''; position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 84px; height: 22px; border-radius: 999px; background: #000; z-index: 3; }
+        .device video { width: 100%; height: 100%; object-fit: cover; border-radius: 37px; background: #0a0a14; }
+        .float { position: absolute; z-index: 3; filter: drop-shadow(0 22px 28px rgba(0,0,0,0.45)); animation: bob 5.5s ease-in-out infinite; pointer-events: none; }
+        .float.pofi { width: 46%; left: -10%; bottom: -2%; }
+        .float.t1 { width: 16%; right: 2%; top: 8%; animation-delay: -1.5s; }
+        .float.t2 { width: 14%; right: -4%; top: 40%; animation-delay: -3s; }
+        .float.t3 { width: 15%; left: 2%; top: 12%; animation-delay: -2.2s; }
+        @keyframes bob { 50% { transform: translateY(-14px) rotate(-3deg); } }
 
-        .pofi-hero-inner {
-            max-width: 1160px;
-            width: 100%;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.08fr 0.92fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+        .stat { padding: 1.6rem; text-align: left; }
+        .stat strong { display: block; font-family: var(--font-display); font-size: clamp(2rem, 3.6vw, 2.8rem); letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.45rem; }
+        .stat span { color: var(--text-2); font-size: 0.92rem; }
+        @media (max-width: 820px) { .stats { grid-template-columns: repeat(2, 1fr); } }
 
-        .pofi-app-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.85rem;
-            padding: 0.55rem 1.1rem 0.55rem 0.6rem;
-            border-radius: 22px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(16px);
-            margin-bottom: 1.75rem;
-        }
+        /* Feature bento */
+        .f-card { display: flex; flex-direction: column; gap: 0.75rem; min-height: 100%; }
+        .f-card p { color: var(--text-2); }
+        .f-media { margin-top: auto; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); position: relative; }
+        .f-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; transition: transform 0.8s var(--ease); }
+        .card:hover .f-media img { transform: scale(1.04); }
+        .f-media.tall { height: 300px; }
+        .f-media.mid { height: 220px; }
+        .pofi-card { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 1rem; }
+        .pofi-card img { width: 100%; max-width: 280px; margin-left: auto; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4)); animation: bob 6s ease-in-out infinite; }
+        .toys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; margin-top: auto; }
+        .toy { aspect-ratio: 1; border-radius: 18px; background: var(--surface-strong); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: transform 0.4s var(--spring), border-color 0.3s; }
+        .toy:hover { transform: translateY(-4px) rotate(-6deg) scale(1.06); border-color: var(--accent); }
+        .toy img { width: 70%; height: 70%; object-fit: contain; }
+        .mini-list { display: grid; gap: 0.6rem; margin-top: 0.5rem; }
+        .mini-list li { list-style: none; display: flex; gap: 0.65rem; align-items: flex-start; color: var(--text-2); font-size: 0.95rem; }
+        .mini-list svg { flex-shrink: 0; margin-top: 3px; color: var(--accent); }
+        @media (max-width: 680px) { .pofi-card { grid-template-columns: 1fr; } .pofi-card img { margin: 0 auto; max-width: 220px; } }
 
-        .pofi-app-badge img {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
+        /* Gallery */
+        .gallery { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 260px); gap: 1.1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.5rem 1.5rem 1.5rem; margin: 0 -1.5rem; scrollbar-width: thin; }
+        .gallery::-webkit-scrollbar { height: 6px; }
+        .gallery::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 6px; }
+        .shot { scroll-snap-align: start; display: block; text-align: left; }
+        .shot .frame { aspect-ratio: 9/16; border-radius: 26px; overflow: hidden; border: 1px solid var(--border-strong); background: var(--bg-elev); box-shadow: var(--shadow-md); transition: transform 0.5s var(--ease), box-shadow 0.5s; }
+        .shot:hover .frame { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .shot .frame img { width: 100%; height: 100%; object-fit: cover; }
+        .shot span { display: block; margin-top: 0.75rem; font-size: 0.9rem; font-weight: 600; color: var(--text-2); }
+        .gallery-nav { display: flex; gap: 0.5rem; }
 
-        .pofi-app-badge-text span {
-            display: block;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--pofi-gold);
-        }
+        /* Trailer */
+        .trailer { padding: clamp(1rem, 2vw, 1.5rem); }
+        .trailer video { width: 100%; aspect-ratio: 16/9; border-radius: 20px; background: #000; }
+        .trailer-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; padding: 1rem 0.5rem 1.5rem; }
 
-        .pofi-app-badge-text strong {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #FFFFFF;
-        }
+        /* Privacy strip */
+        .privacy-strip { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; }
+        @media (max-width: 760px) { .privacy-strip { grid-template-columns: 1fr; } }
 
-        .pofi-headline {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(2.8rem, 6vw, 4.7rem);
-            font-weight: 900;
-            line-height: 1.02;
-            letter-spacing: -0.04em;
-            margin-bottom: 1.35rem;
-            color: #FFFFFF;
-        }
-
-        .pofi-headline span {
-            background: linear-gradient(135deg, #FFD166 0%, #FF9F1C 50%, #FF6B9D 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .pofi-tagline {
-            font-size: 1.22rem;
-            color: rgba(255, 255, 255, 0.76);
-            line-height: 1.6;
-            max-width: 480px;
-            margin-bottom: 2.4rem;
-            font-weight: 500;
-        }
-
-        .pofi-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .pofi-btn-main {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            padding: 1.1rem 2.2rem;
-            border-radius: 999px;
-            font-size: 1.05rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FFD166 0%, #FF9F1C 100%);
-            color: #090C1A !important;
-            box-shadow: 0 16px 38px rgba(255, 159, 28, 0.38);
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
-            text-decoration: none;
-        }
-
-        .pofi-btn-main:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 22px 48px rgba(255, 159, 28, 0.55);
-        }
-
-        .pofi-btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1.1rem 1.8rem;
-            border-radius: 999px;
-            font-size: 1rem;
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.07);
-            color: #FFFFFF !important;
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            backdrop-filter: blur(12px);
-            transition: all 0.22s ease;
-            text-decoration: none;
-        }
-
-        .pofi-btn-ghost:hover {
-            background: rgba(255, 255, 255, 0.14);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Right Device Stage */
-        .pofi-stage {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .pofi-device {
-            width: 310px;
-            border-radius: 44px;
-            padding: 11px;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(255, 209, 102, 0.45), rgba(59, 130, 246, 0.45));
-            box-shadow:
-                0 35px 90px rgba(0, 0, 0, 0.8),
-                0 0 60px rgba(59, 130, 246, 0.28);
-            position: relative;
-            z-index: 2;
-        }
-
-        .pofi-device-screen {
-            border-radius: 34px;
-            overflow: hidden;
-            aspect-ratio: 9 / 16;
-            background: #080B18;
-        }
-
-        .pofi-device-screen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: opacity 0.25s ease;
-        }
-
-        .pofi-float-logo {
-            position: absolute;
-            top: -34px;
-            right: -12px;
-            width: 170px;
-            z-index: 4;
-            filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.7));
-            animation: floatY 5s ease-in-out infinite reverse;
-            pointer-events: none;
-        }
-
-        .pofi-float-cat {
-            position: absolute;
-            bottom: 30px;
-            left: -44px;
-            width: 145px;
-            z-index: 4;
-            filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.75));
-            animation: floatY 4.2s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .pofi-float-gold {
-            position: absolute;
-            bottom: 42px;
-            right: -38px;
-            width: 122px;
-            z-index: 4;
-            filter: drop-shadow(0 16px 30px rgba(255, 184, 48, 0.45));
-            animation: floatY 4.6s ease-in-out infinite 0.7s;
-            pointer-events: none;
-        }
-
-        @keyframes floatY {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .pofi-dots {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1.25rem;
-            z-index: 5;
-        }
-
-        .pofi-dot-btn {
-            padding: 0.42rem 0.95rem;
-            border-radius: 999px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.07);
-            color: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .pofi-dot-btn.active,
-        .pofi-dot-btn:hover {
-            background: #FFFFFF;
-            color: #050711;
-            border-color: #FFFFFF;
-        }
-
-        /* Minimal 3-Card Bento Section */
-        .pofi-bento-wrap {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
-        }
-
-        .pofi-bento {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-        }
-
-        .pofi-card {
-            background: linear-gradient(165deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 32px;
-            padding: 2.4rem;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(20px);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .pofi-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 209, 102, 0.45);
-        }
-
-        .pofi-card.span-7 { grid-column: span 7; }
-        .pofi-card.span-5 { grid-column: span 5; }
-        .pofi-card.span-12 { grid-column: span 12; }
-
-        .pofi-card h2 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(1.55rem, 2.6vw, 2.1rem);
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.55rem;
-            color: #FFFFFF;
-        }
-
-        .pofi-card p {
-            font-size: 1.02rem;
-            color: rgba(255, 255, 255, 0.72);
-            line-height: 1.55;
-            max-width: 480px;
-            margin-bottom: 1.5rem;
-        }
-
-        .pofi-banner-preview {
-            width: 100%;
-            border-radius: 22px;
-            object-fit: cover;
-            max-height: 240px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .pofi-icon-dock {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-            margin-top: auto;
-        }
-
-        .pofi-toy-bubble {
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .pofi-toy-bubble:hover {
-            transform: scale(1.12) rotate(5deg);
-            border-color: var(--pofi-gold);
-        }
-
-        .pofi-toy-bubble img {
-            width: 44px;
-            height: 44px;
-            object-fit: contain;
-        }
-
-        /* Clean 6-Screen Showcase */
-        .pofi-showcase-section {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 6rem;
-        }
-
-        .pofi-section-head {
-            text-align: center;
-            margin-bottom: 2.8rem;
-        }
-
-        .pofi-section-head h2 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            letter-spacing: -0.03em;
-        }
-
-        .pofi-shots {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .pofi-shot {
-            border-radius: 26px;
-            overflow: hidden;
-            border: 1.5px solid rgba(255, 255, 255, 0.12);
-            background: #090C1A;
-            aspect-ratio: 9 / 16;
-            cursor: pointer;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pofi-shot:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--pofi-gold);
-            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.65);
-        }
-
-        .pofi-shot img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Lightbox */
-        .pb-lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background: rgba(5, 7, 16, 0.94);
-            backdrop-filter: blur(18px);
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            flex-direction: column;
-        }
-
-        .pb-lightbox.open {
-            display: flex;
-        }
-
-        .pb-lightbox img {
-            max-height: 85vh;
-            max-width: 92vw;
-            border-radius: 26px;
-            border: 2px solid rgba(255, 209, 102, 0.5);
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.85);
-        }
-
-        .pb-lightbox-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.12);
-            color: #FFFFFF;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        /* Final CTA */
+        .final-cta { text-align: center; padding: clamp(3rem, 7vw, 5rem) 1.5rem; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 120%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 60%), var(--surface); }
+        .final-cta img.pofi { width: 180px; margin: 0 auto 1rem; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4)); animation: bob 5s ease-in-out infinite; }
+        .final-cta .btn-row { justify-content: center; margin-top: 1.75rem; }
 
         @media (max-width: 920px) {
-            .pofi-hero-inner {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
-            }
-            .pofi-tagline {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .pofi-actions {
-                justify-content: center;
-            }
-            .pofi-card.span-7,
-            .pofi-card.span-5 {
-                grid-column: span 12;
-            }
-            .pofi-float-cat { left: -10px; width: 112px; }
-            .pofi-float-gold { right: -10px; width: 96px; }
-            .pofi-float-logo { right: 0; width: 136px; }
+            .p-hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .p-hero .lead { margin-left: auto; margin-right: auto; }
+            .p-hero .btn-row, .p-hero .chip-row { justify-content: center; }
+            .app-pill { margin-left: auto; margin-right: auto; }
+            .stage { margin-top: 1rem; }
         }
     </style>
 </head>
 <body>
+    <div class="ambient" aria-hidden="true"><div class="grid"></div><div class="blob"></div><div class="grain"></div></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Ana menü" data-i18n-aria="nav.aria">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="nav-logo-icon" width="32" height="32">
-                Yuzeracc
+            <a href="index.html" class="brand" aria-label="YuzerAcc">
+                <img src="sora-brand-icon-app.jpg" alt="" width="34" height="34">
+                <span>Yuzer<span class="acc">Acc</span></span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="pastel-blast.html" style="background: linear-gradient(135deg, #FFD166, #FF6B9D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Pofi Toybox</a></li>
-                <li><a href="ligodeck.html" style="color: #b197fc; font-weight: 700;">LigoDeck</a></li>
-                <li><a href="pastel-blast-privacy.html">Gizlilik</a></li>
-                <li><button id="theme-toggle" aria-label="Tema değiştir"></button></li>
+                <li><a href="#features" data-i18n="pofi.nav.features">Özellikler</a></li>
+                <li><a href="#gallery" data-i18n="pofi.nav.gallery">Ekranlar</a></li>
+                <li><a href="#trailer" data-i18n="pofi.nav.trailer">Fragman</a></li>
+                <li><a href="pastel-blast-privacy.html" data-i18n="pofi.nav.privacy">Gizlilik</a></li>
+                <li><a href="index.html#apps" data-i18n="nav.allApps">Tüm uygulamalar</a></li>
             </ul>
-            <button class="menu-toggle" aria-label="Menü">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-tools">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Tema değiştir" data-i18n-aria="nav.theme"></button>
+                <button type="button" class="icon-btn menu-toggle" aria-label="Menü" aria-expanded="false" data-i18n-aria="nav.menu"><span></span><span></span><span></span></button>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="pofi-hero">
-        <div class="pofi-hero-inner">
-            <div>
-                <div class="pofi-app-badge">
-                    <img src="assets/pastel-blast/icon.png" alt="Pofi Toybox">
-                    <div class="pofi-app-badge-text">
-                        <span>3B Peluş Bulmaca</span>
-                        <strong>Pofi Toybox: Plush Puzzle</strong>
+    <main>
+        <!-- HERO -->
+        <section class="p-hero">
+            <div class="container p-hero-grid">
+                <div>
+                    <div class="app-pill reveal">
+                        <img src="assets/pastel-blast/icon.png" alt="" width="50" height="50">
+                        <div><small data-i18n="pofi.hero.kicker">Peluş bulmaca oyunu</small><strong>Pofi Toybox: Plush Puzzle</strong></div>
+                    </div>
+                    <h1 class="h-display toy-title reveal" data-delay="1" data-i18n="pofi.hero.title">Dokun. Patlat.<br><span class="grad-text">Gülümse.</span></h1>
+                    <p class="lead reveal" data-delay="2" data-i18n="pofi.hero.lead">Peluş kedi Pofi'nin oyuncak kutusuna adım at. Aynı renkteki küpleri patlat, roket ve TNT kombolarını birleştir, kayan şeritleri ve şekilli tahtaları çöz.</p>
+                    <div class="btn-row reveal" data-delay="3">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.yuzeracc.pastelblast" target="_blank" rel="noopener">
+                            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8L13.8 12 3.6 22.2a1 1 0 01-.6-.9V2.7c0-.4.2-.7.6-.9z"/><path fill="#FBBC04" d="M17.7 9.5l2.3 2.3a1 1 0 010 1.4l-2.3 2.3L15.4 13l2.3-3.5z"/><path fill="#EA4335" d="M14.5 12.7l2.3 2.3-10.9 6.3 8.6-8.6z"/><path fill="#4285F4" d="M5.9 3.5l10.9 6.3-2.3 2.3-8.6-8.6z"/></svg>
+                            <span><small data-i18n="pofi.hero.soon">Şimdi indir</small><strong>Google Play</strong></span>
+                        </a>
+                        <a href="#trailer" class="btn btn-ghost">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            <span data-i18n="pofi.hero.trailer">Fragmanı izle</span>
+                        </a>
+                    </div>
+                    <div class="chip-row reveal" data-delay="4" style="margin-top:1.75rem">
+                        <span class="chip" data-i18n="pofi.hero.c1">Ücretsiz oyna</span>
+                        <span class="chip" data-i18n="pofi.hero.c2">Hesap gerekmez</span>
+                        <span class="chip" data-i18n="pofi.hero.c3">11 dil</span>
                     </div>
                 </div>
 
-                <h1 class="pofi-headline">
-                    Dokun. Patlat.<br><span>Gülümse.</span>
-                </h1>
-
-                <p class="pofi-tagline">
-                    Peluş kedi Pofi'nin rengarenk oyuncak kutusuna adım at. Küpleri eşleştir, dev roket kombolarını ateşle ve büyülü dünyaları keşfet.
-                </p>
-
-                <div class="pofi-actions">
-                    <a href="#trailer" class="pofi-btn-main">
-                        🎬 Tanıtım Videosunu İzle
-                    </a>
-                    <a href="#bento" class="pofi-btn-ghost">
-                        Oyunu Keşfet
-                    </a>
-                    <a href="#gallery" class="pofi-btn-ghost">
-                        Mağaza Görselleri
-                    </a>
+                <div class="stage reveal" data-delay="2">
+                    <div class="stage-glow" aria-hidden="true"></div>
+                    <div class="device">
+                        <video src="assets/pastel-blast/promo_9x16.mp4" poster="assets/pastel-blast/screens/01.webp" autoplay muted loop playsinline preload="metadata" aria-label="Pofi Toybox oynanış videosu" data-i18n-aria="pofi.hero.videoAria"></video>
+                    </div>
+                    <img class="float pofi" src="assets/pastel-blast/pofi/welcome.webp" alt="" aria-hidden="true">
+                    <img class="float t1" src="assets/pastel-blast/booster_tnt.png" alt="" aria-hidden="true">
+                    <img class="float t2" src="assets/pastel-blast/booster_puzzle_cube.png" alt="" aria-hidden="true">
+                    <img class="float t3" src="assets/pastel-blast/booster_rocket_h.png" alt="" aria-hidden="true">
                 </div>
             </div>
+        </section>
 
-            <div class="pofi-stage">
-                <img src="assets/pastel-blast/logo_toy_wonder.png" alt="Pofi Toybox Logo" class="pofi-float-logo">
-                <div class="pofi-device">
-                    <div class="pofi-device-screen">
-                        <video id="heroVideo" src="assets/pastel-blast/pofi_toybox_promo_10s_9x16.mp4" poster="assets/pastel-blast/01_screen_plush_puzzle_hero.png" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-                        <img id="heroScreen" src="assets/pastel-blast/01_screen_plush_puzzle_hero.png" alt="Pofi Toybox" style="display:none;">
+        <!-- STATS -->
+        <section class="container" aria-label="Öne çıkanlar" data-i18n-aria="pofi.stats.aria">
+            <div class="stats">
+                <div class="card stat reveal"><strong class="grad-text">5.000+</strong><span data-i18n="pofi.stats.s1">seviyelik macera</span></div>
+                <div class="card stat reveal" data-delay="1"><strong>40+</strong><span data-i18n="pofi.stats.s2">farklı tahta şekli</span></div>
+                <div class="card stat reveal" data-delay="2"><strong>9</strong><span data-i18n="pofi.stats.s3">oyuncak gücü ve araç</span></div>
+                <div class="card stat reveal" data-delay="3"><strong>11</strong><span data-i18n="pofi.stats.s4">desteklenen dil</span></div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="dot"></span><span data-i18n="pofi.f.eyebrow">Oyunun kalbi</span></span>
+                    <h2 class="h-1" data-i18n="pofi.f.title">Her dokunuşta <span class="grad-text">küçük bir kutlama</span>.</h2>
+                </div>
+
+                <div class="bento">
+                    <article class="card card-pad f-card col-8 reveal">
+                        <div class="pofi-card">
+                            <div>
+                                <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="9" r="2.3"/><circle cx="17.5" cy="9" r="2.3"/><circle cx="9.5" cy="5" r="2.1"/><circle cx="14.5" cy="5" r="2.1"/><path d="M12 11c-3 0-6 3.3-6 6 0 1.7 1.4 2.6 3 2.6 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 3-.9 3-2.6 0-2.7-3-6-6-6z"/></svg></span>
+                                <h3 class="h-2" style="margin-top:1rem" data-i18n="pofi.f.pofiTitle">Oyun arkadaşın Pofi</h3>
+                                <p style="margin-top:0.5rem" data-i18n="pofi.f.pofiBody">Kurmalı peluş kedi Pofi her komboya sevinir, takıldığında ipucu verir, kaybettiğinde moral verir. İstersen konuşkanlığını ayarlardan azaltabilir ya da kapatabilirsin.</p>
+                            </div>
+                            <img src="assets/pastel-blast/pofi/present.webp" alt="Pofi" loading="lazy">
+                        </div>
+                    </article>
+
+                    <article class="card card-pad f-card col-4 reveal" data-delay="1">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+                        <h3 class="h-2" data-i18n="pofi.f.boostTitle">Patlayıcı oyuncak güçleri</h3>
+                        <p data-i18n="pofi.f.boostBody">Büyük gruplar roket, TNT ve zeka küpü doğurur. Yan yana birleştir, tahtayı tek dokunuşla temizle.</p>
+                        <div class="toys">
+                            <div class="toy"><img src="assets/pastel-blast/booster_rocket_h.png" alt="Roket" data-i18n-alt="pofi.toy.rocket" loading="lazy"></div>
+                            <div class="toy"><img src="assets/pastel-blast/booster_tnt.png" alt="TNT" loading="lazy"></div>
+                            <div class="toy"><img src="assets/pastel-blast/booster_puzzle_cube.png" alt="Zeka küpü" data-i18n-alt="pofi.toy.cube" loading="lazy"></div>
+                            <div class="toy"><img src="assets/pastel-blast/booster_magnet_3d.png" alt="Mıknatıs" data-i18n-alt="pofi.toy.magnet" loading="lazy"></div>
+                            <div class="toy"><img src="assets/pastel-blast/tool_hammer.png" alt="Çekiç" data-i18n-alt="pofi.toy.hammer" loading="lazy"></div>
+                            <div class="toy"><img src="assets/pastel-blast/tool_boxing_glove.png" alt="Eldiven" data-i18n-alt="pofi.toy.glove" loading="lazy"></div>
+                            <div class="toy"><img src="assets/pastel-blast/tool_anvil.png" alt="Örs" data-i18n-alt="pofi.toy.anvil" loading="lazy"></div>
+                            <div class="toy"><img src="assets/pastel-blast/tool_dice.png" alt="Zar" data-i18n-alt="pofi.toy.dice" loading="lazy"></div>
+                        </div>
+                    </article>
+
+                    <article class="card card-pad f-card col-4 reveal">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h15M14 7l5 5-5 5"/><path d="M3 6h6M3 18h6"/></svg></span>
+                        <h3 class="h-2" data-i18n="pofi.f.boardTitle">Şekilli tahtalar ve kayan şeritler</h3>
+                        <p data-i18n="pofi.f.boardBody">Kalp, kedi kafası, kum saati... Bazı satırlar kayar, küpler bir uçtan girip öbür uçtan çıkar. Her tahta yeni bir düşünme biçimi.</p>
+                        <div class="f-media tall"><img src="assets/pastel-blast/screens/02.webp" alt="Kayan şeritli tahta" data-i18n-alt="pofi.shot.2" loading="lazy" style="object-position:center 62%"></div>
+                    </article>
+
+                    <article class="card card-pad f-card col-4 reveal" data-delay="1">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 18l2-11 5 5 2-7 2 7 5-5 2 11z"/><path d="M3 21h18"/></svg></span>
+                        <h3 class="h-2" data-i18n="pofi.f.bossTitle">Fare Kral boss savaşları</h3>
+                        <p data-i18n="pofi.f.bossBody">Fare Kral peynir kalesine saklandı. Kalenin her yanını vur, tahtayı peynire gömmeden onu devir.</p>
+                        <div class="f-media tall"><img src="assets/pastel-blast/screens/04.webp" alt="Fare Kral boss savaşı" data-i18n-alt="pofi.shot.4" loading="lazy" style="object-position:center 50%"></div>
+                    </article>
+
+                    <article class="card card-pad f-card col-4 reveal" data-delay="2">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>
+                        <h3 class="h-2" data-i18n="pofi.f.mapTitle">Sonsuz macera haritası</h3>
+                        <p data-i18n="pofi.f.mapBody">Şeker deresinden saat kulesine uzanan biyomlar, ahşap bölüm tabelaları ve her adımda yeni bir engel.</p>
+                        <div class="f-media tall"><img src="assets/pastel-blast/screens/05.webp" alt="Macera haritası" data-i18n-alt="pofi.shot.5" loading="lazy" style="object-position:center 55%"></div>
+                    </article>
+
+                    <article class="card card-pad f-card col-6 reveal">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.6-7 10-7 10z"/></svg></span>
+                        <h3 class="h-2" data-i18n="pofi.f.fairTitle">Adil ve rahat bir deneyim</h3>
+                        <ul class="mini-list">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="pofi.f.fair1">Art arda kaybedersen Kedi Yardımı devreye girer ve bunu açıkça söyler.</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="pofi.f.fair2">Reklamlar isteğe bağlı ödüller içindir; ekstra hamle için sen karar verirsin.</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="pofi.f.fair3">Zorluk etiketleri simülasyonla ölçülen kazanma oranından gelir.</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="card card-pad f-card col-6 reveal" data-delay="1">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></span>
+                        <h3 class="h-2" data-i18n="pofi.f.accessTitle">Herkes için tasarlandı</h3>
+                        <ul class="mini-list">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="pofi.f.access1">11 dil: Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca, Portekizce, Rusça, Arapça, Japonca, Korece.</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="pofi.f.access2">Renk körlüğü modları, büyük ve okunaklı yazılar.</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="pofi.f.access3">Ses kapalıyken bile titreşim ve görsel geri bildirimle hiçbir şey kaçmaz.</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="section" id="gallery" style="padding-top:0">
+            <div class="container">
+                <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;max-width:none;flex-wrap:wrap">
+                    <div>
+                        <span class="eyebrow"><span class="dot"></span><span data-i18n="pofi.g.eyebrow">Oyundan kareler</span></span>
+                        <h2 class="h-1" data-i18n="pofi.g.title">Sekiz an, <span class="grad-text">sekiz farklı dünya</span>.</h2>
+                    </div>
+                    <div class="gallery-nav">
+                        <button type="button" class="icon-btn" data-scroll="-1" aria-label="Önceki" data-i18n-aria="pofi.g.prev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                        <button type="button" class="icon-btn" data-scroll="1" aria-label="Sonraki" data-i18n-aria="pofi.g.next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></button>
                     </div>
                 </div>
-                <img src="assets/pastel-blast/pofi_crown.png" alt="Peluş Pofi" class="pofi-float-cat">
-                <img src="assets/pastel-blast/golden_pofi_cheer.png" alt="Altın Pofi" class="pofi-float-gold">
-
-                <div class="pofi-dots">
-                    <button class="pofi-dot-btn active" onclick="showHeroVideo(this)">🎬 Fragman</button>
-                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/01_screen_plush_puzzle_hero.png', this)">Menü</button>
-                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/02_screen_super_combos_board.png', this)">Kombo</button>
-                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/05_screen_endless_saga_map.png', this)">Harita</button>
-                    <button class="pofi-dot-btn" onclick="setScreen('assets/pastel-blast/08_screen_global_languages.png', this)">20+ Dil</button>
+                <div class="gallery" id="galleryTrack">
+                    <a class="shot reveal" href="assets/pastel-blast/screens/01.webp" data-lightbox="assets/pastel-blast/screens/01.webp" data-group="pofi" aria-label="Büyük kombo patlaması" data-i18n-aria="pofi.shot.1"><div class="frame"><img src="assets/pastel-blast/screens/01.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.1">Büyük kombo patlaması</span></a>
+                    <a class="shot reveal" href="assets/pastel-blast/screens/02.webp" data-lightbox="assets/pastel-blast/screens/02.webp" data-group="pofi" aria-label="Kayan şeritli tahta" data-i18n-aria="pofi.shot.2"><div class="frame"><img src="assets/pastel-blast/screens/02.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.2">Kayan şeritli tahta</span></a>
+                    <a class="shot reveal" href="assets/pastel-blast/screens/03.webp" data-lightbox="assets/pastel-blast/screens/03.webp" data-group="pofi" aria-label="Mama makinesi ve bisküviler" data-i18n-aria="pofi.shot.3"><div class="frame"><img src="assets/pastel-blast/screens/03.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.3">Mama makinesi ve bisküviler</span></a>
+                    <a class="shot reveal" href="assets/pastel-blast/screens/04.webp" data-lightbox="assets/pastel-blast/screens/04.webp" data-group="pofi" aria-label="Fare Kral boss savaşı" data-i18n-aria="pofi.shot.4"><div class="frame"><img src="assets/pastel-blast/screens/04.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.4">Fare Kral boss savaşı</span></a>
+                    <a class="shot reveal" href="assets/pastel-blast/screens/05.webp" data-lightbox="assets/pastel-blast/screens/05.webp" data-group="pofi" aria-label="Macera haritası" data-i18n-aria="pofi.shot.5"><div class="frame"><img src="assets/pastel-blast/screens/05.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.5">Macera haritası</span></a>
+                    <a class="shot reveal" href="assets/pastel-blast/screens/06.webp" data-lightbox="assets/pastel-blast/screens/06.webp" data-group="pofi" aria-label="Kalp şekilli tahta" data-i18n-aria="pofi.shot.6"><div class="frame"><img src="assets/pastel-blast/screens/06.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.6">Kalp şekilli tahta</span></a>
+                    <a class="shot reveal" href="assets/pastel-blast/screens/07.webp" data-lightbox="assets/pastel-blast/screens/07.webp" data-group="pofi" aria-label="Zafer ve üç yıldız" data-i18n-aria="pofi.shot.7"><div class="frame"><img src="assets/pastel-blast/screens/07.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.7">Zafer ve üç yıldız</span></a>
+                    <a class="shot reveal" href="assets/pastel-blast/screens/08.webp" data-lightbox="assets/pastel-blast/screens/08.webp" data-group="pofi" aria-label="Karton kutuları aç" data-i18n-aria="pofi.shot.8"><div class="frame"><img src="assets/pastel-blast/screens/08.webp" alt="" loading="lazy"></div><span data-i18n="pofi.shot.8">Karton kutuları aç</span></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- OFFICIAL 10-SECOND PROMO TRAILER -->
-    <section class="pofi-bento-wrap" id="trailer" style="padding-bottom: 1rem;">
-        <div class="pofi-card span-12 animate-on-scroll" style="padding: 2.2rem;">
-            <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.25rem;">
+        <!-- TRAILER -->
+        <section class="section" id="trailer" style="padding-top:0">
+            <div class="container">
+                <div class="card trailer reveal">
+                    <div class="trailer-head">
+                        <div>
+                            <span class="eyebrow"><span class="dot"></span><span data-i18n="pofi.t.eyebrow">Oynanış fragmanı</span></span>
+                            <h2 class="h-1" style="font-size:clamp(1.8rem,3.4vw,2.6rem)" data-i18n="pofi.t.title">18 saniyede Pofi'nin dünyası</h2>
+                        </div>
+                        <div class="btn-row">
+                            <a href="assets/pastel-blast/promo_16x9.mp4" download class="btn btn-ghost btn-sm"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-i18n="pofi.t.dl169">16:9 yatay</span></a>
+                            <a href="assets/pastel-blast/promo_9x16.mp4" download class="btn btn-ghost btn-sm"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-i18n="pofi.t.dl916">9:16 dikey</span></a>
+                        </div>
+                    </div>
+                    <video controls muted playsinline preload="metadata" poster="assets/pastel-blast/feature_graphic.png">
+                        <source src="assets/pastel-blast/promo_16x9.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIVACY STRIP -->
+        <section class="container" style="margin-bottom:clamp(3rem,6vw,5rem)">
+            <div class="card card-pad privacy-strip reveal" style="--accent:#34d399;--accent-2:#22d3ee">
+                <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
                 <div>
-                    <span style="display:inline-block; font-size:0.76rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#FFD166; margin-bottom:0.35rem;">RESMİ TANITIM FİLMİ • 10 SANİYE</span>
-                    <h2 style="margin-bottom:0.25rem;">Pofi Toybox: Plush Puzzle — Oynanış Fragmanı</h2>
-                    <p style="margin-bottom:0; max-width:680px;">Peluş kedi Pofi, 3x3 Roket+TNT süper kombosu, Altın Pofi Jackpot, 5.000+ bölümlük macera haritası ve 20+ dil desteği tek bir 10 saniyelik fragmanda.</p>
+                    <h3 class="h-2" data-i18n="pofi.p.title">Hesap yok, ilerlemen cihazında</h3>
+                    <p class="muted" style="margin-top:0.35rem" data-i18n="pofi.p.body">Pofi Toybox kişisel veri istemez ve sunucuda profil tutmaz. Reklamlar Google AdMob ile gösterilir; ayrıntılar gizlilik politikasında.</p>
                 </div>
-                <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
-                    <a href="assets/pastel-blast/pofi_toybox_promo_10s_16x9.mp4" download class="pofi-btn-ghost" style="padding:0.65rem 1.15rem; font-size:0.85rem;">⬇ 16:9 Yatay MP4</a>
-                    <a href="assets/pastel-blast/pofi_toybox_promo_10s_9x16.mp4" download class="pofi-btn-ghost" style="padding:0.65rem 1.15rem; font-size:0.85rem;">⬇ 9:16 Dikey MP4</a>
-                </div>
+                <a href="pastel-blast-privacy.html" class="btn btn-ghost btn-sm"><span data-i18n="pofi.p.cta">Gizlilik ve veri silme</span></a>
             </div>
-            <div style="border-radius:24px; overflow:hidden; border:1.5px solid rgba(255,209,102,0.35); background:#050711; box-shadow:0 24px 64px rgba(0,0,0,0.65);">
-                <video controls autoplay muted loop playsinline poster="assets/pastel-blast/00_feature_graphic_1024x500.png" style="width:100%; height:auto; display:block; aspect-ratio:16/9;">
-                    <source src="assets/pastel-blast/pofi_toybox_promo_10s_16x9.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- MINIMAL BENTO SHOWCASE -->
-    <section class="pofi-bento-wrap" id="bento">
-        <div class="pofi-bento">
-
-            <div class="pofi-card span-7 animate-on-scroll">
-                <div>
-                    <h2>En Sevimli Oyun Arkadaşın: Pofi</h2>
-                    <p>Her kombona sevinen Peluş Pofi ve zafer anlarında tahtayı altına çeviren Altın Pofi her an yanında.</p>
-                </div>
-                <img src="assets/pastel-blast/00_feature_graphic_1024x500.png" alt="Pofi Toybox" class="pofi-banner-preview" loading="lazy">
-            </div>
-
-            <div class="pofi-card span-5 animate-on-scroll">
-                <div>
-                    <h2>Patlayıcı Oyuncak Güçleri</h2>
-                    <p>Roketleri, Parti TNT'yi ve Zeka Küpünü birleştirerek tek dokunuşla tüm tahtayı temizle.</p>
-                </div>
-                <div class="pofi-icon-dock">
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/booster_puzzle_cube.png" alt="Zeka Küpü"></div>
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/booster_tnt.png" alt="Parti TNT"></div>
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/booster_rocket_h.png" alt="Roket"></div>
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/tool_hammer.png" alt="Çekiç"></div>
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/tool_boxing_glove.png" alt="Eldiven"></div>
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/tool_anvil.png" alt="Örs"></div>
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/tool_dice.png" alt="Zar"></div>
-                    <div class="pofi-toy-bubble"><img src="assets/pastel-blast/toy_gold.png" alt="Altın Blok"></div>
+        <!-- FINAL CTA -->
+        <section class="container" style="margin-bottom:2rem">
+            <div class="card final-cta reveal">
+                <img class="pofi" src="assets/pastel-blast/pofi/victory.webp" alt="" loading="lazy">
+                <h2 class="h-1 toy-title" data-i18n="pofi.cta.title">Pofi seni bekliyor.</h2>
+                <p class="lead" style="max-width:520px;margin:0.75rem auto 0" data-i18n="pofi.cta.lead">Pofi Toybox: Plush Puzzle çok yakında Google Play'de. Haberdar olmak için bize yaz.</p>
+                <div class="btn-row">
+                    <a href="mailto:yuzeracc@gmail.com?subject=Pofi%20Toybox" class="btn btn-grad"><span data-i18n="pofi.cta.btn">Haber ver</span></a>
+                    <a href="https://play.google.com/store/apps/developer?id=YuzerAcc" target="_blank" rel="noopener" class="btn btn-ghost"><span data-i18n="pofi.cta.dev">Diğer uygulamalarımız</span></a>
                 </div>
             </div>
+        </section>
+    </main>
 
-        </div>
-    </section>
-
-    <!-- CLEAN 8-SCREEN GALLERY -->
-    <section class="pofi-showcase-section" id="gallery">
-        <div class="pofi-section-head animate-on-scroll">
-            <h2>Oyunun İçinden</h2>
-        </div>
-
-        <div class="pofi-shots">
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/01_screen_plush_puzzle_hero.png')">
-                <img src="assets/pastel-blast/01_screen_plush_puzzle_hero.png" alt="Pofi Toybox Ana Ekran" loading="lazy">
-            </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/02_screen_super_combos_board.png')">
-                <img src="assets/pastel-blast/02_screen_super_combos_board.png" alt="Süper Kombolar" loading="lazy">
-            </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/03_screen_plush_obstacles.png')">
-                <img src="assets/pastel-blast/03_screen_plush_obstacles.png" alt="Peluş Engeller" loading="lazy">
-            </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/04_screen_golden_pofi_jackpot.png')">
-                <img src="assets/pastel-blast/04_screen_golden_pofi_jackpot.png" alt="Altın Pofi Jackpot" loading="lazy">
-            </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/05_screen_endless_saga_map.png')">
-                <img src="assets/pastel-blast/05_screen_endless_saga_map.png" alt="5.000+ Bölüm Haritası" loading="lazy">
-            </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/06_screen_tactical_boosters.png')">
-                <img src="assets/pastel-blast/06_screen_tactical_boosters.png" alt="Taktik Güçlendiriciler" loading="lazy">
-            </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/07_screen_surprise_chests.png')">
-                <img src="assets/pastel-blast/07_screen_surprise_chests.png" alt="Sürpriz Sandıklar" loading="lazy">
-            </div>
-            <div class="pofi-shot animate-on-scroll" onclick="openLightbox('assets/pastel-blast/08_screen_global_languages.png')">
-                <img src="assets/pastel-blast/08_screen_global_languages.png" alt="20+ Dil Desteği" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="pb-lightbox" id="pbLightbox" onclick="closeLightbox(event)">
-        <button class="pb-lightbox-close" aria-label="Kapat" onclick="closeLightbox(event)">&times;</button>
-        <img id="pbLightboxImg" src="" alt="Pofi Toybox">
-    </div>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="footer-logo" width="24" height="24">
-                <p class="footer-copy">&copy; 2026 Yuzeracc. Pofi Toybox: Plush Puzzle.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand"><img src="sora-brand-icon-app.jpg" alt="" width="34" height="34"><span>Yuzer<span class="acc">Acc</span></span></a>
+                    <p class="muted" style="margin-top:0.9rem;max-width:300px;font-size:0.92rem" data-i18n="footer.tagline">Kullanıcı odaklı mobil uygulamalar ve oyunlar.</p>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.products">Ürünler</h4>
+                    <ul>
+                        <li><a href="pastel-blast.html">Pofi Toybox</a></li>
+                        <li><a href="ligodeck.html">LigoDeck</a></li>
+                        <li><a href="index.html#apps" data-i18n="footer.allApps">Tüm uygulamalar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.legal">Yasal</h4>
+                    <ul>
+                        <li><a href="pastel-blast-privacy.html" data-i18n="footer.pofiPrivacy">Pofi Toybox gizlilik</a></li>
+                        <li><a href="pastel-blast-privacy.html#data-deletion" data-i18n="footer.deletion">Veri silme</a></li>
+                        <li><a href="privacy-policy-fluxion.html" data-i18n="footer.fluxionPrivacy">FLUXION gizlilik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.connect">Bağlantı</h4>
+                    <ul>
+                        <li><a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a></li>
+                        <li><a href="https://play.google.com/store/apps/developer?id=YuzerAcc" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="https://github.com/BerkcanYuzer" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="footer-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="pastel-blast-privacy.html">Gizlilik Politikası</a></li>
-                <li><a href="https://play.google.com/store/apps/developer?id=YuzerAcc&hl=tr" target="_blank" rel="noopener">Google Play</a></li>
-            </ul>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> YuzerAcc. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></span>
+                <span data-i18n="footer.made">Türkiye'de tasarlandı ve geliştirildi.</span>
+            </div>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
     <script>
-        function showHeroVideo(btn) {
-            var vid = document.getElementById('heroVideo');
-            var img = document.getElementById('heroScreen');
-            if (img) img.style.display = 'none';
-            if (vid) {
-                vid.style.display = 'block';
-                vid.play().catch(function(){});
-            }
-            document.querySelectorAll('.pofi-dot-btn').forEach(function(b) { b.classList.remove('active'); });
-            if (btn) btn.classList.add('active');
-        }
-
-        function setScreen(src, btn) {
-            var vid = document.getElementById('heroVideo');
-            var img = document.getElementById('heroScreen');
-            if (vid) {
-                vid.pause();
-                vid.style.display = 'none';
-            }
-            if (img) {
-                img.style.display = 'block';
-                img.style.opacity = '0.3';
-                setTimeout(function() {
-                    img.src = src;
-                    img.style.opacity = '1';
-                }, 110);
-            }
-            document.querySelectorAll('.pofi-dot-btn').forEach(function(b) { b.classList.remove('active'); });
-            if (btn) btn.classList.add('active');
-        }
-
-        function openLightbox(src) {
-            var lb = document.getElementById('pbLightbox');
-            document.getElementById('pbLightboxImg').src = src;
-            lb.classList.add('open');
-        }
-
-        function closeLightbox(e) {
-            if (e.target.id === 'pbLightbox' || e.target.classList.contains('pb-lightbox-close')) {
-                document.getElementById('pbLightbox').classList.remove('open');
-            }
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') document.getElementById('pbLightbox').classList.remove('open');
+        document.addEventListener('click', function (e) {
+            var b = e.target.closest('[data-scroll]');
+            if (!b) return;
+            var track = document.getElementById('galleryTrack');
+            track.scrollBy({ left: Number(b.getAttribute('data-scroll')) * track.clientWidth * 0.8, behavior: 'smooth' });
         });
     </script>
 </body>

@@ -1,387 +1,415 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="1uAKbiGoTSEIVHvgDKcHvtSN8I7wDmLVBpRkQwqoRsE" />
-    <title>Yuzeracc — Mobil Uygulama & Oyun Geliştirici</title>
-    <meta name="description" content="Yuzeracc — Kullanıcı odaklı mobil uygulamalar ve oyunlar geliştiriyoruz. Pofi Toybox: Plush Puzzle, LigoDeck, Budget Sphere, PDF Tools, Mind Streak, Habit Garden ve daha fazlası.">
+    <title data-i18n="home.meta.title">YuzerAcc — Mobil Uygulama &amp; Oyun Stüdyosu</title>
+    <meta name="description" data-i18n-content="home.meta.desc" content="YuzerAcc; Pofi Toybox: Plush Puzzle, LigoDeck, Budget Sphere, PDF Tools, Mind Streak ve Habit Garden gibi kullanıcı odaklı mobil uygulamalar ve oyunlar geliştiren bağımsız bir stüdyodur.">
     <link rel="canonical" href="https://berkcanyuzer.github.io/">
-    <meta name="theme-color" content="#07070e">
+    <link rel="alternate" hreflang="tr" href="https://berkcanyuzer.github.io/?lang=tr">
+    <link rel="alternate" hreflang="en" href="https://berkcanyuzer.github.io/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://berkcanyuzer.github.io/">
+    <meta name="theme-color" content="#06060c">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="YuzerAcc">
     <meta property="og:url" content="https://berkcanyuzer.github.io/">
-    <meta property="og:title" content="Yuzeracc — Mobil Uygulama & Oyun Geliştirici">
-    <meta property="og:description" content="Kullanıcı odaklı mobil uygulamalar ve oyunlar geliştiriyoruz. Pofi Toybox: Plush Puzzle, LigoDeck ve daha fazlası.">
-    <meta property="og:image" content="https://berkcanyuzer.github.io/sora-brand-icon-app.jpg">
+    <meta property="og:title" data-i18n-content="home.meta.title" content="YuzerAcc — Mobil Uygulama &amp; Oyun Stüdyosu">
+    <meta property="og:description" data-i18n-content="home.meta.og" content="Kullanıcı odaklı mobil uygulamalar ve oyunlar. Pofi Toybox: Plush Puzzle, LigoDeck ve daha fazlası.">
+    <meta property="og:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/feature_graphic.png">
     <meta property="og:locale" content="tr_TR">
-
-    <!-- Twitter Card -->
+    <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Yuzeracc — Mobil Uygulama & Oyun Geliştirici">
-    <meta name="twitter:description" content="Kullanıcı odaklı mobil uygulamalar ve oyunlar geliştiriyoruz. Pofi Toybox: Plush Puzzle ve daha fazlası.">
-    <meta name="twitter:image" content="https://berkcanyuzer.github.io/sora-brand-icon-app.jpg">
+    <meta name="twitter:image" content="https://berkcanyuzer.github.io/assets/pastel-blast/feature_graphic.png">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="sora-brand-icon-light.jpg">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ----- Home ----- */
+        .hero { min-height: 100svh; display: flex; align-items: center; padding: calc(var(--nav-h) + 3rem) 0 4rem; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+        .hero .lead { max-width: 560px; margin: 1.5rem 0 2.25rem; }
+        .hero-meta { display: flex; gap: 2.25rem; margin-top: 3rem; flex-wrap: wrap; }
+        .hero-meta div strong { display: block; font-family: var(--font-display); font-size: 1.9rem; letter-spacing: -0.03em; }
+        .hero-meta div span { font-size: 0.85rem; color: var(--text-3); }
+
+        .orbit { position: relative; aspect-ratio: 1; max-width: 520px; margin-left: auto; width: 100%; }
+        .orbit-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed var(--border-strong); animation: spin 60s linear infinite; }
+        .orbit-ring.r2 { inset: 16%; animation-duration: 45s; animation-direction: reverse; }
+        .orbit-ring.r3 { inset: 32%; border-style: solid; border-color: var(--border); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .orbit-core {
+            position: absolute; inset: 34%;
+            border-radius: 30%;
+            background: var(--grad);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 30px 90px -20px color-mix(in srgb, var(--accent) 70%, transparent);
+            animation: float 6s ease-in-out infinite;
+        }
+        .orbit-core img { width: 72%; border-radius: 26%; }
+        .orbit-app {
+            position: absolute; width: 18%; aspect-ratio: 1;
+            border-radius: 26%;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-strong);
+            animation: float 7s ease-in-out infinite;
+            background: var(--bg-elev);
+        }
+        .orbit-app img { width: 100%; height: 100%; object-fit: cover; }
+        .orbit-app:nth-of-type(1) { top: 2%; left: 40%; animation-delay: -1s; }
+        .orbit-app:nth-of-type(2) { top: 24%; right: 0; animation-delay: -2s; }
+        .orbit-app:nth-of-type(3) { bottom: 14%; right: 6%; animation-delay: -3s; }
+        .orbit-app:nth-of-type(4) { bottom: 0; left: 36%; animation-delay: -4s; }
+        .orbit-app:nth-of-type(5) { bottom: 22%; left: 0; animation-delay: -5s; }
+        .orbit-app:nth-of-type(6) { top: 18%; left: 4%; animation-delay: -6s; }
+        @keyframes float { 50% { transform: translateY(-12px); } }
+
+        /* Featured game */
+        .feature-game {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 520px;
+            --accent: #ffb547; --accent-2: #ff6fae; --accent-3: #6aa8ff;
+        }
+        .feature-game .copy { padding: clamp(2rem, 4vw, 3.5rem); display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
+        .feature-game .media { position: relative; overflow: hidden; background: radial-gradient(circle at 60% 40%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 60%); display: flex; align-items: center; justify-content: center; padding: 2rem; }
+        .feature-game .phone { width: min(270px, 70%); aspect-ratio: 9/16; border-radius: 34px; padding: 8px; background: linear-gradient(145deg, rgba(255,255,255,0.5), rgba(255,255,255,0.08)); box-shadow: var(--shadow-lg); position: relative; z-index: 2; transform: rotate(-4deg); transition: transform 0.6s var(--ease); }
+        .feature-game:hover .phone { transform: rotate(0deg) translateY(-6px); }
+        .feature-game .phone video, .feature-game .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 27px; }
+        .feature-game .pofi { position: absolute; width: 46%; right: -2%; bottom: -4%; z-index: 3; filter: drop-shadow(0 24px 30px rgba(0,0,0,0.45)); animation: float 5s ease-in-out infinite; }
+        .app-icon-lg { width: 64px; height: 64px; border-radius: 18px; box-shadow: var(--shadow-md); }
+        @media (max-width: 880px) { .feature-game { grid-template-columns: 1fr; } .feature-game .media { min-height: 460px; } }
+
+        /* App cards */
+        .app-card { display: flex; flex-direction: column; gap: 1rem; height: 100%; }
+        .app-card .top { display: flex; align-items: center; gap: 0.9rem; }
+        .app-card img.icon { width: 56px; height: 56px; border-radius: 16px; object-fit: cover; box-shadow: var(--shadow-md); background: var(--bg-elev); }
+        .app-card p { color: var(--text-2); font-size: 0.95rem; flex: 1; }
+        .app-card .go { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 650; font-size: 0.9rem; color: var(--text); }
+        .app-card .go svg { transition: transform 0.35s var(--spring); }
+        .app-card:hover .go svg { transform: translateX(4px); }
+        a.card:hover { transform: translateY(-4px); }
+
+        .icon-chip { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 1rem 0.55rem 0.55rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); white-space: nowrap; font-weight: 600; font-size: 0.92rem; }
+        .icon-chip img { width: 30px; height: 30px; border-radius: 9px; object-fit: cover; }
+
+        .stat-card strong { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3rem); letter-spacing: -0.04em; display: block; line-height: 1; margin-bottom: 0.5rem; }
+        .stat-card span { color: var(--text-2); font-size: 0.95rem; }
+        .stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+
+        .contact-cta { text-align: center; padding: clamp(3rem, 7vw, 5.5rem) 1.5rem; background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%), var(--surface); }
+        .contact-cta .btn-row { justify-content: center; margin-top: 2rem; }
+
+        @media (max-width: 920px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .orbit { max-width: 380px; margin: 1rem auto 0; }
+        }
+    </style>
 </head>
 <body>
+    <div class="ambient" aria-hidden="true"><div class="grid"></div><div class="blob"></div><div class="grain"></div></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Ana menü" data-i18n-aria="nav.aria">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">
-                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="nav-logo-icon" width="32" height="32">
-                Yuzeracc
+            <a href="index.html" class="brand" aria-label="YuzerAcc">
+                <img src="sora-brand-icon-app.jpg" alt="" width="34" height="34">
+                <span>Yuzer<span class="acc">Acc</span></span>
             </a>
             <ul class="nav-links">
-                <li><a href="#hero">Ana Sayfa</a></li>
-                <li><a href="#apps">Uygulamalar</a></li>
-                <li><a href="pastel-blast.html" style="background: linear-gradient(135deg, #FFD166, #FF6B9D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Pofi Toybox</a></li>
-                <li><a href="ligodeck.html" style="color: #b197fc; font-weight: 700;">LigoDeck</a></li>
-                <li><a href="#about">Hakkımızda</a></li>
-                <li><a href="#contact">İletişim</a></li>
-                <li><button id="theme-toggle" aria-label="Tema değiştir"></button></li>
+                <li><a href="#apps" data-i18n="nav.apps">Uygulamalar</a></li>
+                <li><a href="pastel-blast.html" data-i18n="nav.pofi">Pofi Toybox</a></li>
+                <li><a href="ligodeck.html">LigoDeck</a></li>
+                <li><a href="#about" data-i18n="nav.about">Hakkımızda</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">İletişim</a></li>
             </ul>
-            <button class="menu-toggle" aria-label="Menü">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-tools">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Tema değiştir" data-i18n-aria="nav.theme"></button>
+                <button type="button" class="icon-btn menu-toggle" aria-label="Menü" aria-expanded="false" data-i18n-aria="nav.menu"><span></span><span></span><span></span></button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <div class="orb"></div>
-            <div class="orb"></div>
-            <div class="orb"></div>
-        </div>
-        <div class="hero-content">
-            <img src="sora-brand-icon-app.jpg" alt="Yuzeracc Logo" class="hero-logo" width="120" height="120">
-            <h1>Yuzeracc</h1>
-            <p class="hero-subtitle">Kullanıcı odaklı mobil uygulamalar geliştiriyoruz. Pratik araçlar, eğlenceli oyunlar ve daha fazlası.</p>
-            <div class="hero-buttons">
-                <a href="#apps" class="btn btn-primary">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-                    Uygulamaları Keşfet
-                </a>
-                <a href="pastel-blast.html" class="btn btn-outline" style="border-color: rgba(255, 209, 102, 0.55); background: rgba(59, 130, 246, 0.16); color: #FFD166;">
-                    🐾 Pofi Toybox: Plush Puzzle
-                </a>
-                <a href="https://play.google.com/store/apps/developer?id=YuzerAcc&hl=tr" target="_blank" rel="noopener" class="btn btn-outline">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.726.558-.92h.052zm10.89 10.89l2.302 2.302-10.937 6.333 8.635-8.635zm3.196-3.196l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.394 12l2.302-2.492zM5.864 3.477L16.8 9.81l-2.302 2.302L5.864 3.477z"/></svg>
-                    Google Play
-                </a>
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow reveal"><span class="dot"></span><span data-i18n="home.hero.eyebrow">Bağımsız mobil stüdyo</span></span>
+                    <h1 class="h-display reveal" data-delay="1" data-i18n="home.hero.title">Günlük hayata <span class="grad-text">küçük mutluluklar</span> tasarlıyoruz.</h1>
+                    <p class="lead reveal" data-delay="2" data-i18n="home.hero.lead">YuzerAcc; pratik araçlar, sevimli oyunlar ve alışkanlıklarınızı güçlendiren uygulamalar geliştirir. Hepsi sade, hızlı ve gizliliğinize saygılı.</p>
+                    <div class="btn-row reveal" data-delay="3">
+                        <a href="#apps" class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+                            <span data-i18n="home.hero.cta1">Uygulamaları keşfet</span>
+                        </a>
+                        <a href="pastel-blast.html" class="btn btn-ghost">
+                            <img src="assets/pastel-blast/icon.png" alt="" width="22" height="22" style="border-radius:7px">
+                            <span data-i18n="home.hero.cta2">Yeni oyun: Pofi Toybox</span>
+                        </a>
+                    </div>
+                    <div class="hero-meta reveal" data-delay="4">
+                        <div><strong>20+</strong><span data-i18n="home.hero.m1">yayımlanan uygulama</span></div>
+                        <div><strong>Google Play</strong><span data-i18n="home.hero.m2">yayın mağazası</span></div>
+                        <div><strong>TR · EN</strong><span data-i18n="home.hero.m3">çok dilli deneyim</span></div>
+                    </div>
+                </div>
+
+                <div class="orbit reveal" data-delay="2" aria-hidden="true">
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-ring r2"></div>
+                    <div class="orbit-ring r3"></div>
+                    <div class="orbit-core"><img src="sora-brand-icon-app.jpg" alt=""></div>
+                    <div class="orbit-app"><img src="assets/pastel-blast/icon.png" alt=""></div>
+                    <div class="orbit-app"><img src="app-icons/ligodeck.png" alt=""></div>
+                    <div class="orbit-app"><img src="app-icons/habitgarden.png" alt=""></div>
+                    <div class="orbit-app"><img src="app-icons/budgetsphere.png" alt=""></div>
+                    <div class="orbit-app"><img src="app-icons/mindstreak.png" alt=""></div>
+                    <div class="orbit-app"><img src="app-icons/pdftools.png" alt=""></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span class="icon-chip"><img src="assets/pastel-blast/icon.png" alt="">Pofi Toybox</span>
+                <span class="icon-chip"><img src="app-icons/ligodeck.png" alt="">LigoDeck</span>
+                <span class="icon-chip"><img src="app-icons/budgetsphere.png" alt="">Budget Sphere</span>
+                <span class="icon-chip"><img src="app-icons/pdftools.png" alt="">PDF Tools</span>
+                <span class="icon-chip"><img src="app-icons/mindstreak.png" alt="">Mind Streak</span>
+                <span class="icon-chip"><img src="app-icons/habitgarden.png" alt="">Habit Garden</span>
+                <span class="icon-chip"><img src="app-icons/mevduatfaizi.png" alt="">Mevduat Faizi</span>
+                <span class="icon-chip"><img src="app-icons/fluxion.png" alt="">FLUXION</span>
+                <span class="icon-chip"><img src="app-icons/metrorush.png" alt="">Metro Rush</span>
+                <span class="icon-chip"><img src="assets/pastel-blast/icon.png" alt="">Pofi Toybox</span>
+                <span class="icon-chip"><img src="app-icons/ligodeck.png" alt="">LigoDeck</span>
+                <span class="icon-chip"><img src="app-icons/budgetsphere.png" alt="">Budget Sphere</span>
+                <span class="icon-chip"><img src="app-icons/pdftools.png" alt="">PDF Tools</span>
+                <span class="icon-chip"><img src="app-icons/mindstreak.png" alt="">Mind Streak</span>
+                <span class="icon-chip"><img src="app-icons/habitgarden.png" alt="">Habit Garden</span>
+                <span class="icon-chip"><img src="app-icons/mevduatfaizi.png" alt="">Mevduat Faizi</span>
+                <span class="icon-chip"><img src="app-icons/fluxion.png" alt="">FLUXION</span>
+                <span class="icon-chip"><img src="app-icons/metrorush.png" alt="">Metro Rush</span>
             </div>
         </div>
-    </section>
 
-    <!-- Apps -->
-    <section class="section" id="apps">
-        <h2 class="section-title animate-on-scroll">Uygulamalarımız</h2>
-        <p class="section-subtitle animate-on-scroll">Google Play'de yayımladığımız uygulamalarımızı ve yeni nesil oyunlarımızı keşfedin.</p>
-
-        <div class="apps-grid">
-
-            <!-- Pofi Toybox: Plush Puzzle (Vitrin / Öne Çıkan Oyun) -->
-            <div class="app-card animate-on-scroll" style="grid-column: 1 / -1; border-color: rgba(59, 130, 246, 0.5); background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(255, 209, 102, 0.08) 50%, rgba(255, 107, 157, 0.08) 100%); box-shadow: 0 14px 44px rgba(59, 130, 246, 0.16);">
-                <span class="coming-soon-badge" style="background: linear-gradient(135deg, #FFD166, #FF9F1C); color: #0f1326; font-weight: 800;">★ YENİ OYUN • VİTRİN</span>
-                <div class="app-card-header" style="align-items: center;">
-                    <div class="app-icon" style="width: 68px; height: 68px; border-radius: 18px; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35); border: 2px solid rgba(255, 209, 102, 0.6);">
-                        <img src="assets/pastel-blast/icon.png" alt="Pofi Toybox: Plush Puzzle" width="68" height="68" loading="lazy">
+        <!-- FEATURED GAME -->
+        <section class="section" id="featured">
+            <div class="container">
+                <article class="card feature-game reveal">
+                    <div class="copy">
+                        <div class="chip-row">
+                            <span class="chip soon" data-i18n="home.game.badge">Yeni oyun · Yakında Google Play'de</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:1rem">
+                            <img class="app-icon-lg" src="assets/pastel-blast/icon.png" alt="Pofi Toybox: Plush Puzzle" width="64" height="64">
+                            <h2 class="h-1" style="font-size:clamp(1.9rem,3.6vw,2.8rem)">Pofi Toybox: <span class="grad-text">Plush Puzzle</span></h2>
+                        </div>
+                        <p class="lead" data-i18n="home.game.lead">Peluş kedi Pofi'nin oyuncak kutusuna hoş geldin. Renkli küpleri patlat, roket ve TNT kombolarını birleştir, Fare Kral'ı devir ve 5.000'den fazla seviyelik haritada ilerle.</p>
+                        <div class="chip-row">
+                            <span class="chip" data-i18n="home.game.t1">Şekilli tahtalar</span>
+                            <span class="chip" data-i18n="home.game.t2">Kayan şeritler</span>
+                            <span class="chip" data-i18n="home.game.t3">Boss savaşları</span>
+                            <span class="chip" data-i18n="home.game.t4">11 dil</span>
+                        </div>
+                        <div class="btn-row" style="margin-top:0.5rem">
+                            <a href="pastel-blast.html" class="btn btn-grad">
+                                <span data-i18n="home.game.cta">Oyunu keşfet</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                            <a href="pastel-blast.html#trailer" class="btn btn-ghost">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <span data-i18n="home.game.trailer">Fragmanı izle</span>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <h3 style="font-size: 1.38rem; font-weight: 800; background: linear-gradient(90deg, #FFD166, #FF85AD); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pofi Toybox: Plush Puzzle</h3>
-                        <p style="font-size: 0.94rem; margin-top: 0.25rem; max-width: 720px;">Peluş kedi Pofi'nin rengarenk oyuncak kutusuna adım at. Küpleri eşleştir, patlayıcı oyuncak güçlerini birleştir ve büyülü dünyaları keşfet.</p>
+                    <div class="media">
+                        <div class="phone">
+                            <video src="assets/pastel-blast/promo_9x16.mp4" poster="assets/pastel-blast/screens/01.webp" autoplay muted loop playsinline preload="metadata" aria-label="Pofi Toybox oynanış videosu" data-i18n-aria="home.game.videoAria"></video>
+                        </div>
+                        <img class="pofi" src="assets/pastel-blast/pofi/cheer.webp" alt="" loading="lazy">
                     </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- APPS -->
+        <section class="section" id="apps" style="padding-top:0">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="dot"></span><span data-i18n="home.apps.eyebrow">Portföy</span></span>
+                    <h2 class="h-1" data-i18n="home.apps.title">Her gün kullanılan, <span class="grad-text">özenle yapılmış</span> uygulamalar.</h2>
+                    <p class="lead" style="margin-top:1rem" data-i18n="home.apps.lead">Google Play'de yayımladığımız uygulamalar ve sıradaki projelerimiz.</p>
                 </div>
-                <div class="app-tags">
-                    <span class="tag" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(96, 165, 250, 0.35); font-weight: 700;">🐾 3B Peluş Bulmaca</span>
-                    <span class="tag" style="background: rgba(255, 209, 102, 0.16); color: #FFD166;">Süper Kombolar</span>
-                    <span class="tag">Çok Yakında Google Play'de</span>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 0.5rem;">
-                    <a href="pastel-blast.html" class="btn btn-app" style="background: linear-gradient(135deg, #FFD166 0%, #FF9F1C 50%, #FF6B9D 100%); color: #0f1326; font-weight: 800; box-shadow: 0 6px 20px rgba(255, 159, 28, 0.32);">
-                        🎮 Oyunu Keşfet
+
+                <div class="bento">
+                    <a href="ligodeck.html" class="card card-pad app-card col-6 reveal" style="--accent:#8b5cf6;--accent-2:#22d3ee">
+                        <div class="top">
+                            <img class="icon" src="app-icons/ligodeck.png" alt="LigoDeck" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2">LigoDeck</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip live" data-i18n="home.app.desktop">Windows + Mobil</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.ligodeck">Telefonunu veya tabletini mekanik bir stream deck'e dönüştür. Windows bilgisayarını makrolar ve kısayollarla, yerel ağ üzerinden gecikmesiz yönet.</p>
+                        <span class="go"><span data-i18n="home.app.download">İndir ve kur</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                     </a>
-                    <span class="btn btn-soon" style="display: inline-flex; align-items: center; justify-content: center;">
-                        ✨ Çok Yakında Google Play'de
-                    </span>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.budgetSphere" target="_blank" rel="noopener" class="card card-pad app-card col-6 reveal" data-delay="1" style="--accent:#10b981;--accent-2:#22d3ee">
+                        <div class="top">
+                            <img class="icon" src="app-icons/budgetsphere.png" alt="Budget Sphere" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2">Budget Sphere</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip live" data-i18n="home.app.finance">Finans</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.budget">Gelir-gider takibi, maaş ve vardiya yönetimi, birikim hedefleri. Reklamsız, ücretsiz ve çevrimdışı çalışır.</p>
+                        <span class="go"><span data-i18n="home.app.play">Google Play'de incele</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.pdftools" target="_blank" rel="noopener" class="card card-pad app-card col-4 reveal" style="--accent:#ef4444;--accent-2:#f97316">
+                        <div class="top">
+                            <img class="icon" src="app-icons/pdftools.png" alt="PDF Tools" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2">PDF Tools</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip live" data-i18n="home.app.tools">Araç</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.pdf">PDF birleştir, böl, sıkıştır ve görüntüye dönüştür. Dosyaların cihazından hiç çıkmaz.</p>
+                        <span class="go"><span data-i18n="home.app.play">Google Play'de incele</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.mindstreakapp" target="_blank" rel="noopener" class="card card-pad app-card col-4 reveal" data-delay="1" style="--accent:#ec4899;--accent-2:#a855f7">
+                        <div class="top">
+                            <img class="icon" src="app-icons/mindstreak.png" alt="Mind Streak" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2">Mind Streak</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip live" data-i18n="home.app.wellbeing">Sağlık</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.mind">Ruh halini her gün kaydet, duygusal eğilimlerini izle ve kendine dair içgörüler kazan.</p>
+                        <span class="go"><span data-i18n="home.app.play">Google Play'de incele</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.habitgarden" target="_blank" rel="noopener" class="card card-pad app-card col-4 reveal" data-delay="2" style="--accent:#22c55e;--accent-2:#84cc16">
+                        <div class="top">
+                            <img class="icon" src="app-icons/habitgarden.png" alt="Habit Garden" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2">Habit Garden</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip live" data-i18n="home.app.productivity">Verimlilik</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.habit">Alışkanlıklarını takip ettikçe piksel sanatı bahçen büyür. 9 bitki türü, hava durumu ve seri motivasyonu.</p>
+                        <span class="go"><span data-i18n="home.app.play">Google Play'de incele</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.vadelihesaplamaapp" target="_blank" rel="noopener" class="card card-pad app-card col-4 reveal" style="--accent:#3b82f6;--accent-2:#06b6d4">
+                        <div class="top">
+                            <img class="icon" src="app-icons/mevduatfaizi.png" alt="Mevduat Faizi Hesaplama" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2" data-i18n="home.app.depositName">Mevduat Faizi</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip live" data-i18n="home.app.finance">Finans</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.deposit">Vadeli mevduat getirini saniyeler içinde hesapla, farklı vadeleri karşılaştır.</p>
+                        <span class="go"><span data-i18n="home.app.play">Google Play'de incele</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+                    </a>
+
+                    <div class="card card-pad app-card col-4 reveal" data-delay="1" style="--accent:#a855f7;--accent-2:#6366f1">
+                        <div class="top">
+                            <img class="icon" src="app-icons/fluxion.png" alt="FLUXION" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2">FLUXION</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip soon" data-i18n="home.app.soon">Yakında</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.fluxion">Strateji ve bulmacayı birleştiren, bırakması zor bir oyun deneyimi.</p>
+                        <a class="go" href="privacy-policy-fluxion.html"><span data-i18n="home.app.privacy">Gizlilik politikası</span></a>
+                    </div>
+
+                    <div class="card card-pad app-card col-4 reveal" data-delay="2" style="--accent:#f59e0b;--accent-2:#ef4444">
+                        <div class="top">
+                            <img class="icon" src="app-icons/metrorush.png" alt="Metro Rush" width="56" height="56" loading="lazy">
+                            <div><h3 class="h-2">Metro Rush</h3><div class="chip-row" style="margin-top:0.35rem"><span class="chip soon" data-i18n="home.app.soon">Yakında</span></div></div>
+                        </div>
+                        <p data-i18n="home.app.metro">Hızlı tempolu metro macerası. Trenleri yönet, rotaları optimize et.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- LigoDeck -->
-            <div class="app-card animate-on-scroll" style="border-color: rgba(132, 94, 247, 0.35); background: rgba(132, 94, 247, 0.04);">
-                <div class="app-card-header">
-                    <div class="app-icon" style="background: #090B14;">
-                        <img src="app-icons/ligodeck.png" alt="LigoDeck" width="52" height="52" loading="lazy">
+        <!-- ABOUT -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="bento">
+                    <div class="card card-pad col-7 reveal">
+                        <span class="eyebrow"><span class="dot"></span><span data-i18n="home.about.eyebrow">Hakkımızda</span></span>
+                        <h2 class="h-1" style="font-size:clamp(1.8rem,3.4vw,2.6rem)" data-i18n="home.about.title">Kalite, hız ve <span class="grad-text">saygı</span>.</h2>
+                        <p class="lead" style="margin-top:1rem" data-i18n="home.about.body">YuzerAcc olarak günlük hayatı kolaylaştıran araçlar, zihni çalıştıran oyunlar ve alışkanlıkları güçlendiren uygulamalar geliştiriyoruz. Her projede performansı, sade tasarımı ve kullanıcı gizliliğini ön planda tutuyoruz.</p>
+                        <div class="stack">
+                            <span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span><span class="chip">Godot</span><span class="chip">Vue.js</span><span class="chip">Ionic</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3>LigoDeck (Masaüstü & Mobil)</h3>
-                        <p>Telefon veya tabletinizi güçlü bir mekanik stream deck'e dönüştürün. Windows PC kontrolü, makrolar ve sıfır gecikmeli LAN iletişimi.</p>
+                    <div class="col-5" style="display:grid;gap:1.1rem">
+                        <div class="card card-pad stat-card reveal" data-delay="1"><strong class="grad-text">20+</strong><span data-i18n="home.about.s1">Google Play'de yayımlanan uygulama</span></div>
+                        <div class="card card-pad stat-card reveal" data-delay="2"><strong>100%</strong><span data-i18n="home.about.s2">kullanıcı odaklı, sade ve hızlı tasarım</span></div>
                     </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag" style="background: rgba(44, 216, 166, 0.15); color: #2CD8A6;">Windows Ajanı</span>
-                    <span class="tag">Stream Deck</span>
-                    <span class="tag">Verimlilik</span>
-                </div>
-                <a href="ligodeck.html" class="btn btn-app" style="background: linear-gradient(135deg, #3B99FC, #20C997); color: #fff; font-weight: 700;">Masaüstü İndir & Kur</a>
-            </div>
-
-            <!-- Budget Sphere -->
-            <div class="app-card animate-on-scroll">
-                <div class="app-card-header">
-                    <div class="app-icon">
-                        <img src="app-icons/budgetsphere.png" alt="Budget Sphere" width="52" height="52" loading="lazy">
-                    </div>
-                    <div>
-                        <h3>Budget Sphere</h3>
-                        <p>Gelir-gider takibi, maaş/vardiya yönetimi ve birikim hedefleri. Reklamsız, %100 ücretsiz ve çevrimdışı.</p>
-                    </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag">Finans</span>
-                    <span class="tag">Verimlilik</span>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.budgetSphere&hl=tr" target="_blank" rel="noopener" class="btn btn-app">Google Play'de İncele</a>
-            </div>
-
-            <!-- PDF Tools -->
-            <div class="app-card animate-on-scroll">
-                <div class="app-card-header">
-                    <div class="app-icon">
-                        <img src="app-icons/pdftools.png" alt="PDF Tools" width="52" height="52" loading="lazy">
-                    </div>
-                    <div>
-                        <h3>PDF Tools</h3>
-                        <p>PDF birleştirme, bölme, optimize etme ve görüntü dönüştürme. %100 çevrimdışı, verileriniz cihazınızda kalır.</p>
-                    </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag">Araç</span>
-                    <span class="tag">Verimlilik</span>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.pdftools&hl=tr" target="_blank" rel="noopener" class="btn btn-app">Google Play'de İncele</a>
-            </div>
-
-            <!-- Mind Streak -->
-            <div class="app-card animate-on-scroll">
-                <div class="app-card-header">
-                    <div class="app-icon">
-                        <img src="app-icons/mindstreak.png" alt="Mind Streak" width="52" height="52" loading="lazy">
-                    </div>
-                    <div>
-                        <h3>Mind Streak</h3>
-                        <p>Ruh halinizi günlük olarak takip edin, duygusal trendlerinizi izleyin ve kişisel içgörüler kazanın.</p>
-                    </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag">Sağlık</span>
-                    <span class="tag">Yaşam</span>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.mindstreakapp&hl=tr" target="_blank" rel="noopener" class="btn btn-app">Google Play'de İncele</a>
-            </div>
-
-            <!-- Habit Garden -->
-            <div class="app-card animate-on-scroll">
-                <div class="app-card-header">
-                    <div class="app-icon">
-                        <img src="app-icons/habitgarden.png" alt="Habit Garden" width="52" height="52" loading="lazy">
-                    </div>
-                    <div>
-                        <h3>Habit Garden</h3>
-                        <p>Alışkanlıklarınızı takip edin, pixel sanatı bahçenizi büyütün. 9 bitki türü, hava durumu sistemi ve streak motivasyonu.</p>
-                    </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag">Verimlilik</span>
-                    <span class="tag">Sağlık</span>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.habitgarden&hl=tr" target="_blank" rel="noopener" class="btn btn-app">Google Play'de İncele</a>
-            </div>
-
-            <!-- Mevduat Faizi Hesaplama -->
-            <div class="app-card animate-on-scroll">
-                <div class="app-card-header">
-                    <div class="app-icon">
-                        <img src="app-icons/mevduatfaizi.png" alt="Mevduat Faizi Hesaplama" width="52" height="52" loading="lazy">
-                    </div>
-                    <div>
-                        <h3>Mevduat Faizi Hesaplama</h3>
-                        <p>Vadeli mevduat faizinizi hızlıca hesaplayın ve farklı vadileri karşılaştırın.</p>
-                    </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag">Finans</span>
-                    <span class="tag">Araç</span>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.vadelihesaplamaapp&hl=tr" target="_blank" rel="noopener" class="btn btn-app">Google Play'de İncele</a>
-            </div>
-
-            <!-- FLUXION (Coming Soon) -->
-            <div class="app-card animate-on-scroll">
-                <span class="coming-soon-badge">Yakında</span>
-                <div class="app-card-header">
-                    <div class="app-icon">
-                        <img src="app-icons/fluxion.png" alt="FLUXION" width="52" height="52" loading="lazy">
-                    </div>
-                    <div>
-                        <h3>FLUXION</h3>
-                        <p>Strateji ve puzzle unsurlarını birleştiren bağımlılık yapan bir oyun deneyimi.</p>
-                    </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag">Oyun</span>
-                    <span class="tag">Strateji</span>
-                </div>
-                <span class="btn btn-soon">Çok Yakında Google Play'de</span>
-            </div>
-
-            <!-- Metro Rush (Coming Soon) -->
-            <div class="app-card animate-on-scroll">
-                <span class="coming-soon-badge">Yakında</span>
-                <div class="app-card-header">
-                    <div class="app-icon">
-                        <img src="app-icons/metrorush.png" alt="Metro Rush" width="52" height="52" loading="lazy">
-                    </div>
-                    <div>
-                        <h3>Metro Rush</h3>
-                        <p>Hızlı tempolu metro macerası. Trenleri yönet, rotaları optimize et!</p>
-                    </div>
-                </div>
-                <div class="app-tags">
-                    <span class="tag">Oyun</span>
-                    <span class="tag">Arcade</span>
-                </div>
-                <span class="btn btn-soon">Çok Yakında Google Play'de</span>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-        <h2 class="section-title animate-on-scroll">Hakkımızda</h2>
-        <p class="section-subtitle animate-on-scroll">Kullanıcı deneyimini ön planda tutan uygulamalar geliştiriyoruz.</p>
-
-        <div class="about-grid">
-            <div class="about-text animate-on-scroll">
-                <p>Yuzeracc olarak günlük hayatı kolaylaştıran araçlar, zekânızı çalıştıran oyunlar ve alışkanlıklarınızı güçlendiren uygulamalar geliştiriyoruz. Her projemizde kalite, performans ve kullanıcı memnuniyetini ön planda tutuyoruz.</p>
-                <div class="tech-stack">
-                    <span class="tech-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                        React Native
-                    </span>
-                    <span class="tech-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                        Expo
-                    </span>
-                    <span class="tech-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        TypeScript
-                    </span>
-                    <span class="tech-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 13V9m0 8h.01"/></svg>
-                        JavaScript
-                    </span>
-                    <span class="tech-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                        Ionic
-                    </span>
-                    <span class="tech-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg>
-                        Vue.js
-                    </span>
-                    <span class="tech-item" style="border-color: rgba(255, 107, 157, 0.35); color: #FF85AD;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 19 21 12 17 5 21 12 2"/></svg>
-                        Godot 4.7 (Vulkan 3D)
-                    </span>
                 </div>
             </div>
-            <div class="stats-grid animate-on-scroll">
-                <div class="stat-card">
-                    <div class="stat-value">20+</div>
-                    <div class="stat-label">Yayımlanan Uygulama</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">Google Play</div>
-                    <div class="stat-label">Mağaza</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Kullanıcı Odaklı</div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact" style="padding-top:0">
+            <div class="container">
+                <div class="card contact-cta reveal">
+                    <span class="eyebrow"><span class="dot"></span><span data-i18n="home.contact.eyebrow">İletişim</span></span>
+                    <h2 class="h-1" data-i18n="home.contact.title">Bir fikriniz mi var? <span class="grad-text">Konuşalım.</span></h2>
+                    <p class="lead" style="max-width:560px;margin:1rem auto 0" data-i18n="home.contact.lead">Sorularınız, önerileriniz veya iş birliği talepleriniz için bize yazın.</p>
+                    <div class="btn-row">
+                        <a href="mailto:yuzeracc@gmail.com" class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6l-10 7L2 6"/></svg>
+                            yuzeracc@gmail.com
+                        </a>
+                        <a href="https://play.google.com/store/apps/developer?id=YuzerAcc" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8L13.8 12 3.6 22.2a1 1 0 01-.6-.9V2.7c0-.4.2-.7.6-.9zm10.9 10.9l2.3 2.3-10.9 6.3 8.6-8.6zm3.2-3.2l2.3 2.3a1 1 0 010 1.4l-2.3 2.3-2.3-2.5 2.3-3.5zM5.9 3.5l10.9 6.3-2.3 2.3-8.6-8.6z"/></svg>
+                            Google Play
+                        </a>
+                        <a href="https://github.com/BerkcanYuzer" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 00-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0012 .5z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Contact -->
-    <section class="section" id="contact">
-        <h2 class="section-title animate-on-scroll">İletişim</h2>
-        <p class="section-subtitle animate-on-scroll">Sorularınız veya önerileriniz için bize ulaşın.</p>
-
-        <div class="contact-grid">
-            <div class="contact-info animate-on-scroll">
-                <a href="mailto:yuzeracc@gmail.com" class="contact-item">
-                    <div class="contact-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
-                    </div>
-                    <div class="contact-item-text">
-                        <h4>E-posta</h4>
-                        <p>yuzeracc@gmail.com</p>
-                    </div>
-                </a>
-                <a href="https://play.google.com/store/apps/developer?id=YuzerAcc&hl=tr" target="_blank" rel="noopener" class="contact-item">
-                    <div class="contact-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.382.218-.726.558-.92h.052zm10.89 10.89l2.302 2.302-10.937 6.333 8.635-8.635zm3.196-3.196l2.302 2.302a1 1 0 010 1.38l-2.302 2.302L15.394 12l2.302-2.492zM5.864 3.477L16.8 9.81l-2.302 2.302L5.864 3.477z"/></svg>
-                    </div>
-                    <div class="contact-item-text">
-                        <h4>Google Play</h4>
-                        <p>Tüm uygulamalarımızı inceleyin</p>
-                    </div>
-                </a>
-                <a href="https://github.com/BerkcanYuzer" target="_blank" rel="noopener" class="contact-item">
-                    <div class="contact-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </div>
-                    <div class="contact-item-text">
-                        <h4>GitHub</h4>
-                        <p>github.com/BerkcanYuzer</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Toast Container -->
-    <div id="toast-container"></div>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="sora-brand-icon-app.jpg" alt="Yuzeracc" class="footer-logo" width="24" height="24">
-                <p class="footer-copy">&copy; 2026 Yuzeracc. Tüm hakları saklıdır.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand"><img src="sora-brand-icon-app.jpg" alt="" width="34" height="34"><span>Yuzer<span class="acc">Acc</span></span></a>
+                    <p class="muted" style="margin-top:0.9rem;max-width:300px;font-size:0.92rem" data-i18n="footer.tagline">Kullanıcı odaklı mobil uygulamalar ve oyunlar.</p>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.products">Ürünler</h4>
+                    <ul>
+                        <li><a href="pastel-blast.html">Pofi Toybox</a></li>
+                        <li><a href="ligodeck.html">LigoDeck</a></li>
+                        <li><a href="index.html#apps" data-i18n="footer.allApps">Tüm uygulamalar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.legal">Yasal</h4>
+                    <ul>
+                        <li><a href="pastel-blast-privacy.html" data-i18n="footer.pofiPrivacy">Pofi Toybox gizlilik</a></li>
+                        <li><a href="pastel-blast-privacy.html#data-deletion" data-i18n="footer.deletion">Veri silme</a></li>
+                        <li><a href="privacy-policy-fluxion.html" data-i18n="footer.fluxionPrivacy">FLUXION gizlilik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.connect">Bağlantı</h4>
+                    <ul>
+                        <li><a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a></li>
+                        <li><a href="https://play.google.com/store/apps/developer?id=YuzerAcc" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="https://github.com/BerkcanYuzer" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="footer-links">
-                <li><a href="#hero">Ana Sayfa</a></li>
-                <li><a href="#apps">Uygulamalar</a></li>
-                <li><a href="pastel-blast.html" style="color: #FF85AD; font-weight: 600;">Pastel Blast</a></li>
-                <li><a href="pastel-blast-privacy.html">Gizlilik Politikası</a></li>
-                <li><a href="https://play.google.com/store/apps/developer?id=YuzerAcc&hl=tr" target="_blank" rel="noopener">Google Play</a></li>
-                <li><a href="https://github.com/BerkcanYuzer" target="_blank" rel="noopener">GitHub</a></li>
-            </ul>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> YuzerAcc. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></span>
+                <span data-i18n="footer.made">Türkiye'de tasarlandı ve geliştirildi.</span>
+            </div>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
