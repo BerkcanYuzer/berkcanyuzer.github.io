@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="astro.meta.title">Doğum Haritası: Astroloji (Astro Map) — Natal Harita &amp; 7 Katmanlı Sentez | YuzerAcc</title>
+    <meta name="description" data-i18n-content="astro.meta.desc" content="Doğum Haritası: Astroloji (Astro Map: Birth Chart Wheel) — %100 çevrimdışı astronomik efemeris motoru, 247 ülkede 606 dünya şehri, interaktif 360° natal çark ve 20 dilde 7 katmanlı kozmik sentez.">
+    <link rel="canonical" href="https://berkcanyuzer.github.io/astro-map.html">
+    <link rel="alternate" hreflang="tr" href="https://berkcanyuzer.github.io/astro-map.html?lang=tr">
+    <link rel="alternate" hreflang="en" href="https://berkcanyuzer.github.io/astro-map.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://berkcanyuzer.github.io/astro-map.html">
+    <meta name="theme-color" content="#06060c">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="YuzerAcc">
+    <meta property="og:url" content="https://berkcanyuzer.github.io/astro-map.html">
+    <meta property="og:title" content="Doğum Haritası: Astroloji — Astro Map: Birth Chart Wheel">
+    <meta property="og:description" data-i18n-content="astro.meta.og" content="Gökyüzünün doğduğun andaki gerçek haritası. %100 çevrimdışı astronomik motor, 606 dünya şehri ve 20 dilde 7 katmanlı natal sentez.">
+    <meta property="og:image" content="https://berkcanyuzer.github.io/assets/astro-map/feature_graphic.png">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Doğum Haritası: Astroloji — Astro Map">
+    <meta name="twitter:image" content="https://berkcanyuzer.github.io/assets/astro-map/feature_graphic.png">
+
+    <link rel="icon" type="image/png" href="assets/astro-map/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root, [data-theme="light"] { --accent: #f5b942; --accent-2: #8b5cf6; --accent-3: #22d3ee; }
+
+        /* Hero */
+        .p-hero { min-height: 100svh; display: flex; align-items: center; padding: calc(var(--nav-h) + 2.5rem) 0 4rem; }
+        .p-hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        .app-pill { display: inline-flex; align-items: center; gap: 0.85rem; padding: 0.5rem 1.1rem 0.5rem 0.5rem; border-radius: 22px; background: var(--surface); border: 1px solid var(--border); backdrop-filter: blur(14px); margin-bottom: 1.6rem; }
+        .app-pill img { width: 50px; height: 50px; border-radius: 14px; box-shadow: var(--shadow-md); }
+        .app-pill small { display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+        .app-pill strong { font-size: 1rem; }
+        .p-hero h1 { font-size: clamp(2.8rem, 6.8vw, 5.4rem); line-height: 0.98; }
+        .p-hero .lead { max-width: 540px; margin: 1.5rem 0 2.2rem; }
+        .store-badge { text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1.25rem 0.7rem 1rem; border-radius: 16px; background: #000; color: #fff; border: 1px solid rgba(255,255,255,0.22); }
+        [data-theme="light"] .store-badge { background: #0c0c1a; }
+        .store-badge small { display: block; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; line-height: 1.2; }
+        .store-badge strong { font-size: 1.05rem; line-height: 1.2; }
+
+        .stage { position: relative; display: flex; justify-content: center; }
+        .stage-glow { position: absolute; width: 90%; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from 90deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent)); filter: blur(70px); opacity: 0.35; top: 8%; animation: spin 22s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .device { position: relative; z-index: 2; width: min(320px, 78vw); aspect-ratio: 9 / 16; border-radius: 46px; padding: 10px; background: linear-gradient(150deg, rgba(255,255,255,0.55), rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.3)); box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255,255,255,0.08); }
+        .device img { width: 100%; height: 100%; object-fit: cover; border-radius: 37px; background: #0a0a14; }
+
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+        .stat { padding: 1.6rem; text-align: left; }
+        .stat strong { display: block; font-family: var(--font-display); font-size: clamp(2rem, 3.6vw, 2.8rem); letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.45rem; }
+        .stat span { color: var(--text-2); font-size: 0.92rem; }
+        @media (max-width: 820px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Feature bento */
+        .f-card { display: flex; flex-direction: column; gap: 0.75rem; min-height: 100%; }
+        .f-card p { color: var(--text-2); }
+        .f-media { margin-top: auto; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); position: relative; }
+        .f-media img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.8s var(--ease); }
+        .card:hover .f-media img { transform: scale(1.04); }
+        .f-media.tall { height: 320px; }
+        .mini-list { display: grid; gap: 0.6rem; margin-top: 0.5rem; }
+        .mini-list li { list-style: none; display: flex; gap: 0.65rem; align-items: flex-start; color: var(--text-2); font-size: 0.95rem; }
+        .mini-list svg { flex-shrink: 0; margin-top: 3px; color: var(--accent); }
+
+        /* Gallery */
+        .gallery { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 260px); gap: 1.1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.5rem 1.5rem 1.5rem; margin: 0 -1.5rem; scrollbar-width: thin; }
+        .gallery::-webkit-scrollbar { height: 6px; }
+        .gallery::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 6px; }
+        .shot { scroll-snap-align: start; display: block; text-align: left; }
+        .shot .frame { aspect-ratio: 9/16; border-radius: 26px; overflow: hidden; border: 1px solid var(--border-strong); background: var(--bg-elev); box-shadow: var(--shadow-md); transition: transform 0.5s var(--ease), box-shadow 0.5s; }
+        .shot:hover .frame { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .shot .frame img { width: 100%; height: 100%; object-fit: cover; }
+        .shot span { display: block; margin-top: 0.75rem; font-size: 0.9rem; font-weight: 600; color: var(--text-2); }
+        .gallery-nav { display: flex; gap: 0.5rem; }
+
+        /* Privacy strip */
+        .privacy-strip { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; }
+        @media (max-width: 760px) { .privacy-strip { grid-template-columns: 1fr; } }
+
+        /* Final CTA */
+        .final-cta { text-align: center; padding: clamp(3rem, 7vw, 5rem) 1.5rem; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 120%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 60%), var(--surface); }
+        .final-cta .btn-row { justify-content: center; margin-top: 1.75rem; }
+
+        @media (max-width: 920px) {
+            .p-hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .p-hero .lead { margin-left: auto; margin-right: auto; }
+            .p-hero .btn-row, .p-hero .chip-row { justify-content: center; }
+            .app-pill { margin-left: auto; margin-right: auto; }
+            .stage { margin-top: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient" aria-hidden="true"><div class="grid"></div><div class="blob"></div><div class="grain"></div></div>
+
+    <nav class="navbar" aria-label="Ana menü" data-i18n-aria="nav.aria">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="YuzerAcc">
+                <img src="sora-brand-icon-app.jpg" alt="" width="34" height="34">
+                <span>Yuzer<span class="acc">Acc</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features" data-i18n="pofi.nav.features">Özellikler</a></li>
+                <li><a href="#gallery" data-i18n="pofi.nav.gallery">Ekranlar</a></li>
+                <li><a href="astro-map-privacy.html" data-i18n="pofi.nav.privacy">Gizlilik</a></li>
+                <li><a href="index.html#apps" data-i18n="nav.allApps">Tüm uygulamalar</a></li>
+            </ul>
+            <div class="nav-tools">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Tema değiştir" data-i18n-aria="nav.theme"></button>
+                <button type="button" class="icon-btn menu-toggle" aria-label="Menü" aria-expanded="false" data-i18n-aria="nav.menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section class="p-hero">
+            <div class="container p-hero-grid">
+                <div>
+                    <div class="app-pill reveal">
+                        <img src="assets/astro-map/icon.png" alt="Doğum Haritası: Astroloji" width="50" height="50">
+                        <div><small data-i18n="astro.hero.kicker">Natal Astroloji &amp; Astronomik Motor</small><strong>Doğum Haritası: Astroloji (Astro Map)</strong></div>
+                    </div>
+                    <h1 class="h-display reveal" data-delay="1" data-i18n="astro.hero.title">Gökyüzünün<br><span class="grad-text">doğduğun andaki</span> izi.</h1>
+                    <p class="lead reveal" data-delay="2" data-i18n="astro.hero.lead">İnternet bağlantısına ihtiyaç duymayan %100 çevrimdışı astronomik efemeris motoruyla Güneş, Ay, Yükselen, 10 gezegen, 12 Placidus evi, Kiron, Lilith ve Ay Düğümlerini saniyenin altında hesapla.</p>
+                    <div class="btn-row reveal" data-delay="3">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.yuzeracc.dogumharitasiapp" target="_blank" rel="noopener">
+                            <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8L13.8 12 3.6 22.2a1 1 0 01-.6-.9V2.7c0-.4.2-.7.6-.9z"/><path fill="#FBBC04" d="M17.7 9.5l2.3 2.3a1 1 0 010 1.4l-2.3 2.3L15.4 13l2.3-3.5z"/><path fill="#EA4335" d="M14.5 12.7l2.3 2.3-10.9 6.3 8.6-8.6z"/><path fill="#4285F4" d="M5.9 3.5l10.9 6.3-2.3 2.3-8.6-8.6z"/></svg>
+                            <span><small data-i18n="pofi.hero.soon">Şimdi indir</small><strong>Google Play</strong></span>
+                        </a>
+                        <a href="astro-map-privacy.html" class="btn btn-ghost">
+                            <span data-i18n="pofi.p.cta">Gizlilik ve veri silme</span>
+                        </a>
+                    </div>
+                    <div class="chip-row reveal" data-delay="4" style="margin-top:1.75rem">
+                        <span class="chip" data-i18n="astro.hero.c1">%100 Çevrimdışı Motor</span>
+                        <span class="chip" data-i18n="astro.hero.c2">247 Ülke · 606 Şehir</span>
+                        <span class="chip" data-i18n="astro.hero.c3">20 Dil Desteği</span>
+                    </div>
+                </div>
+
+                <div class="stage reveal" data-delay="2">
+                    <div class="stage-glow" aria-hidden="true"></div>
+                    <div class="device">
+                        <img src="assets/astro-map/screens/01.png" alt="Doğum Haritası: Astroloji — 360° Natal Çark">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="container" aria-label="Öne çıkanlar">
+            <div class="stats">
+                <div class="card stat reveal"><strong class="grad-text">606</strong><span data-i18n="astro.stats.s1">dünya şehri (247 ülke)</span></div>
+                <div class="card stat reveal" data-delay="1"><strong>418</strong><span data-i18n="astro.stats.s2">IANA tarihsel saat dilimi</span></div>
+                <div class="card stat reveal" data-delay="2"><strong>7 Katman</strong><span data-i18n="astro.stats.s3">derin astrolojik sentez</span></div>
+                <div class="card stat reveal" data-delay="3"><strong>20 Dil</strong><span data-i18n="astro.stats.s4">tam yerelleştirilmiş deneyim</span></div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><span class="dot"></span><span data-i18n="astro.f.eyebrow">Astronomik Hassasiyet</span></span>
+                    <h2 class="h-1" data-i18n="astro.f.title">Gerçek gökyüzü matematiği, <span class="grad-text">derin bilgelik</span>.</h2>
+                </div>
+
+                <div class="bento">
+                    <article class="card card-pad f-card col-4 reveal">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></span>
+                        <h3 class="h-2" data-i18n="astro.f.wheelTitle">360° İnteraktif Natal Çark</h3>
+                        <p data-i18n="astro.f.wheelBody">Placidus ev başlangıçları, 10 gezegen, Kiron, Lilith, Kuzey/Güney Ay Düğümleri, Şans Noktası ve açı çizgilerini tek dokunuşla keşfet.</p>
+                        <div class="f-media tall"><img src="assets/astro-map/screens/07.png" alt="İnteraktif Natal Çark" loading="lazy"></div>
+                    </article>
+
+                    <article class="card card-pad f-card col-4 reveal" data-delay="1">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l9 19H3z"/><circle cx="12" cy="14" r="2"/></svg></span>
+                        <h3 class="h-2" data-i18n="astro.f.triadTitle">Kutsal Üçlü &amp; 12 Ev Arenası</h3>
+                        <p data-i18n="astro.f.triadBody">Güneş, Ay ve Yükselen burcunun oluşturduğu Kutsal Üçlüyü, 4 elementi, nitelik dengesini ve 12 yaşam evinin yöneticilerini incele.</p>
+                        <div class="f-media tall"><img src="assets/astro-map/screens/03.png" alt="Kutsal Üçlü" loading="lazy"></div>
+                    </article>
+
+                    <article class="card card-pad f-card col-4 reveal" data-delay="2">
+                        <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z"/></svg></span>
+                        <h3 class="h-2" data-i18n="astro.f.synthTitle">7 Katman &amp; 5 Astroloji Geleneği</h3>
+                        <p data-i18n="astro.f.synthBody">Batı Psikolojik, Helenistik, Vedik (Jyotish), Çin / Doğu ve Karmik Arketip geleneklerini harmanlayan 7 katmanlı baş astrolog raporu.</p>
+                        <div class="f-media tall"><img src="assets/astro-map/screens/08.png" alt="7 Katmanlı Sentez ve 5 Gelenek" loading="lazy"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="section" id="gallery" style="padding-top:0">
+            <div class="container">
+                <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;max-width:none;flex-wrap:wrap">
+                    <div>
+                        <span class="eyebrow"><span class="dot"></span><span data-i18n="astro.g.eyebrow">Uygulama İçi Görünümler</span></span>
+                        <h2 class="h-1" data-i18n="astro.g.title">Sekiz ekranda <span class="grad-text">kozmik portren</span>.</h2>
+                    </div>
+                    <div class="gallery-nav">
+                        <button type="button" class="icon-btn" data-scroll="-1" aria-label="Önceki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                        <button type="button" class="icon-btn" data-scroll="1" aria-label="Sonraki"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></button>
+                    </div>
+                </div>
+                <div class="gallery" id="galleryTrack">
+                    <a class="shot reveal" href="assets/astro-map/screens/01.png" data-lightbox="assets/astro-map/screens/01.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/01.png" alt="360° Natal Harita Çarkı" loading="lazy"></div><span>360° Natal Harita Çarkı</span></a>
+                    <a class="shot reveal" href="assets/astro-map/screens/02.png" data-lightbox="assets/astro-map/screens/02.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/02.png" alt="Gezegen Yerleşimleri ve Asaletler" loading="lazy"></div><span>Gezegen Yerleşimleri &amp; Asaletler</span></a>
+                    <a class="shot reveal" href="assets/astro-map/screens/03.png" data-lightbox="assets/astro-map/screens/03.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/03.png" alt="Kutsal Üçlü: Güneş, Ay ve Yükselen" loading="lazy"></div><span>Kutsal Üçlü: Güneş, Ay &amp; Yükselen</span></a>
+                    <a class="shot reveal" href="assets/astro-map/screens/04.png" data-lightbox="assets/astro-map/screens/04.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/04.png" alt="12 Ev Yaşam Arenası" loading="lazy"></div><span>12 Ev Yaşam Arenası</span></a>
+                    <a class="shot reveal" href="assets/astro-map/screens/05.png" data-lightbox="assets/astro-map/screens/05.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/05.png" alt="Açı Matrisi ve Geometrik Kalıplar" loading="lazy"></div><span>Açı Matrisi &amp; Geometrik Kalıplar</span></a>
+                    <a class="shot reveal" href="assets/astro-map/screens/06.png" data-lightbox="assets/astro-map/screens/06.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/06.png" alt="Karmik Sentez ve Ay Düğümleri" loading="lazy"></div><span>Karmik Sentez &amp; Ay Düğümleri</span></a>
+                    <a class="shot reveal" href="assets/astro-map/screens/07.png" data-lightbox="assets/astro-map/screens/07.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/07.png" alt="Uygulama İçi İnteraktif Çark" loading="lazy"></div><span>Uygulama İçi İnteraktif Çark</span></a>
+                    <a class="shot reveal" href="assets/astro-map/screens/08.png" data-lightbox="assets/astro-map/screens/08.png" data-group="astro"><div class="frame"><img src="assets/astro-map/screens/08.png" alt="7 Katmanlı Rapor ve 5 Gelenek" loading="lazy"></div><span>7 Katmanlı Rapor &amp; 5 Gelenek</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIVACY STRIP -->
+        <section class="container" style="margin-bottom:clamp(3rem,6vw,5rem)">
+            <div class="card card-pad privacy-strip reveal" style="--accent:#34d399;--accent-2:#22d3ee">
+                <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <div>
+                    <h3 class="h-2" data-i18n="astro.p.title">Doğum verilerin cihazından hiç çıkmaz</h3>
+                    <p class="muted" style="margin-top:0.35rem" data-i18n="astro.p.body">Doğum Haritası: Astroloji (<code>com.yuzeracc.dogumharitasiapp</code>) hesap istemez ve doğum bilgilerini hiçbir sunucuya göndermez. Tüm hesaplamalar %100 cihaz içinde yapılır.</p>
+                </div>
+                <a href="astro-map-privacy.html" class="btn btn-ghost btn-sm"><span data-i18n="pofi.p.cta">Gizlilik ve veri silme</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="brand"><img src="sora-brand-icon-app.jpg" alt="" width="34" height="34"><span>Yuzer<span class="acc">Acc</span></span></a>
+                    <p class="muted" style="margin-top:0.9rem;max-width:300px;font-size:0.92rem" data-i18n="footer.tagline">Kullanıcı odaklı mobil uygulamalar ve oyunlar.</p>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.products">Ürünler</h4>
+                    <ul>
+                        <li><a href="astro-map.html" aria-current="page">Doğum Haritası: Astroloji</a></li>
+                        <li><a href="pastel-blast.html">Pofi Toybox</a></li>
+                        <li><a href="ligodeck.html">LigoDeck</a></li>
+                        <li><a href="index.html#apps" data-i18n="footer.allApps">Tüm uygulamalar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.legal">Yasal</h4>
+                    <ul>
+                        <li><a href="astro-map-privacy.html">Doğum Haritası gizlilik</a></li>
+                        <li><a href="astro-map-privacy.html#data-deletion" data-i18n="footer.deletion">Veri silme</a></li>
+                        <li><a href="pastel-blast-privacy.html" data-i18n="footer.pofiPrivacy">Pofi Toybox gizlilik</a></li>
+                        <li><a href="privacy-policy-fluxion.html" data-i18n="footer.fluxionPrivacy">FLUXION gizlilik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.connect">Bağlantı</h4>
+                    <ul>
+                        <li><a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a></li>
+                        <li><a href="https://play.google.com/store/apps/developer?id=YuzerAcc" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="https://github.com/BerkcanYuzer" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span data-year>2026</span> YuzerAcc. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></span>
+                <span data-i18n="footer.made">Türkiye'de tasarlandı ve geliştirildi.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('click', function (e) {
+            var b = e.target.closest('[data-scroll]');
+            if (!b) return;
+            var track = document.getElementById('galleryTrack');
+            track.scrollBy({ left: Number(b.getAttribute('data-scroll')) * track.clientWidth * 0.8, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
