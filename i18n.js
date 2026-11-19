@@ -25,8 +25,8 @@ window.I18N_EN = {
 
   /* ---------- Home ---------- */
   'home.meta.title': 'YuzerAcc — Mobile App &amp; Game Studio',
-  'home.meta.desc': 'YuzerAcc is an independent studio building user-first mobile apps and games such as Pofi Cat: Toy Cube Blast, LigoDeck, Budget Sphere, PDF Tools, Mind Streak and Habit Garden.',
-  'home.meta.og': 'User-first mobile apps and games. Pofi Cat: Toy Cube Blast, LigoDeck and more.',
+  'home.meta.desc': 'YuzerAcc is an independent studio building user-first mobile apps and games such as Pofi Cat: Cube Blast Puzzle, LigoDeck, Budget Sphere, PDF Tools, Mind Streak and Habit Garden.',
+  'home.meta.og': 'User-first mobile apps and games. Pofi Cat: Cube Blast Puzzle, LigoDeck and more.',
   'home.hero.eyebrow': 'Independent mobile studio',
   'home.hero.title': 'We design <span class="grad-text">small joys</span> for everyday life.',
   'home.hero.lead': 'YuzerAcc builds practical tools, cheerful games and apps that strengthen your habits. All simple, fast and respectful of your privacy.',
@@ -82,8 +82,8 @@ window.I18N_EN = {
   'home.contact.lead': 'Write to us with questions, suggestions or partnership requests.',
 
   /* ---------- Pofi Cat ---------- */
-  'pofi.meta.title': 'Pofi Cat: Toy Cube Blast — Relaxing Cube Blast Puzzle for Adults | YuzerAcc',
-  'pofi.meta.desc': 'Pofi Cat: Toy Cube Blast is a free cube blast puzzle game for adults on Android: 5,000 levels with Pofi the cat, 42 board shapes, sliding lanes, rocket and TNT combos. No forced ads; full-screen ads only open when you pick a reward.',
+  'pofi.meta.title': 'Pofi Cat: Cube Blast Puzzle — Relaxing Cube Blast Puzzle for Adults | YuzerAcc',
+  'pofi.meta.desc': 'Pofi Cat: Cube Blast Puzzle is a free cube blast puzzle game for adults on Android: 5,000 levels with Pofi the cat, 42 board shapes, sliding lanes, rocket and TNT combos. No forced ads; full-screen ads only open when you pick a reward.',
   'pofi.meta.og': 'Tap. Blast. Smile. A toy box puzzle with plush cat Pofi.',
   'pofi.nav.features': 'Features',
   'pofi.nav.gallery': 'Screens',
@@ -157,14 +157,14 @@ window.I18N_EN = {
   'pofi.p.cta': 'Privacy and data deletion',
 
   'pofi.cta.title': 'Pofi is waiting for you.',
-  'pofi.cta.lead': 'Pofi Cat: Toy Cube Blast is free on Google Play. Write to us with questions or press requests.',
+  'pofi.cta.lead': 'Pofi Cat: Cube Blast Puzzle is free on Google Play. Write to us with questions or press requests.',
   'pofi.cta.btn': 'Get it on Google Play',
   'pofi.cta.dev': 'Our other apps',
 
   'pofi.faq.eyebrow': 'FAQ',
-  'pofi.faq.title': 'Pofi Cat: Toy Cube Blast in short answers',
-  'pofi.faq.q1': 'What is Pofi Cat: Toy Cube Blast?',
-  'pofi.faq.a1': 'Pofi Cat: Toy Cube Blast is a free cube blast puzzle game for Android made by YuzerAcc. You tap 2 or more touching cubes of the same color to blast them, hosted by Pofi the cat. It has 5,000 levels and 42 board shapes.',
+  'pofi.faq.title': 'Pofi Cat: Cube Blast Puzzle in short answers',
+  'pofi.faq.q1': 'What is Pofi Cat: Cube Blast Puzzle?',
+  'pofi.faq.a1': 'Pofi Cat: Cube Blast Puzzle is a free cube blast puzzle game for Android made by YuzerAcc. You tap 2 or more touching cubes of the same color to blast them, hosted by Pofi the cat. It has 5,000 levels and 42 board shapes.',
   'pofi.faq.q2': 'What makes it different from other cube blast puzzles?',
   'pofi.faq.a2': 'It is a relaxing tap-to-blast cube puzzle for adults where most boards come in shapes such as a heart or an hourglass, and some rows and columns move like conveyor lanes. Full-screen ads only open when the player chooses a reward.',
   'pofi.faq.q3': 'Is it suitable for adults?',
@@ -178,8 +178,8 @@ window.I18N_EN = {
   'pofi.faq.more': 'Fact sheet and press kit &rarr;',
 
   /* ---------- Pofi privacy ---------- */
-  'pp.meta.title': 'Pofi Cat: Toy Cube Blast — Privacy Policy and Data Deletion | YuzerAcc',
-  'pp.meta.desc': 'Privacy policy and Google Play data deletion instructions for Pofi Cat: Toy Cube Blast (com.yuzeracc.pastelblast).',
+  'pp.meta.title': 'Pofi Cat: Cube Blast Puzzle — Privacy Policy and Data Deletion | YuzerAcc',
+  'pp.meta.desc': 'Privacy policy and Google Play data deletion instructions for Pofi Cat: Cube Blast Puzzle (com.yuzeracc.pastelblast).',
   'pp.nav.game': 'Game page',
   'pp.nav.deletion': 'Data deletion',
   'pp.eyebrow': 'Privacy',
