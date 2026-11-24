@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ldp.meta.title">ThockBox — Gizlilik Politikası ve Veri Silme | YuzerAcc</title>
+    <meta name="description" data-i18n-content="ldp.meta.desc" content="ThockBox (com.yuzeracc.thockbox) gizlilik politikası, yerel ağ güvenliği, Google Play faturalandırma ve veri silme yönergesi.">
+    <link rel="canonical" href="https://berkcanyuzer.github.io/thockbox-privacy.html">
+    <meta name="theme-color" content="#06060c">
+    <link rel="icon" type="image/png" href="app-icons/ligodeck.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root, [data-theme="light"] { --accent: #ff4d1a; --accent-2: #ffb800; --accent-3: #00d68f; }
+        .legal { padding: calc(var(--nav-h) + 3rem) 0 4rem; }
+        .legal-grid { display: grid; grid-template-columns: 240px 1fr; gap: 2.5rem; align-items: start; }
+        .toc { position: sticky; top: calc(var(--nav-h) + 1.5rem); display: grid; gap: 0.25rem; }
+        .toc a { padding: 0.55rem 0.8rem; border-radius: 10px; color: var(--text-2); font-size: 0.9rem; font-weight: 550; }
+        .toc a:hover { background: var(--surface-strong); color: var(--text); }
+        .legal-head { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; }
+        .legal-head img { width: 72px; height: 72px; border-radius: 20px; box-shadow: var(--shadow-md); }
+        .deletion { --accent: #00d68f; --accent-2: #22d3ee; margin-bottom: 1.5rem; border-color: color-mix(in srgb, #00d68f 35%, transparent); }
+        .deletion h2 { margin-top: 0.5rem; }
+        .steps { counter-reset: s; display: grid; gap: 0.9rem; margin-top: 1rem; list-style: none; }
+        .steps li { counter-increment: s; position: relative; padding-left: 2.6rem; color: var(--text-2); line-height: 1.7; }
+        .steps li::before { content: counter(s); position: absolute; left: 0; top: 0.1rem; width: 1.8rem; height: 1.8rem; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; background: color-mix(in srgb, #00d68f 18%, transparent); color: #00d68f; }
+        .meta-line { font-size: 0.85rem; color: var(--text-3); }
+        .contact-box { margin-top: 2rem; padding: 1.4rem; border-radius: var(--radius-md); background: var(--surface-strong); border: 1px solid var(--border); }
+        @media (max-width: 900px) { .legal-grid { grid-template-columns: 1fr; } .toc { position: static; display: flex; flex-wrap: wrap; } }
+    </style>
+</head>
+<body>
+    <div class="ambient" aria-hidden="true"><div class="grid"></div><div class="grain"></div></div>
+
+    <nav class="navbar" aria-label="Ana menü" data-i18n-aria="nav.aria">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="YuzerAcc">
+                <img src="sora-brand-icon-app.jpg" alt="" width="34" height="34">
+                <span>Yuzer<span class="acc">Acc</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="thockbox.html" data-i18n="ldp.nav.app">Uygulama sayfası</a></li>
+                <li><a href="#data-deletion" data-i18n="pp.nav.deletion">Veri silme</a></li>
+                <li><a href="index.html#apps" data-i18n="nav.allApps">Tüm uygulamalar</a></li>
+            </ul>
+            <div class="nav-tools">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Tema değiştir" data-i18n-aria="nav.theme"></button>
+                <button type="button" class="icon-btn menu-toggle" aria-label="Menü" aria-expanded="false" data-i18n-aria="nav.menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="legal">
+        <div class="container">
+            <header class="legal-head reveal">
+                <img src="app-icons/ligodeck.png" alt="ThockBox" width="72" height="72">
+                <div>
+                    <span class="eyebrow" style="margin-bottom:0.6rem"><span class="dot"></span><span data-i18n="pp.eyebrow">Gizlilik</span></span>
+                    <h1 class="h-1" style="font-size:clamp(1.8rem,4vw,2.8rem)" data-i18n="pp.title">Gizlilik Politikası ve Veri Silme</h1>
+                    <p class="muted" style="margin-top:0.4rem">ThockBox · <code>com.yuzeracc.thockbox</code> · <span data-i18n="pp.dev">Geliştirici</span>: <strong>YuzerAcc (Berkcan Yüzer)</strong></p>
+                </div>
+            </header>
+
+            <div class="legal-grid">
+                <aside class="toc reveal" aria-label="İçindekiler" data-i18n-aria="pp.toc">
+                    <a href="#data-deletion" data-i18n="pp.toc.deletion">Veri silme</a>
+                    <a href="#tr" data-lang-link="tr">Türkçe metin</a>
+                    <a href="#en" data-lang-link="en">English policy</a>
+                    <a href="thockbox.html" data-i18n="ldp.toc.back">&larr; ThockBox sayfası</a>
+                </aside>
+
+                <div>
+                    <!-- DATA DELETION (Google Play Data Safety URL target: #data-deletion) -->
+                    <section class="card card-pad deletion reveal" id="data-deletion">
+                        <div data-lang-block="tr" class="prose">
+                            <span class="chip live">Google Play · Veri silme yönergesi</span>
+                            <h2>Kullanıcı verilerinin silinmesi</h2>
+                            <p><strong>ThockBox</strong> (<code>com.yuzeracc.thockbox</code>) kullanıcı hesabı gerektirmez ve kumanda profillerini, makro tuşlarını veya eşleşme verilerini harici sunucularda <strong>saklamaz</strong>. Tüm profiller, widget tercihleri ve eşleşme jetonları yalnızca kendi cihazlarında tutulur.</p>
+                            <ol class="steps">
+                                <li><strong>Mobil cihazdaki tüm verileri silme:</strong> Android cihazında <strong>Ayarlar → Uygulamalar → ThockBox → Depolama → Verileri temizle</strong> adımını uygula ya da uygulamayı kaldır. Kayıtlı tüm PC adresleri, şifreli eşleşme jetonları, dil/tema/widget ayarları ve özel arka plan tercihin kalıcı olarak silinir.</li>
+                                <li><strong>Windows PC'deki yapılandırmayı silme:</strong> Windows'ta <code>%APPDATA%\ligodeck-desktop-agent</code> klasörünü silerek tüm profilleri, yedekleri, TLS sertifikalarını ve eşleşme kayıtlarını temizleyebilirsin.</li>
+                                <li><strong>Google reklam kimliği (AAID) ve rızayı sıfırlama:</strong> Uygulama içi <strong>Ayarlar → Gizlilik Seçenekleri (UMP)</strong> üzerinden reklam tercihlerini dilediğin zaman değiştirebilir; Android'de <strong>Ayarlar → Google → Tüm hizmetler → Reklamlar → Reklam kimliğini sil</strong> seçeneğiyle AdMob tanımlayıcını silebilirsin.</li>
+                                <li><strong>İsteğe bağlı Teşekkür Duvarı takma adı veya satın alma kayıtları:</strong> Kozmetik paket sonrası isteğe bağlı olarak gönderdiğin genel takma adın Teşekkür Duvarı'ndan kaldırılmasını veya RevenueCat anonim müşteri kimliğinin silinmesini istemek için <a href="mailto:yuzeracc@gmail.com?subject=ThockBox%20Veri%20Silme%20Talebi">yuzeracc@gmail.com</a> adresine yaz. Talepler en geç 7 iş günü içinde tamamlanır.</li>
+                            </ol>
+                        </div>
+                        <div data-lang-block="en" class="prose">
+                            <span class="chip live">Google Play · Data deletion instructions</span>
+                            <h2>Deleting your data</h2>
+                            <p><strong>ThockBox</strong> (<code>com.yuzeracc.thockbox</code>) requires no account and does <strong>not</strong> upload your deck buttons, keystrokes or local layouts to our servers. All profiles, widget selections and pairing tokens stay strictly on your own devices.</p>
+                            <ol class="steps">
+                                <li><strong>Delete mobile app data:</strong> On Android go to <strong>Settings → Apps → ThockBox → Storage → Clear data</strong>, or uninstall the app to permanently remove all saved PCs, encrypted tokens, widget preferences and custom wallpaper selections.</li>
+                                <li><strong>Delete Windows desktop data:</strong> Delete <code>%APPDATA%\ligodeck-desktop-agent</code> on your Windows PC to erase all profiles, local backups, TLS certificates and paired device entries.</li>
+                                <li><strong>Reset consent or Google Advertising ID:</strong> Update ad consent anytime in <strong>Settings → Privacy Options (UMP)</strong>, or delete your AAID under Android <strong>Settings → Google → All services → Ads</strong>.</li>
+                                <li><strong>Optional Thank-You Wall nickname or purchase identifier:</strong> To remove an optional public nickname from the Thank-You Wall or request deletion of an anonymous RevenueCat customer ID, email <a href="mailto:yuzeracc@gmail.com?subject=ThockBox%20Data%20Deletion%20Request">yuzeracc@gmail.com</a>. Requests are processed within 7 business days.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- TURKISH POLICY -->
+                    <section class="card card-pad prose reveal" id="tr" data-lang-block="tr">
+                        <span class="chip">Türkçe · resmi metin</span>
+                        <p class="meta-line" style="margin-top:0.75rem">Son güncelleme: 24 Kasım 2026 · Yürürlük: 24 Kasım 2026</p>
+                        <p>Bu Gizlilik Politikası, <strong>YuzerAcc (Berkcan Yüzer)</strong> tarafından geliştirilen ve yayımlanan <strong>ThockBox</strong> (Android paket adı: <code>com.yuzeracc.thockbox</code> ve Windows masaüstü yardımcı uygulaması <em>ThockBox Desktop</em>) ekosisteminin kullanıcı verilerini nasıl işlediğini açıklar.</p>
+
+                        <h2>1. Yerel mimari ve cihazda saklanan veriler</h2>
+                        <p>ThockBox yerel ağ (LAN) ve USB kablo öncelikli çalışır. Ad, soyad, e-posta, telefon numarası, konum, rehber veya mikrofon sesi <strong>toplanmaz</strong>. Cihazında yalnızca kumandanın ve ana ekran widget'larının çalışması için gereken yerel ayarlar (PC adresi, şifreli SecureStore JWT jetonu, dil/tema/widget tercihleri ve seçersen yerel galeri arka plan yolu) saklanır.</p>
+
+                        <h2>2. Cihaz izinleri</h2>
+                        <ul>
+                            <li><strong>Kamera (<code>CAMERA</code>):</strong> Yalnızca masaüstü uygulamasının gösterdiği tek kullanımlık güvenli eşleşme QR kodunu taramak için kullanılır; fotoğraf/video kaydedilmez.</li>
+                            <li><strong>Yerel Ağ ve Wi-Fi:</strong> Aynı ağdaki ThockBox Windows bilgisayarını bulmak ve şifreli <code>wss://</code> bağlantısı kurmak için kullanılır.</li>
+                            <li><strong>Fotoğraf Seçici (isteğe bağlı):</strong> Yalnızca kozmetik paketiyle özel arka plan duvar kağıdı seçersen Android sistem fotoğraf seçicisi aracılığıyla yalnızca seçtiğin görsele cihaz içi erişim sağlanır; görsel internete yüklenmez.</li>
+                        </ul>
+
+                        <h2>3. Üçüncü taraf hizmetler (Google AdMob, Google Play Billing / RevenueCat &amp; İsteğe Bağlı Teşekkür Duvarı)</h2>
+                        <ul>
+                            <li><strong>Google AdMob &amp; UMP:</strong> Tüm işlevsel özellikler %100 ücretsizdir. Alt şeritte tek bir banner reklam gösterilir (kozmetik paket sahiplerinde gizlenir). AEA, Birleşik Krallık, İsviçre ve ilgili ABD eyaletlerinde Google UMP rıza akışı uygulanır.</li>
+                            <li><strong>Google Play Faturalandırma &amp; RevenueCat:</strong> İsteğe bağlı kozmetik kişiselleştirme paketleri (aylık/yıllık abonelik veya tek seferlik paket) Google Play üzerinden işlenir. Ödeme kartı bilgilerini asla görmeyiz; RevenueCat yalnızca satın alma haklarını (entitlement) doğrulamak için anonim bir uygulama kullanıcı kimliği ve satın alma fişi işler.</li>
+                            <li><strong>Teşekkür Duvarı (isteğe bağlı):</strong> Kozmetik paket sahipleri dilerse yalnızca kendi yazdıkları herkese açık bir takma adın (kişisel bilgi içermeyen 3–20 karakter) Teşekkür Duvarı'nda listelenmesini seçebilir.</li>
+                        </ul>
+
+                        <h2>4. Çocukların gizliliği</h2>
+                        <p>ThockBox 13 yaş altındaki çocuklara yönelik değildir ve çocuklardan bilerek kişisel veri toplanmaz.</p>
+
+                        <div class="contact-box">
+                            <h3 style="margin-top:0">5. İletişim</h3>
+                            <p><strong>Geliştirici:</strong> YuzerAcc (Berkcan Yüzer)<br>
+                            <strong>E-posta:</strong> <a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a><br>
+                            <strong>Web sitesi:</strong> <a href="https://berkcanyuzer.github.io/thockbox.html">berkcanyuzer.github.io/thockbox.html</a><br>
+                            <strong>Veri silme bağlantısı:</strong> <a href="https://berkcanyuzer.github.io/thockbox-privacy.html#data-deletion">berkcanyuzer.github.io/thockbox-privacy.html#data-deletion</a></p>
+                        </div>
+                    </section>
+
+                    <!-- ENGLISH POLICY -->
+                    <section class="card card-pad prose reveal" id="en" data-lang-block="en">
+                        <span class="chip">English · official policy</span>
+                        <p class="meta-line" style="margin-top:0.75rem">Last updated: November 24, 2026 · Effective: November 24, 2026</p>
+                        <p>This Privacy Policy explains how <strong>ThockBox</strong> (Android package ID: <code>com.yuzeracc.thockbox</code> and the Windows desktop app <em>ThockBox Desktop</em>), published by <strong>YuzerAcc (Berkcan Yüzer)</strong>, handles and protects user data.</p>
+
+                        <h2>1. Local-first architecture</h2>
+                        <p>ThockBox operates strictly over your local network (LAN) or USB cable. We do <strong>not</strong> collect your real name, email, phone number, location, contacts or microphone audio. Only local settings needed for the deck and Android home screen widgets (paired PC hosts, encrypted SecureStore JWT tokens, language/theme/widget preferences and an optional on-device wallpaper URI) are stored on your device.</p>
+
+                        <h2>2. Device permissions</h2>
+                        <ul>
+                            <li><strong>Camera (<code>CAMERA</code>):</strong> Used exclusively to scan the one-time pairing QR code shown by ThockBox Desktop.</li>
+                            <li><strong>Local Network &amp; Wi-Fi:</strong> Used to discover your Windows PC over mDNS and establish an encrypted <code>wss://</code> WebSocket connection.</li>
+                            <li><strong>Photo Picker (optional):</strong> Used strictly on-device when a cosmetic pack holder chooses a custom background wallpaper; images are never uploaded.</li>
+                        </ul>
+
+                        <h2>3. Third-party services (Google AdMob, Google Play Billing / RevenueCat &amp; Optional Thank-You Wall)</h2>
+                        <ul>
+                            <li><strong>Google AdMob &amp; UMP:</strong> All functional features are 100% free. A single bottom banner ad is shown (hidden for cosmetic pack holders). Google UMP consent applies in the EEA, UK, Switzerland and applicable US states.</li>
+                            <li><strong>Google Play Billing &amp; RevenueCat:</strong> Optional cosmetic personalization packs (monthly/yearly or one-time) are processed by Google Play. We never see payment details; RevenueCat processes an anonymous app user ID and purchase receipt solely to verify cosmetic entitlements.</li>
+                            <li><strong>Optional Thank-You Wall:</strong> Cosmetic pack holders may optionally submit a public nickname (3–20 characters, no personal data) for display on the Thank-You Wall.</li>
+                        </ul>
+
+                        <h2>4. Children's privacy</h2>
+                        <p>ThockBox is a general PC remote control utility not directed at children under 13.</p>
+
+                        <div class="contact-box">
+                            <h3 style="margin-top:0">5. Contact</h3>
+                            <p><strong>Developer:</strong> YuzerAcc (Berkcan Yüzer)<br>
+                            <strong>Email:</strong> <a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a><br>
+                            <strong>Website:</strong> <a href="https://berkcanyuzer.github.io/thockbox.html">berkcanyuzer.github.io/thockbox.html</a><br>
+                            <strong>Data deletion URL:</strong> <a href="https://berkcanyuzer.github.io/thockbox-privacy.html#data-deletion">berkcanyuzer.github.io/thockbox-privacy.html#data-deletion</a></p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+                <span>&copy; <span data-year>2026</span> YuzerAcc. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></span>
+                <span><a href="index.html">berkcanyuzer.github.io</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
