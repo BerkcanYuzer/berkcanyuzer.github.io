@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ldp.meta.title">LigoDeck — Gizlilik Politikası ve Veri Silme | YuzerAcc</title>
+    <meta name="description" data-i18n-content="ldp.meta.desc" content="LigoDeck (com.yuzeracc.ligodeck) gizlilik politikası, yerel ağ güvenliği ve Google Play veri silme yönergesi.">
+    <link rel="canonical" href="https://berkcanyuzer.github.io/ligodeck-privacy.html">
+    <meta name="theme-color" content="#06060c">
+    <link rel="icon" type="image/png" href="app-icons/ligodeck.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root, [data-theme="light"] { --accent: #8b5cf6; --accent-2: #22d3ee; --accent-3: #34d399; }
+        .legal { padding: calc(var(--nav-h) + 3rem) 0 4rem; }
+        .legal-grid { display: grid; grid-template-columns: 240px 1fr; gap: 2.5rem; align-items: start; }
+        .toc { position: sticky; top: calc(var(--nav-h) + 1.5rem); display: grid; gap: 0.25rem; }
+        .toc a { padding: 0.55rem 0.8rem; border-radius: 10px; color: var(--text-2); font-size: 0.9rem; font-weight: 550; }
+        .toc a:hover { background: var(--surface-strong); color: var(--text); }
+        .legal-head { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem; }
+        .legal-head img { width: 72px; height: 72px; border-radius: 20px; box-shadow: var(--shadow-md); }
+        .deletion { --accent: #34d399; --accent-2: #22d3ee; margin-bottom: 1.5rem; border-color: color-mix(in srgb, #34d399 35%, transparent); }
+        .deletion h2 { margin-top: 0.5rem; }
+        .steps { counter-reset: s; display: grid; gap: 0.9rem; margin-top: 1rem; list-style: none; }
+        .steps li { counter-increment: s; position: relative; padding-left: 2.6rem; color: var(--text-2); line-height: 1.7; }
+        .steps li::before { content: counter(s); position: absolute; left: 0; top: 0.1rem; width: 1.8rem; height: 1.8rem; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; background: color-mix(in srgb, #34d399 18%, transparent); color: #34d399; }
+        .meta-line { font-size: 0.85rem; color: var(--text-3); }
+        .contact-box { margin-top: 2rem; padding: 1.4rem; border-radius: var(--radius-md); background: var(--surface-strong); border: 1px solid var(--border); }
+        @media (max-width: 900px) { .legal-grid { grid-template-columns: 1fr; } .toc { position: static; display: flex; flex-wrap: wrap; } }
+    </style>
+</head>
+<body>
+    <div class="ambient" aria-hidden="true"><div class="grid"></div><div class="grain"></div></div>
+
+    <nav class="navbar" aria-label="Ana menü" data-i18n-aria="nav.aria">
+        <div class="nav-inner">
+            <a href="index.html" class="brand" aria-label="YuzerAcc">
+                <img src="sora-brand-icon-app.jpg" alt="" width="34" height="34">
+                <span>Yuzer<span class="acc">Acc</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="ligodeck.html" data-i18n="ldp.nav.app">Uygulama sayfası</a></li>
+                <li><a href="#data-deletion" data-i18n="pp.nav.deletion">Veri silme</a></li>
+                <li><a href="index.html#apps" data-i18n="nav.allApps">Tüm uygulamalar</a></li>
+            </ul>
+            <div class="nav-tools">
+                <div class="lang-switch" role="group" aria-label="Dil / Language">
+                    <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Tema değiştir" data-i18n-aria="nav.theme"></button>
+                <button type="button" class="icon-btn menu-toggle" aria-label="Menü" aria-expanded="false" data-i18n-aria="nav.menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="legal">
+        <div class="container">
+            <header class="legal-head reveal">
+                <img src="app-icons/ligodeck.png" alt="LigoDeck" width="72" height="72">
+                <div>
+                    <span class="eyebrow" style="margin-bottom:0.6rem"><span class="dot"></span><span data-i18n="pp.eyebrow">Gizlilik</span></span>
+                    <h1 class="h-1" style="font-size:clamp(1.8rem,4vw,2.8rem)" data-i18n="pp.title">Gizlilik Politikası ve Veri Silme</h1>
+                    <p class="muted" style="margin-top:0.4rem">LigoDeck · <code>com.yuzeracc.ligodeck</code> · <span data-i18n="pp.dev">Geliştirici</span>: <strong>YuzerAcc (Berkcan Yüzer)</strong></p>
+                </div>
+            </header>
+
+            <div class="legal-grid">
+                <aside class="toc reveal" aria-label="İçindekiler" data-i18n-aria="pp.toc">
+                    <a href="#data-deletion" data-i18n="pp.toc.deletion">Veri silme</a>
+                    <a href="#tr" data-lang-link="tr">Türkçe metin</a>
+                    <a href="#en" data-lang-link="en">English policy</a>
+                    <a href="ligodeck.html" data-i18n="ldp.toc.back">&larr; LigoDeck sayfası</a>
+                </aside>
+
+                <div>
+                    <!-- DATA DELETION (Google Play Data Safety URL target: #data-deletion) -->
+                    <section class="card card-pad deletion reveal" id="data-deletion">
+                        <div data-lang-block="tr" class="prose">
+                            <span class="chip live">Google Play · Veri silme yönergesi</span>
+                            <h2>Kullanıcı verilerinin silinmesi</h2>
+                            <p><strong>LigoDeck</strong> (<code>com.yuzeracc.ligodeck</code>) kullanıcı hesabı oluşturmaz, bulut sunucusu kullanmaz ve sunucularımızda hiçbir kişisel veri, e-posta, tuş vuruşu veya yapılandırma dosyası <strong>saklamaz</strong>. Tüm profiller, eşleşme jetonları ve ayarlar yalnızca kendi cihazlarında (Android telefonun ve Windows bilgisayarın) yerel olarak tutulur.</p>
+                            <ol class="steps">
+                                <li><strong>Mobil cihazdaki tüm verileri silme:</strong> Android cihazında <strong>Ayarlar → Uygulamalar → LigoDeck → Depolama → Verileri temizle</strong> adımını uygula ya da uygulamayı kaldır. Kayıtlı tüm PC adresleri, şifreli eşleşme jetonları (SecureStore), dil/tema tercihleri ve sertifika parmak izleri kalıcı olarak silinir.</li>
+                                <li><strong>Windows PC'deki yapılandırmayı silme:</strong> Windows'ta <code>%APPDATA%\ligodeck-desktop-agent</code> klasörünü silerek tüm profilleri, yedekleri, TLS sertifikalarını ve eşleşme kayıtlarını temizleyebilirsin.</li>
+                                <li><strong>Google reklam kimliğini (AAID) ve rızayı sıfırlama:</strong> Uygulama içi <strong>Ayarlar → Gizlilik Seçenekleri (UMP)</strong> üzerinden reklam tercihlerini dilediğin zaman değiştirebilir; Android'de <strong>Ayarlar → Google → Tüm hizmetler → Reklamlar → Reklam kimliğini sil</strong> seçeneğiyle AdMob reklam tanımlayıcını silebilirsin.</li>
+                                <li><strong>E-posta ile talep:</strong> Her türlü gizlilik veya doğrulama talebin için <a href="mailto:yuzeracc@gmail.com?subject=LigoDeck%20Veri%20Silme%20Talebi">yuzeracc@gmail.com</a> adresine yaz. Talepler en geç 7 iş günü içinde yanıtlanır.</li>
+                            </ol>
+                        </div>
+                        <div data-lang-block="en" class="prose">
+                            <span class="chip live">Google Play · Data deletion instructions</span>
+                            <h2>Deleting your data</h2>
+                            <p><strong>LigoDeck</strong> (<code>com.yuzeracc.ligodeck</code>) does not require user accounts, uses no cloud servers, and does <strong>not</strong> store any personal data, email address, keystrokes or deck layouts on our servers. All profiles, pairing tokens and preferences live strictly on your own devices (your Android device and your Windows PC).</p>
+                            <ol class="steps">
+                                <li><strong>Delete mobile app data:</strong> On Android go to <strong>Settings → Apps → LigoDeck → Storage → Clear data</strong>, or uninstall the app. All saved PC hosts, encrypted pairing tokens (SecureStore), language/theme settings and pinned certificate fingerprints are permanently erased.</li>
+                                <li><strong>Delete Windows desktop data:</strong> Delete the <code>%APPDATA%\ligodeck-desktop-agent</code> folder on your Windows PC to remove all profiles, local backups, TLS certificates and paired device entries.</li>
+                                <li><strong>Manage consent or delete your Google Advertising ID:</strong> Change ad consent anytime inside <strong>Settings → Privacy Options (UMP)</strong>, or go to Android <strong>Settings → Google → All services → Ads → Delete advertising ID</strong>.</li>
+                                <li><strong>Request by email:</strong> For any privacy or verification inquiry, email <a href="mailto:yuzeracc@gmail.com?subject=LigoDeck%20Data%20Deletion%20Request">yuzeracc@gmail.com</a>. We respond within 7 business days.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- TURKISH POLICY -->
+                    <section class="card card-pad prose reveal" id="tr" data-lang-block="tr">
+                        <span class="chip">Türkçe · resmi metin</span>
+                        <p class="meta-line" style="margin-top:0.75rem">Son güncelleme: 24 Kasım 2026 · Yürürlük: 24 Kasım 2026</p>
+                        <p>Bu Gizlilik Politikası, <strong>YuzerAcc (Berkcan Yüzer)</strong> tarafından geliştirilen ve yayımlanan <strong>LigoDeck</strong> (Android paket adı: <code>com.yuzeracc.ligodeck</code> ve Windows masaüstü yardımcı uygulaması <em>LigoDeck Desktop</em>) ekosisteminin ("Uygulama") kullanıcı verilerini nasıl işlediğini ve koruduğunu açıklar.</p>
+
+                        <h2>1. Yerel mimari ve cihazda saklanan veriler</h2>
+                        <p>LigoDeck yerel ağ (LAN) ve USB kablo öncelikli tasarlanmıştır. Ad, soyad, e-posta, telefon numarası, konum, rehber, mikrofon sesi veya finansal bilgiler <strong>toplanmaz ve harici bir sunucuya gönderilmez</strong>. Cihazında yalnızca kumandanın çalışması için gerekli şu yerel veriler tutulur:</p>
+                        <ul>
+                            <li>Eşleştiğin Windows PC adları, yerel ağ IP adresleri, bağlantı portları ve sertifika SHA-256 parmak izleri,</li>
+                            <li>Android <code>SecureStore</code> içinde donanım destekli şifreleme ile saklanan tek cihaza özgü JWT oturum jetonları,</li>
+                            <li>Dil (6 dil), tema, OLED yanık koruması, ekranı açık tutma ve dokunsal geri bildirim tercihleri,</li>
+                            <li>Windows PC'nde yerel olarak saklanan buton profilleri, sayfalar, klasörler ve isteğe bağlı OBS WebSocket ayarları.</li>
+                        </ul>
+
+                        <h2>2. Cihaz izinleri ve kullanım amaçları</h2>
+                        <ul>
+                            <li><strong>Kamera (<code>CAMERA</code>):</strong> Yalnızca masaüstü uygulamasının gösterdiği tek kullanımlık güvenli eşleşme QR kodunu taramak için kullanılır. Görüntü veya video kaydedilmez, hiçbir yere gönderilmez.</li>
+                            <li><strong>Yerel Ağ ve Wi-Fi (<code>INTERNET</code>, <code>ACCESS_WIFI_STATE</code>, <code>CHANGE_WIFI_MULTICAST_STATE</code>):</strong> Aynı ağdaki LigoDeck Windows bilgisayarını mDNS (Zeroconf) ile bulmak ve şifreli <code>wss://</code> WebSocket bağlantısı kurmak için kullanılır.</li>
+                        </ul>
+
+                        <h2>3. İletişim güvenliği</h2>
+                        <p>Telefon ile Windows bilgisayar arasındaki tüm Wi-Fi komut trafiği <strong>TLS (<code>wss://</code>)</strong> ile şifrelenir ve QR kodda taşınan tek kullanımlık 128-bit eşleşme sırrı ile SHA-256 sertifika parmak izi doğrulamasıyla korunur. USB modunda iletişim yalnızca yerel <code>127.0.0.1</code> ADB geri döngü tüneli üzerinden gerçekleşir.</p>
+
+                        <h2>4. Üçüncü taraf hizmetler (Google AdMob &amp; UMP)</h2>
+                        <p>LigoDeck'in tüm işlevsel özellikleri <strong>%100 ücretsizdir</strong>. Uygulamada zorunlu tam ekran geçiş reklamı, açılış reklamı veya ödüllü reklam <strong>bulunmaz</strong>; yalnızca kumanda tuşlarını kapatmayan ve dokunma gecikmesi eklemeyen tek bir alt banner alanı için <strong>Google AdMob</strong> kullanılır.</p>
+                        <ul>
+                            <li>Google AdMob SDK'sı, yalnızca bu tek alt banner reklamını sunmak ve dolandırıcılığı önlemek amacıyla cihaz reklam kimliğini (AAID), yaklaşık IP tabanlı bölge bilgisini ve temel reklam etkileşim/tanılama verilerini kendi gizlilik politikasına göre işleyebilir.</li>
+                            <li>Avrupa Ekonomik Alanı (AEA), Birleşik Krallık, İsviçre ve ilgili ABD eyaletlerinde <strong>Google User Messaging Platform (UMP)</strong> rıza akışı uygulanır; rıza verilmezse yalnızca kişiselleştirilmemiş reklamlar (<code>npa=1</code>) istenir.</li>
+                            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a> · <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob gizlilik bilgileri</a></li>
+                        </ul>
+
+                        <h2>5. Çocukların gizliliği</h2>
+                        <p>Uygulama genel üretkenlik ve bilgisayar kontrolü amaçlıdır; 13 yaş altındaki çocuklara yönelik değildir ve çocuklardan bilerek kişisel veri toplanmaz.</p>
+
+                        <h2>6. Haklarınız ve verilerin silinmesi (KVKK ve GDPR)</h2>
+                        <p><a href="#data-deletion">Veri silme yönergesi</a> bölümünde anlatıldığı gibi, uygulama verilerini temizleyerek veya kaldırarak tüm yerel verilerini anında silebilir, uygulama içi Ayarlar'dan UMP gizlilik tercihlerini güncelleyebilirsin.</p>
+
+                        <div class="contact-box">
+                            <h3 style="margin-top:0">7. İletişim</h3>
+                            <p><strong>Geliştirici:</strong> YuzerAcc (Berkcan Yüzer)<br>
+                            <strong>E-posta:</strong> <a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a><br>
+                            <strong>Web sitesi:</strong> <a href="https://berkcanyuzer.github.io/ligodeck.html">berkcanyuzer.github.io/ligodeck.html</a><br>
+                            <strong>Veri silme bağlantısı:</strong> <a href="https://berkcanyuzer.github.io/ligodeck-privacy.html#data-deletion">berkcanyuzer.github.io/ligodeck-privacy.html#data-deletion</a></p>
+                        </div>
+                    </section>
+
+                    <!-- ENGLISH POLICY -->
+                    <section class="card card-pad prose reveal" id="en" data-lang-block="en">
+                        <span class="chip">English · official policy</span>
+                        <p class="meta-line" style="margin-top:0.75rem">Last updated: November 24, 2026 · Effective: November 24, 2026</p>
+                        <p>This Privacy Policy explains how <strong>LigoDeck</strong> (Android package ID: <code>com.yuzeracc.ligodeck</code> and the companion Windows desktop app <em>LigoDeck Desktop</em>), developed and published by <strong>YuzerAcc (Berkcan Yüzer)</strong> ("we", "us"), handles and protects user data.</p>
+
+                        <h2>1. Local-first architecture and on-device storage</h2>
+                        <p>LigoDeck is designed to run strictly over your local network (LAN) or USB cable. We do <strong>not</strong> collect or send your name, email address, phone number, location, contacts, microphone audio or financial data to any external server. Only the local state needed for the controller to function is stored on your devices:</p>
+                        <ul>
+                            <li>Paired Windows PC names, local network IP addresses, ports and pinned SHA-256 TLS certificate fingerprints,</li>
+                            <li>Per-device JWT session tokens stored in Android <code>SecureStore</code> encrypted storage,</li>
+                            <li>Language (6 languages), theme, OLED burn-in protection, keep-screen-awake and haptic feedback settings,</li>
+                            <li>Macro profiles, pages, folders and optional OBS WebSocket settings stored locally on your Windows PC.</li>
+                        </ul>
+
+                        <h2>2. Device permissions</h2>
+                        <ul>
+                            <li><strong>Camera (<code>CAMERA</code>):</strong> Used solely to scan the one-time secure pairing QR code shown by LigoDeck Desktop. No photos or videos are recorded, stored or transmitted.</li>
+                            <li><strong>Local Network &amp; Wi-Fi (<code>INTERNET</code>, <code>ACCESS_WIFI_STATE</code>, <code>CHANGE_WIFI_MULTICAST_STATE</code>):</strong> Used to discover your Windows PC via mDNS (Zeroconf) and establish an encrypted local <code>wss://</code> WebSocket connection.</li>
+                        </ul>
+
+                        <h2>3. Transport security</h2>
+                        <p>All Wi-Fi command traffic between your phone and Windows PC is encrypted with <strong>TLS (<code>wss://</code>)</strong>, authenticated using a one-time 128-bit QR pairing secret and protected by SHA-256 certificate fingerprint pinning. USB mode communicates strictly over the local <code>127.0.0.1</code> ADB loopback tunnel.</p>
+
+                        <h2>4. Third-party services (Google AdMob &amp; UMP)</h2>
+                        <p>All functional features of LigoDeck are <strong>100% free</strong>. The app contains <strong>no</strong> interstitial ads, app-open ads or rewarded video walls. <strong>Google AdMob</strong> is used solely for a single, non-intrusive bottom banner positioned outside the control grid.</p>
+                        <ul>
+                            <li>To serve this banner and prevent fraud, the Google AdMob SDK may process your device advertising ID (AAID), coarse IP-derived region and basic ad performance/diagnostics data under Google's policies.</li>
+                            <li>In the EEA, UK, Switzerland and applicable US states, the <strong>Google User Messaging Platform (UMP)</strong> consent flow applies; if consent is declined, only non-personalized ads (<code>npa=1</code>) are requested.</li>
+                            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> · <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob privacy information</a></li>
+                        </ul>
+
+                        <h2>5. Children's privacy</h2>
+                        <p>LigoDeck is a general PC remote control and productivity utility not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+                        <h2>6. Your rights and data deletion (GDPR, CCPA, Google Play Data Safety)</h2>
+                        <p>As described in the <a href="#data-deletion">data deletion instructions</a>, you can erase all local data at any time by clearing app storage or uninstalling the app, and adjust UMP ad preferences inside the app's Settings screen.</p>
+
+                        <div class="contact-box">
+                            <h3 style="margin-top:0">7. Contact</h3>
+                            <p><strong>Developer:</strong> YuzerAcc (Berkcan Yüzer)<br>
+                            <strong>Email:</strong> <a href="mailto:yuzeracc@gmail.com">yuzeracc@gmail.com</a><br>
+                            <strong>Website:</strong> <a href="https://berkcanyuzer.github.io/ligodeck.html">berkcanyuzer.github.io/ligodeck.html</a><br>
+                            <strong>Data deletion URL:</strong> <a href="https://berkcanyuzer.github.io/ligodeck-privacy.html#data-deletion">berkcanyuzer.github.io/ligodeck-privacy.html#data-deletion</a></p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+                <span>&copy; <span data-year>2026</span> YuzerAcc. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span></span>
+                <span><a href="index.html">berkcanyuzer.github.io</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+    <script>
+        (function () {
+            function sync() {
+                if (location.hash === '#en' && window.YA.lang() !== 'en') window.YA.applyLang('en');
+                if (location.hash === '#tr' && window.YA.lang() !== 'tr') window.YA.applyLang('tr');
+            }
+            window.addEventListener('hashchange', sync);
+            document.addEventListener('DOMContentLoaded', function () { sync(); var t = location.hash && document.querySelector(location.hash); if (t) setTimeout(function () { t.scrollIntoView(); }, 50); });
+            document.addEventListener('click', function (e) {
+                var a = e.target.closest('[data-lang-link]');
+                if (a) window.YA.applyLang(a.getAttribute('data-lang-link'));
+            }, true);
+        })();
+    </script>
+</body>
+</html>

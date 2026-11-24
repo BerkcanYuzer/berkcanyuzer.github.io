@@ -3,35 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="ld.meta.title">LigoDeck Desktop — Windows Masaüstü Ajanını İndir | YuzerAcc</title>
-    <meta name="description" data-i18n-content="ld.meta.desc" content="LigoDeck Windows masaüstü ajanını indirin. Telefon veya tabletinizden bilgisayarınızı gecikmesiz kontrol edin: makrolar, kısayollar ve özel sayfalar.">
+    <title data-i18n="ld.meta.title">LigoDeck v2.0 — Ücretsiz 3D Masaüstü Makro &amp; Yayın Kumandası | YuzerAcc</title>
+    <meta name="description" data-i18n-content="ld.meta.desc" content="LigoDeck v2.0 Windows masaüstü stüdyosu ve Android kumandasını indir. OBS Studio, Spotify, uygulama başına ses mikseri, 128 3D ikon, 6 tema ve TLS/USB sıfır gecikme — %100 ücretsiz, abonelik yok.">
     <link rel="canonical" href="https://berkcanyuzer.github.io/ligodeck.html">
+    <link rel="alternate" hreflang="tr" href="https://berkcanyuzer.github.io/ligodeck.html?lang=tr">
+    <link rel="alternate" hreflang="en" href="https://berkcanyuzer.github.io/ligodeck.html?lang=en">
     <meta name="theme-color" content="#06060c">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://berkcanyuzer.github.io/ligodeck.html">
-    <meta property="og:title" data-i18n-content="ld.meta.title" content="LigoDeck Desktop — Windows Masaüstü Ajanını İndir | YuzerAcc">
-    <meta property="og:description" data-i18n-content="ld.meta.desc" content="LigoDeck Windows masaüstü ajanını indirin. Telefon veya tabletinizden bilgisayarınızı gecikmesiz kontrol edin: makrolar, kısayollar ve özel sayfalar.">
-    <meta property="og:image" content="https://berkcanyuzer.github.io/app-icons/ligodeck.png">
+    <meta property="og:title" data-i18n-content="ld.meta.title" content="LigoDeck v2.0 — Ücretsiz 3D Masaüstü Makro &amp; Yayın Kumandası | YuzerAcc">
+    <meta property="og:description" data-i18n-content="ld.meta.desc" content="LigoDeck v2.0 Windows masaüstü stüdyosu ve Android kumandasını indir. OBS Studio, Spotify, uygulama başına ses mikseri, 128 3D ikon, 6 tema ve TLS/USB sıfır gecikme — %100 ücretsiz, abonelik yok.">
+    <meta property="og:image" content="https://berkcanyuzer.github.io/assets/ligodeck/desktop-studio.png">
     <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale:alternate" content="en_US">
     <link rel="icon" type="image/png" href="app-icons/ligodeck.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        :root, [data-theme="light"] { --accent: #8b5cf6; --accent-2: #22d3ee; --accent-3: #34d399; }
-        .l-hero { padding: calc(var(--nav-h) + 4rem) 0 3rem; text-align: center; }
-        .l-logo { width: 128px; height: 128px; border-radius: 34px; margin: 0 auto 1.75rem; box-shadow: 0 30px 70px -20px color-mix(in srgb, var(--accent) 70%, transparent); animation: bob 5s ease-in-out infinite; }
-        @keyframes bob { 50% { transform: translateY(-10px); } }
-        .l-hero .lead { max-width: 640px; margin: 1.25rem auto 0; }
-        .download { max-width: 640px; margin: 2.5rem auto 0; text-align: center; }
-        .download .btn-grad { width: 100%; max-width: 440px; padding: 1.15rem 1.5rem; font-size: 1.05rem; }
-        .alt-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; font-size: 0.9rem; color: var(--text-2); }
+        :root, [data-theme="light"] { --accent: #22d3ee; --accent-2: #8b5cf6; --accent-3: #34d399; }
+        .l-hero { padding: calc(var(--nav-h) + 3.5rem) 0 3rem; text-align: center; }
+        .l-logo { width: 120px; height: 120px; border-radius: 30px; margin: 0 auto 1.5rem; box-shadow: 0 28px 70px -18px color-mix(in srgb, var(--accent) 65%, transparent); animation: bob 5s ease-in-out infinite; }
+        @keyframes bob { 50% { transform: translateY(-9px); } }
+        .l-hero .lead { max-width: 680px; margin: 1.15rem auto 0; }
+        .download { max-width: 720px; margin: 2.25rem auto 0; text-align: center; }
+        .dl-actions { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+        .download .btn-grad { padding: 1.05rem 1.6rem; font-size: 1rem; }
+        .alt-links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin-top: 1.1rem; font-size: 0.9rem; color: var(--text-2); }
         .alt-links a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border-strong); }
-        .notice { margin-top: 1.25rem; padding: 0.95rem 1.1rem; border-radius: 14px; text-align: left; display: flex; gap: 0.75rem; font-size: 0.88rem; color: var(--text-2); background: color-mix(in srgb, var(--accent-2) 8%, transparent); border: 1px solid color-mix(in srgb, var(--accent-2) 28%, transparent); }
-        .notice svg { flex-shrink: 0; color: var(--accent-2); margin-top: 2px; }
+        .notice { margin-top: 1.25rem; padding: 0.95rem 1.1rem; border-radius: 14px; text-align: left; display: flex; gap: 0.75rem; font-size: 0.88rem; color: var(--text-2); background: color-mix(in srgb, var(--accent) 8%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); }
+        .notice svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
         .step-num { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; background: var(--grad); color: #fff; margin-bottom: 1rem; }
         .card p { color: var(--text-2); }
+        .showcase-grid { display: grid; grid-template-columns: 1.65fr 0.75fr; gap: 1.5rem; align-items: stretch; margin-top: 2.25rem; }
+        .shot-card { padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+        .shot-card img { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); object-fit: cover; }
+        .shot-card.phone img { max-height: 540px; width: auto; max-width: 100%; margin: 0 auto; border-radius: 24px; }
+        .shot-cap { font-size: 0.88rem; color: var(--text-2); text-align: center; font-weight: 500; }
+        .mini-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.25rem; }
+        .mini-shots img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 14px; border: 1px solid var(--border); }
+        .privacy-banner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+        .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem auto 0; max-width: 820px; }
+        .stat-pill { padding: 1rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); text-align: center; }
+        .stat-pill strong { display: block; font-family: var(--font-display); font-size: 1.6rem; color: var(--text); }
+        .stat-pill span { font-size: 0.82rem; color: var(--text-2); }
+        @media (max-width: 900px) {
+            .showcase-grid { grid-template-columns: 1fr; }
+            .mini-shots { grid-template-columns: 1fr; }
+            .stat-strip { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -45,8 +66,9 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#download" data-i18n="ld.nav.download">İndir</a></li>
+                <li><a href="#screens" data-i18n="ld.nav.screens">Ekranlar</a></li>
                 <li><a href="#features" data-i18n="ld.nav.features">Özellikler</a></li>
-                <li><a href="pastel-blast.html">Pofi Toybox</a></li>
+                <li><a href="ligodeck-privacy.html" data-i18n="ld.nav.privacy">Gizlilik</a></li>
                 <li><a href="index.html#apps" data-i18n="nav.allApps">Tüm uygulamalar</a></li>
             </ul>
             <div class="nav-tools">
@@ -63,40 +85,91 @@
     <main>
         <section class="l-hero" id="download">
             <div class="container">
-                <img class="l-logo reveal" src="app-icons/ligodeck.png" alt="LigoDeck" width="128" height="128">
-                <div class="chip-row reveal" style="justify-content:center;margin-bottom:1.25rem">
-                    <span class="chip live" data-i18n="ld.badge.version">v1.0.0 resmi sürüm</span>
-                    <span class="chip">Windows 10 / 11 (64-bit)</span>
-                    <span class="chip" data-i18n="ld.badge.lan">Gecikmesiz yerel ağ</span>
+                <img class="l-logo reveal" src="app-icons/ligodeck.png" alt="LigoDeck v2.0" width="120" height="120">
+                <div class="chip-row reveal" style="justify-content:center;margin-bottom:1.15rem">
+                    <span class="chip live" data-i18n="ld.badge.version">v2.0.0 yeni sürüm</span>
+                    <span class="chip">Windows 10 / 11 (64-bit) + Android</span>
+                    <span class="chip" data-i18n="ld.badge.free">%100 Ücretsiz · Abonelik Yok</span>
+                    <span class="chip" data-i18n="ld.badge.lan">TLS Şifreli Wi-Fi + USB</span>
                 </div>
-                <h1 class="h-display reveal" data-delay="1" style="font-size:clamp(2.6rem,6.5vw,5rem)">LigoDeck <span class="grad-text">Desktop</span></h1>
-                <p class="lead reveal" data-delay="2" data-i18n="ld.hero.lead">Telefonunu veya tabletini güçlü bir makro kumandasına dönüştür. Windows bilgisayarını tek dokunuşla yönet.</p>
+                <h1 class="h-display reveal" data-delay="1" style="font-size:clamp(2.5rem,6vw,4.8rem)">LigoDeck <span class="grad-text">Studio v2</span></h1>
+                <p class="lead reveal" data-delay="2" data-i18n="ld.hero.lead">Telefonunu 3D ışıklı stream deck'e dönüştür. OBS Studio, Spotify, uygulama başına ses fader'ları, sınırsız makro ve 128 3D ikon — tek kuruş abonelik ödemeden, 4 ms yerel gecikmeyle.</p>
+
+                <div class="stat-strip reveal" data-delay="2">
+                    <div class="stat-pill"><strong class="grad-text">128</strong><span data-i18n="ld.stat.icons">3D dokunsal ikon</span></div>
+                    <div class="stat-pill"><strong>6</strong><span data-i18n="ld.stat.themes">Tema (OLED &amp; Büyük Tuş)</span></div>
+                    <div class="stat-pill"><strong>6</strong><span data-i18n="ld.stat.langs">Tam yerelleştirilmiş dil</span></div>
+                    <div class="stat-pill"><strong class="grad-text">₺0</strong><span data-i18n="ld.stat.free">Ödeme duvarı yok</span></div>
+                </div>
 
                 <div class="card card-pad download reveal" data-delay="3">
-                    <h2 class="h-2" data-i18n="ld.dl.title">Masaüstü kurulumunu başlat</h2>
-                    <p class="muted" style="margin:0.5rem 0 1.5rem" data-i18n="ld.dl.body">Kurulum dosyasını çalıştır; LigoDeck saniyeler içinde kurulur ve bilgisayarın mobilden bağlanmaya hazır olur.</p>
-                    <a href="https://github.com/BerkcanYuzer/berkcanyuzer.github.io/releases/download/v1.0.0/LigoDeck-Setup.exe" class="btn btn-grad">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-                        <span data-i18n="ld.dl.btn">İndir ve kur (Windows · v1.0.0)</span>
-                    </a>
+                    <h2 class="h-2" data-i18n="ld.dl.title">Windows Masaüstü Stüdyosunu İndir</h2>
+                    <p class="muted" style="margin:0.5rem 0 1.4rem" data-i18n="ld.dl.body">Kurulum dosyasını çalıştır, masaüstü stüdyoda tek QR kodu telefonunla okut ve 45 saniyede kumandan hazır olsun.</p>
+                    <div class="dl-actions">
+                        <a href="https://github.com/BerkcanYuzer/berkcanyuzer.github.io/releases/download/v2.0.0/LigoDeck-Setup-2.0.0.exe" class="btn btn-grad">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                            <span data-i18n="ld.dl.btn">Windows Kurulum İndir (v2.0.0)</span>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.ligodeck" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8L13.8 12 3.6 22.2a1 1 0 01-.6-.9V2.7c0-.4.2-.7.6-.9zm10.9 10.9l2.3 2.3-10.9 6.3 8.6-8.6zm3.2-3.2l2.3 2.3a1 1 0 010 1.4l-2.3 2.3-2.3-2.5 2.3-3.5zM5.9 3.5l10.9 6.3-2.3 2.3-8.6-8.6z"/></svg>
+                            <span data-i18n="ld.dl.play">Google Play (Android)</span>
+                        </a>
+                    </div>
                     <div class="alt-links">
-                        <a href="https://github.com/BerkcanYuzer/berkcanyuzer.github.io/releases/download/v1.0.0/LigoDeck-portable.exe" data-i18n="ld.dl.portable">Taşınabilir sürüm (.exe · v1.0.0)</a>
-                        <span data-i18n="ld.dl.free">Ücretsiz ve reklamsız</span>
+                        <a href="https://github.com/BerkcanYuzer/berkcanyuzer.github.io/releases/download/v2.0.0/LigoDeck-2.0.0-portable.exe" data-i18n="ld.dl.portable">Taşınabilir sürüm (.exe · v2.0.0)</a>
+                        <a href="ligodeck-privacy.html" data-i18n="ld.dl.privacy">Gizlilik politikası &amp; veri silme</a>
+                        <span data-i18n="ld.dl.free">Masaüstü %100 ücretsiz ve reklamsız</span>
                     </div>
                     <div class="notice">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>
-                        <span data-i18n="ld.dl.smartscreen"><strong>Windows SmartScreen uyarısı:</strong> İlk açılışta mavi bir uyarı çıkarsa önce "Ek bilgi", ardından "Yine de çalıştır" seçeneğine tıklayarak kurulumu tamamlayabilirsin.</span>
+                        <span data-i18n="ld.dl.smartscreen"><strong>Windows SmartScreen uyarısı:</strong> Bağımsız geliştirici sürümü olduğu için ilk açılışta mavi uyarı çıkarsa "Ek bilgi" → "Yine de çalıştır" adımıyla kurulumu güvenle tamamlayabilirsin.</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="padding-top:2rem">
+        <section class="section" id="screens" style="padding-top:1rem">
+            <div class="container">
+                <div class="section-head center reveal">
+                    <span class="eyebrow"><span class="dot"></span><span data-i18n="ld.sc.eyebrow">Canlı Arayüz</span></span>
+                    <h2 class="h-1" data-i18n="ld.sc.title">Masaüstü Stüdyo &amp; <span class="grad-text">3D Mobil Kumanda</span>.</h2>
+                </div>
+
+                <div class="showcase-grid">
+                    <div class="card shot-card reveal">
+                        <img src="assets/ligodeck/desktop-studio.png" alt="LigoDeck Desktop Studio v2" loading="lazy">
+                        <div class="shot-cap" data-i18n="ld.sc.cap1">Sürükle-bırak 3 sütunlu Masaüstü Stüdyo: canlı telefon maketi, anında senkron ve 5 hazır şablon.</div>
+                    </div>
+                    <div class="card shot-card phone reveal" data-delay="1">
+                        <img data-lang-block="tr" src="assets/ligodeck/mobile-hero-tr.png" alt="LigoDeck Android Kumanda (TR)" loading="lazy">
+                        <img data-lang-block="en" src="assets/ligodeck/mobile-hero-en.png" alt="LigoDeck Android Controller (EN)" loading="lazy">
+                        <div class="shot-cap" data-i18n="ld.sc.cap2">Canlı OBS yayını, Spotify oynatıcı, 3 kanallı ses fader'ı ve CPU/RAM telemetri.</div>
+                    </div>
+                </div>
+
+                <div class="mini-shots">
+                    <div class="card shot-card reveal">
+                        <img src="assets/ligodeck/desktop-icons.png" alt="128 3D İkon Galerisi" loading="lazy">
+                        <div class="shot-cap" data-i18n="ld.sc.cap3">128 özel 3D cam ikon (Yayın, Oyun, Müzik, Ofis, Sistem, Klasör).</div>
+                    </div>
+                    <div class="card shot-card reveal" data-delay="1">
+                        <img src="assets/ligodeck/desktop-qr.png" alt="Tek QR TLS Şifreli Eşleşme ve Tanılayıcı" loading="lazy">
+                        <div class="shot-cap" data-i18n="ld.sc.cap4">Tek-QR TLS sertifika parmak izi doğrulaması, USB ADB ve dahili ağ tanılayıcı.</div>
+                    </div>
+                    <div class="card shot-card reveal" data-delay="2">
+                        <img src="assets/ligodeck/mobile-landscape.png" alt="Yatay Tablet ve Telefon Görünümü" loading="lazy">
+                        <div class="shot-cap" data-i18n="ld.sc.cap5">Yatay telefon ve tablet modu, ekranı açık tutma ve OLED yanık koruması.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:1.5rem">
             <div class="container">
                 <div class="bento">
-                    <div class="card card-pad col-4 reveal"><div class="step-num">1</div><h3 class="h-2" data-i18n="ld.s1.t">İndir ve çalıştır</h3><p style="margin-top:0.5rem" data-i18n="ld.s1.b"><code>LigoDeck-Setup.exe</code> dosyasını aç. SmartScreen uyarısı çıkarsa "Ek bilgi" → "Yine de çalıştır" ile saniyeler içinde kur.</p></div>
-                    <div class="card card-pad col-4 reveal" data-delay="1"><div class="step-num">2</div><h3 class="h-2" data-i18n="ld.s2.t">Arka planda hazır</h3><p style="margin-top:0.5rem" data-i18n="ld.s2.b">Uygulama açılınca sistem tepsisinde sessizce çalışır ve yerel Wi-Fi ağını dinler.</p></div>
-                    <div class="card card-pad col-4 reveal" data-delay="2"><div class="step-num">3</div><h3 class="h-2" data-i18n="ld.s3.t">Mobilden bağlan</h3><p style="margin-top:0.5rem" data-i18n="ld.s3.b">Telefonundaki LigoDeck uygulamasını aç. Bilgisayarın otomatik görünür; dokun ve kumandan hazır.</p></div>
+                    <div class="card card-pad col-4 reveal"><div class="step-num">1</div><h3 class="h-2" data-i18n="ld.s1.t">Kur ve stüdyoyu aç</h3><p style="margin-top:0.5rem" data-i18n="ld.s1.b"><code>LigoDeck-Setup-2.0.0.exe</code> ile 10 saniyede kur; oyun, yayın, müzik veya ofis şablonlarından birini seç.</p></div>
+                    <div class="card card-pad col-4 reveal" data-delay="1"><div class="step-num">2</div><h3 class="h-2" data-i18n="ld.s2.t">Tek QR kodu tara</h3><p style="margin-top:0.5rem" data-i18n="ld.s2.b">Masaüstündeki "QR Bağlan" penceresini telefonundan okut. TLS sertifika parmak izi otomatik sabitlenir; istersen USB kablo ile bağlan.</p></div>
+                    <div class="card card-pad col-4 reveal" data-delay="2"><div class="step-num">3</div><h3 class="h-2" data-i18n="ld.s3.t">Anında kontrol et</h3><p style="margin-top:0.5rem" data-i18n="ld.s3.b">Stüdyoda sürükle-bırak yaptığın her tuş, tema ve klasör anında telefonuna senkronize olur.</p></div>
                 </div>
             </div>
         </section>
@@ -104,14 +177,28 @@
         <section class="section" id="features" style="padding-top:0">
             <div class="container">
                 <div class="section-head center reveal">
-                    <span class="eyebrow"><span class="dot"></span><span data-i18n="ld.f.eyebrow">Neden LigoDeck?</span></span>
-                    <h2 class="h-1" data-i18n="ld.f.title">Pahalı donanıma <span class="grad-text">modern bir alternatif</span>.</h2>
+                    <span class="eyebrow"><span class="dot"></span><span data-i18n="ld.f.eyebrow">Neden LigoDeck v2?</span></span>
+                    <h2 class="h-1" data-i18n="ld.f.title">Rakiplerin abonelikle sattığı her şey, <span class="grad-text">%100 ücretsiz</span>.</h2>
                 </div>
                 <div class="bento">
-                    <div class="card card-pad col-6 reveal" style="--accent:#ff4b63"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="2"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f1.t">Oyuncak gibi pastel tasarım</h3><p style="margin-top:0.5rem" data-i18n="ld.f1.b">Mekanik 3B tuş basma hissi, yumuşak pastel renkler ve yüksek çözünürlüklü vektör simgeler.</p></div>
-                    <div class="card card-pad col-6 reveal" data-delay="1" style="--accent:#34d399"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f2.t">Gecikmesiz yerel bağlantı</h3><p style="margin-top:0.5rem" data-i18n="ld.f2.b">Bulut sunucusu veya internet gerekmez. Yerel ağ üzerinden düşük gecikmeli, güvenli WebSocket iletişimi.</p></div>
-                    <div class="card card-pad col-6 reveal" style="--accent:#8b5cf6"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f3.t">Sınırsız makro özgürlüğü</h3><p style="margin-top:0.5rem" data-i18n="ld.f3.b">Tek tuşla karmaşık tuş kombinasyonları (basılı tut, dokun, bırak), ses kontrolü, uygulama başlatma, koşul mantığı ve çoklu sayfalar.</p></div>
-                    <div class="card card-pad col-6 reveal" data-delay="1" style="--accent:#3b82f6"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f4.t">Dahili görsel düzenleyici</h3><p style="margin-top:0.5rem" data-i18n="ld.f4.b">Profilleri, tuşları, renkleri ve makroları masaüstü ajanındaki düzenleyicide sürükle-bırak ile yapılandır.</p></div>
+                    <div class="card card-pad col-4 reveal" style="--accent:#ef4444"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M4.9 4.9a10 10 0 000 14.2M19.1 4.9a10 10 0 010 14.2"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f1.t">Yerleşik OBS Studio v5</h3><p style="margin-top:0.5rem" data-i18n="ld.f1.b">Sahne değiştir, yayını veya kaydı başlat/durdur, canlı kırmızı CANLI/KAYIT rozetiyle durumu anında gör.</p></div>
+                    <div class="card card-pad col-4 reveal" data-delay="1" style="--accent:#10b981"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f2.t">Spotify &amp; Ses Mikseri</h3><p style="margin-top:0.5rem" data-i18n="ld.f2.b">Canlı albüm kapağıyla medya kontrolü ve Master, Discord, Spotify, oyunlar için ayrı dikey dokunmatik ses fader'ları.</p></div>
+                    <div class="card card-pad col-4 reveal" data-delay="2" style="--accent:#22d3ee"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f3.t">Canlı CPU/RAM &amp; Oyun Tuşları</h3><p style="margin-top:0.5rem" data-i18n="ld.f3.b">DirectInput oyunları dahil Win32 Scancode tuş basımı, 104+ tuş haritası, sıfır takılı tuş garantisi ve canlı PC telemetri.</p></div>
+                    <div class="card card-pad col-4 reveal" style="--accent:#8b5cf6"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f4.t">Klasörler, Sınırsız Tuş &amp; Webhook</h3><p style="margin-top:0.5rem" data-i18n="ld.f4.b">Sınırsız sayfa, iç içe klasörler, çok adımlı makrolar, ses panosu (play/stop), pano geçmişi ve akıllı ev HTTP Webhook'ları.</p></div>
+                    <div class="card card-pad col-4 reveal" data-delay="1" style="--accent:#f472b6"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5 2 7-6.5-4.5-6.5 4.5 2-7L2 9h7z"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f5.t">128 3D İkon &amp; 6 Tema</h3><p style="margin-top:0.5rem" data-i18n="ld.f5.b">Obsidyen 3D Cam, Pastel Oyuncak, Neon Arcade, Minimal Mat, Saf Siyah OLED ve Büyük Tuş Erişilebilirlik temaları.</p></div>
+                    <div class="card card-pad col-4 reveal" data-delay="2" style="--accent:#34d399"><span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><h3 class="h-2" style="margin-top:1rem" data-i18n="ld.f6.t">TLS Şifreli + USB ADB + Gizlilik</h3><p style="margin-top:0.5rem" data-i18n="ld.f6.b">Hesap yok, bulut yok. SHA-256 sertifika sabitlemeli yerel WSS veya USB kablolu sıfır gecikmeli bağlantı.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="card card-pad privacy-banner reveal">
+                    <div>
+                        <h3 class="h-2" data-i18n="ld.p.title">Hesap yok, bulut yok — verilerin yalnızca senin cihazlarında</h3>
+                        <p class="muted" style="margin-top:0.4rem" data-i18n="ld.p.body">LigoDeck (<code>com.yuzeracc.ligodeck</code>) tamamen yerel ağında çalışır. İzinler, AdMob UMP tercihleri ve veri silme yönergesini incele.</p>
+                    </div>
+                    <a href="ligodeck-privacy.html" class="btn btn-ghost" data-i18n="ld.p.cta">Gizlilik politikası &amp; veri silme &rarr;</a>
                 </div>
             </div>
         </section>
@@ -121,7 +208,7 @@
         <div class="container">
             <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
                 <span>&copy; <span data-year>2026</span> YuzerAcc. <span data-i18n="ld.footer">LigoDeck bir YuzerAcc ürünüdür.</span></span>
-                <span><a href="index.html">berkcanyuzer.github.io</a></span>
+                <span><a href="ligodeck-privacy.html" data-i18n="ld.nav.privacy">Gizlilik</a> · <a href="index.html">berkcanyuzer.github.io</a></span>
             </div>
         </div>
     </footer>
