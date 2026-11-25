@@ -369,6 +369,8 @@ code { font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-si
 }
 .chip.live { color: #34d399; border-color: color-mix(in srgb, #34d399 35%, transparent); background: color-mix(in srgb, #34d399 10%, transparent); }
 .chip.soon { color: #fbbf24; border-color: color-mix(in srgb, #fbbf24 35%, transparent); background: color-mix(in srgb, #fbbf24 10%, transparent); }
+[data-theme="light"] .chip.live { color: #047857; border-color: rgba(4, 120, 87, 0.35); background: rgba(4, 120, 87, 0.08); }
+[data-theme="light"] .chip.soon { color: #b45309; border-color: rgba(180, 83, 9, 0.35); background: rgba(180, 83, 9, 0.08); }
 .chip-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 
 .icon-tile {

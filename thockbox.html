@@ -24,12 +24,16 @@
     }
     </script>
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="YuzerAcc">
     <meta property="og:url" content="https://berkcanyuzer.github.io/thockbox.html">
     <meta property="og:title" data-i18n-content="ld.meta.title" content="ThockBox — Ücretsiz 3D Masaüstü Makro &amp; Yayın Konsolu | YuzerAcc">
     <meta property="og:description" data-i18n-content="ld.meta.desc" content="ThockBox Windows Masaüstü Stüdyosu ve Android kumandasını indir. OBS Studio, Spotify, uygulama başına ses mikseri, Android Ana Ekran Widget'ı, 128 3D ikon, 6 tema ve 10 dil — tüm özellikler %100 ücretsiz.">
     <meta property="og:image" content="https://berkcanyuzer.github.io/assets/ligodeck/desktop-studio.png">
     <meta property="og:locale" content="tr_TR">
     <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-i18n-content="ld.meta.title" content="ThockBox — Ücretsiz 3D Masaüstü Makro &amp; Yayın Konsolu | YuzerAcc">
+    <meta name="twitter:image" content="https://berkcanyuzer.github.io/assets/ligodeck/desktop-studio.png">
     <link rel="icon" type="image/png" href="app-icons/ligodeck.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +47,14 @@
         .l-hero .lead { max-width: 680px; margin: 1.15rem auto 0; }
         .download { max-width: 720px; margin: 2.25rem auto 0; text-align: center; }
         .dl-actions { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
-        .download .btn-grad { padding: 1.05rem 1.6rem; font-size: 1rem; }
+        .download .btn-grad { padding: 1.05rem 1.6rem; font-size: 1rem; background: linear-gradient(120deg, #ff4d1a 0%, #e11d48 100%); box-shadow: 0 14px 34px -10px rgba(255, 77, 26, 0.65); }
+        .shot-card a[data-lightbox] { display: block; cursor: zoom-in; }
+        .shot-card a[data-lightbox]:hover img { transform: scale(1.015); transition: transform 0.35s var(--ease); }
+        .hash-details { margin-top: 0.45rem; font-size: 0.78rem; color: var(--text-3); }
+        .hash-details summary { cursor: pointer; font-weight: 600; color: var(--text-2); }
+        .hash-details code { display: block; margin-top: 0.35rem; word-break: break-all; font-size: 0.74rem; padding: 0.35rem 0.5rem; }
+        .cosmetics-card { border-color: color-mix(in srgb, #00d68f 38%, transparent); background: linear-gradient(135deg, color-mix(in srgb, #00d68f 8%, transparent), color-mix(in srgb, #ff4d1a 6%, transparent)); }
+        .cosmetics-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
         .alt-links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin-top: 1.1rem; font-size: 0.9rem; color: var(--text-2); }
         .alt-links a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border-strong); }
         .notice { margin-top: 1.35rem; padding: 1.1rem 1.2rem; border-radius: 16px; text-align: left; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.88rem; color: var(--text-2); background: color-mix(in srgb, var(--accent) 8%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
@@ -155,6 +166,11 @@
                             </li>
                         </ul>
                         <div class="notice-foot" data-i18n="ld.dl.guardFoot">Neden çıkıyor? Bağımsız geliştirici (YuzerAcc) sürümü olduğu için Windows yeni kurulum dosyalarında otomatik uyarı gösterir. ThockBox %100 ücretsiz, reklamsız, hesapsız ve yalnızca yerel ağında çalışır; dilersen kurulumsuz Taşınabilir (.exe) sürümü de kullanabilirsin.</div>
+                        <details class="hash-details">
+                            <summary data-i18n="ld.dl.shaTitle">SHA-256 Dosya Doğrulama Kodlarını Göster</summary>
+                            <code>ThockBox-Setup-2.1.0.exe: CE961D3D049F39C57353F9C7BE0F00F1E0394D4D815CE4EFF6D5D22BD6B4E8CE</code>
+                            <code>ThockBox-2.1.0-portable.exe: A3EA7475ADE1650273029BAED42F66F5C414375DB6247234A4F59561222A67C4</code>
+                        </details>
                     </div>
                 </div>
             </div>
@@ -169,27 +185,39 @@
 
                 <div class="showcase-grid">
                     <div class="card shot-card reveal">
-                        <img src="assets/ligodeck/desktop-studio.png" alt="ThockBox Masaüstü Stüdyo" loading="lazy">
+                        <a href="assets/ligodeck/desktop-studio.png" data-lightbox="assets/ligodeck/desktop-studio.png" data-group="thockbox" aria-label="ThockBox Masaüstü Stüdyo">
+                            <img src="assets/ligodeck/desktop-studio.png" alt="ThockBox Masaüstü Stüdyo" loading="lazy">
+                        </a>
                         <div class="shot-cap" data-i18n="ld.sc.cap1">Sürükle-bırak 3 sütunlu Masaüstü Stüdyo: canlı telefon maketi, 4 adımlı öğretici, kaydırılabilir profil çubuğu ve 5 hazır şablon.</div>
                     </div>
                     <div class="card shot-card phone reveal" data-delay="1">
-                        <img data-lang-block="tr" src="assets/ligodeck/mobile-hero-tr.png" alt="ThockBox Android Konsol (TR)" loading="lazy">
-                        <img data-lang-block="en" src="assets/ligodeck/mobile-hero-en.png" alt="ThockBox Android Console (EN)" loading="lazy">
+                        <a data-lang-block="tr" href="assets/ligodeck/mobile-hero-tr.png" data-lightbox="assets/ligodeck/mobile-hero-tr.png" data-group="thockbox" aria-label="ThockBox Android Konsol (TR)">
+                            <img src="assets/ligodeck/mobile-hero-tr.png" alt="ThockBox Android Konsol (TR)" loading="lazy">
+                        </a>
+                        <a data-lang-block="en" href="assets/ligodeck/mobile-hero-en.png" data-lightbox="assets/ligodeck/mobile-hero-en.png" data-group="thockbox" aria-label="ThockBox Android Console (EN)">
+                            <img src="assets/ligodeck/mobile-hero-en.png" alt="ThockBox Android Console (EN)" loading="lazy">
+                        </a>
                         <div class="shot-cap" data-i18n="ld.sc.cap2">Canlı OBS yayını, Spotify oynatıcı, 3 kanallı ses fader'ı, mekanik PBT tuş sesi ve CPU/RAM telemetri.</div>
                     </div>
                 </div>
 
                 <div class="mini-shots">
                     <div class="card shot-card reveal">
-                        <img src="assets/ligodeck/desktop-icons.png" alt="128 3D İkon Galerisi" loading="lazy">
+                        <a href="assets/ligodeck/desktop-icons.png" data-lightbox="assets/ligodeck/desktop-icons.png" data-group="thockbox" aria-label="128 3D İkon Galerisi">
+                            <img src="assets/ligodeck/desktop-icons.png" alt="128 3D İkon Galerisi" loading="lazy">
+                        </a>
                         <div class="shot-cap" data-i18n="ld.sc.cap3">128 özel 3D dokunsal ikon (Yayın, Oyun, Müzik, Ofis, Sistem, Klasör).</div>
                     </div>
                     <div class="card shot-card reveal" data-delay="1">
-                        <img src="assets/ligodeck/desktop-qr.png" alt="Tek QR Eşleşme" loading="lazy">
+                        <a href="assets/ligodeck/desktop-qr.png" data-lightbox="assets/ligodeck/desktop-qr.png" data-group="thockbox" aria-label="Tek QR Eşleşme">
+                            <img src="assets/ligodeck/desktop-qr.png" alt="Tek QR Eşleşme" loading="lazy">
+                        </a>
                         <div class="shot-cap" data-i18n="ld.sc.cap4">Sade tek-QR TLS eşleşmesi, USB kablo modu ve dahili ağ tanılayıcı.</div>
                     </div>
                     <div class="card shot-card reveal" data-delay="2">
-                        <img src="assets/ligodeck/mobile-landscape.png" alt="Yatay Tablet ve Telefon Görünümü" loading="lazy">
+                        <a href="assets/ligodeck/mobile-landscape.png" data-lightbox="assets/ligodeck/mobile-landscape.png" data-group="thockbox" aria-label="Yatay Tablet ve Telefon Görünümü">
+                            <img src="assets/ligodeck/mobile-landscape.png" alt="Yatay Tablet ve Telefon Görünümü" loading="lazy">
+                        </a>
                         <div class="shot-cap" data-i18n="ld.sc.cap5">Yatay telefon ve tablet modu, ücretsiz Android Ana Ekran Widget'ları ve OLED yanık koruması.</div>
                     </div>
                 </div>
@@ -224,7 +252,21 @@
         </section>
 
         <section class="section" style="padding-top:0">
-            <div class="container">
+            <div class="container" style="display:grid;gap:1.5rem">
+                <div class="card card-pad cosmetics-card reveal">
+                    <div class="chip-row" style="margin-bottom:0.85rem">
+                        <span class="chip live" data-i18n="ld.cos.badge">0 Kilitli Özellik · Yalnızca Kozmetik</span>
+                        <span class="chip" data-i18n="ld.cos.v21">v2.1.0 Yenilikleri</span>
+                    </div>
+                    <h3 class="h-2" data-i18n="ld.cos.title">İsteğe Bağlı Özel Tema Stüdyosu &amp; 15 Koleksiyoncu 3D Rozeti</h3>
+                    <p class="muted" style="margin-top:0.5rem;max-width:780px" data-i18n="ld.cos.body">Tüm makro, OBS, ses mikseri, widget ve 6 donanım teması sonsuza kadar %100 ücretsizdir. Konsolunu kendi zevkine göre kişiselleştirmek isteyenler için yerel fiyatlı isteğe bağlı kozmetik paketler: galeri duvar kağıdı, buzlu cam/saydam ızgara, özel kasa ve LED renkleri, 5 sanat duvar kağıdı, 15 seçilebilir 3D koleksiyoncu rozeti ve reklamsız görünüm.</p>
+                    <div class="cosmetics-pills">
+                        <span class="chip" data-i18n="ld.cos.p1">Kendi Temanı Kur (3 Slot)</span>
+                        <span class="chip" data-i18n="ld.cos.p2">15 Özel 3D Rozet</span>
+                        <span class="chip" data-i18n="ld.cos.p3">5 Sanat Duvar Kağıdı + Galeri</span>
+                        <span class="chip" data-i18n="ld.cos.p4">3 Katmanlı Hızlı LAN Keşfi</span>
+                    </div>
+                </div>
                 <div class="card card-pad privacy-banner reveal">
                     <div>
                         <h3 class="h-2" data-i18n="ld.p.title">Hesap yok, bulut yok — verilerin yalnızca senin cihazlarında</h3>
