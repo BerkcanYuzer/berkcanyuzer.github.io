@@ -28,6 +28,13 @@
 - [YuzerAcc on Google Play](https://play.google.com/store/apps/developer?id=YuzerAcc)
 - [YouTube: Pofi Cat: Cube Blast Puzzle (@PofiCatBlast)](https://www.youtube.com/@PofiCatBlast)
 
+## ThockBox: PC Macro & OBS Deck - key facts
+
+- Official name: ThockBox: PC Macro & OBS Deck (Google Play package com.yuzeracc.thockbox; earlier development name LigoDeck).
+- Platforms: Windows 10/11 (64-bit Desktop Studio) + Android (Google Play).
+- Core features (100% free, zero feature paywalls): OBS Studio v5 control, Spotify media control, per-app volume faders, free Android Home Screen Widgets (4x2 & 2x2), 128 3D tactile icons, 6 hardware themes, 10 languages, local TLS WSS + USB ADB mode.
+- Pages: [ThockBox page](https://berkcanyuzer.github.io/thockbox.html), [Privacy policy](https://berkcanyuzer.github.io/thockbox-privacy.html), [Google Play](https://play.google.com/store/apps/details?id=com.yuzeracc.thockbox)
+
 ## Optional
 
-- [Studio home](https://berkcanyuzer.github.io/): other YuzerAcc apps (LigoDeck, Astro Map)
+- [Studio home](https://berkcanyuzer.github.io/): all YuzerAcc apps (ThockBox, Pofi Cat, Astro Map)

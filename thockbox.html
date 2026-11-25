@@ -8,7 +8,21 @@
     <link rel="canonical" href="https://berkcanyuzer.github.io/thockbox.html">
     <link rel="alternate" hreflang="tr" href="https://berkcanyuzer.github.io/thockbox.html?lang=tr">
     <link rel="alternate" hreflang="en" href="https://berkcanyuzer.github.io/thockbox.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://berkcanyuzer.github.io/thockbox.html">
     <meta name="theme-color" content="#06060c">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ThockBox: PC Macro & OBS Deck",
+      "operatingSystem": "Windows 10, Windows 11, Android",
+      "applicationCategory": "UtilitiesApplication",
+      "softwareVersion": "2.1.0",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@type": "Organization", "name": "YuzerAcc", "url": "https://berkcanyuzer.github.io/" },
+      "url": "https://berkcanyuzer.github.io/thockbox.html"
+    }
+    </script>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://berkcanyuzer.github.io/thockbox.html">
     <meta property="og:title" data-i18n-content="ld.meta.title" content="ThockBox — Ücretsiz 3D Masaüstü Makro &amp; Yayın Konsolu | YuzerAcc">
@@ -32,8 +46,13 @@
         .download .btn-grad { padding: 1.05rem 1.6rem; font-size: 1rem; }
         .alt-links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin-top: 1.1rem; font-size: 0.9rem; color: var(--text-2); }
         .alt-links a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border-strong); }
-        .notice { margin-top: 1.25rem; padding: 0.95rem 1.1rem; border-radius: 14px; text-align: left; display: flex; gap: 0.75rem; font-size: 0.88rem; color: var(--text-2); background: color-mix(in srgb, var(--accent) 8%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); }
-        .notice svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
+        .notice { margin-top: 1.35rem; padding: 1.1rem 1.2rem; border-radius: 16px; text-align: left; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.88rem; color: var(--text-2); background: color-mix(in srgb, var(--accent) 8%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+        .notice-head { display: flex; align-items: center; gap: 0.6rem; color: var(--text); font-weight: 700; font-size: 0.94rem; }
+        .notice-head svg { flex-shrink: 0; color: var(--accent); }
+        .notice-steps { list-style: none; display: grid; gap: 0.5rem; margin: 0; padding: 0; }
+        .notice-steps li { display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.5; }
+        .notice-badge { flex-shrink: 0; min-width: 22px; height: 22px; border-radius: 7px; background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--accent); font-weight: 800; font-size: 0.78rem; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+        .notice-foot { font-size: 0.82rem; color: var(--text-3); border-top: 1px solid var(--border); padding-top: 0.55rem; }
         .step-num { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; background: var(--grad); color: #fff; margin-bottom: 1rem; }
         .card p { color: var(--text-2); }
         .showcase-grid { display: grid; grid-template-columns: 1.65fr 0.75fr; gap: 1.5rem; align-items: stretch; margin-top: 2.25rem; }
@@ -87,7 +106,7 @@
             <div class="container">
                 <img class="l-logo reveal" src="app-icons/ligodeck.png" alt="ThockBox MK-III" width="120" height="120">
                 <div class="chip-row reveal" style="justify-content:center;margin-bottom:1.15rem">
-                    <span class="chip live" data-i18n="ld.badge.version">v2.0.0 · MK-III</span>
+                    <span class="chip live" data-i18n="ld.badge.version">v2.1.0 · MK-III</span>
                     <span class="chip">Windows 10 / 11 (64-bit) + Android</span>
                     <span class="chip" data-i18n="ld.badge.free">Tüm Özellikler %100 Ücretsiz</span>
                     <span class="chip" data-i18n="ld.badge.lan">TLS Şifreli Wi-Fi + USB + Ana Ekran Widget</span>
@@ -106,9 +125,9 @@
                     <h2 class="h-2" data-i18n="ld.dl.title">Windows Masaüstü Stüdyosunu İndir</h2>
                     <p class="muted" style="margin:0.5rem 0 1.4rem" data-i18n="ld.dl.body">Kurulum dosyasını çalıştır, masaüstü stüdyoda tek QR kodu telefonunla okut ve 45 saniyede konsolun hazır olsun.</p>
                     <div class="dl-actions">
-                        <a href="https://github.com/BerkcanYuzer/berkcanyuzer.github.io/releases/download/v2.0.0/ThockBox-Setup-2.0.0.exe" class="btn btn-grad">
+                        <a href="releases/v2.1.0/ThockBox-Setup-2.1.0.exe" download="ThockBox-Setup-2.1.0.exe" class="btn btn-grad">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-                            <span data-i18n="ld.dl.btn">Windows Kurulum İndir (v2.0.0)</span>
+                            <span data-i18n="ld.dl.btn">Windows Kurulum İndir (v2.1.0 · 94 MB)</span>
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.yuzeracc.thockbox" target="_blank" rel="noopener" class="btn btn-ghost">
                             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8L13.8 12 3.6 22.2a1 1 0 01-.6-.9V2.7c0-.4.2-.7.6-.9zm10.9 10.9l2.3 2.3-10.9 6.3 8.6-8.6zm3.2-3.2l2.3 2.3a1 1 0 010 1.4l-2.3 2.3-2.3-2.5 2.3-3.5zM5.9 3.5l10.9 6.3-2.3 2.3-8.6-8.6z"/></svg>
@@ -116,13 +135,26 @@
                         </a>
                     </div>
                     <div class="alt-links">
-                        <a href="https://github.com/BerkcanYuzer/berkcanyuzer.github.io/releases/download/v2.0.0/ThockBox-2.0.0-portable.exe" data-i18n="ld.dl.portable">Taşınabilir sürüm (.exe · v2.0.0)</a>
+                        <a href="releases/v2.1.0/ThockBox-2.1.0-portable.exe" download="ThockBox-2.1.0-portable.exe" data-i18n="ld.dl.portable">Taşınabilir sürüm (.exe · v2.1.0 · 93 MB)</a>
                         <a href="thockbox-privacy.html" data-i18n="ld.dl.privacy">Gizlilik politikası &amp; veri silme</a>
                         <span data-i18n="ld.dl.free">Masaüstü %100 ücretsiz ve reklamsız</span>
                     </div>
                     <div class="notice">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>
-                        <span data-i18n="ld.dl.smartscreen"><strong>Windows SmartScreen uyarısı:</strong> Bağımsız geliştirici sürümü olduğu için ilk açılışta mavi uyarı çıkarsa "Ek bilgi" → "Yine de çalıştır" adımıyla kurulumu güvenle tamamlayabilirsin.</span>
+                        <div class="notice-head">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>
+                            <span data-i18n="ld.dl.guardTitle">Windows veya Tarayıcı Uyarısı Çıkarsa Nasıl Kurulur? (2 Hızlı Adım)</span>
+                        </div>
+                        <ul class="notice-steps">
+                            <li>
+                                <span class="notice-badge">1</span>
+                                <span data-i18n="ld.dl.guardStep1"><strong>Chrome / Edge indirme uyarısı:</strong> "Yaygın olarak indirilmiyor" veya "Sakla" bildirimi görürsen indirme çubuğundaki <strong>⋯</strong> (veya <strong>^</strong>) simgesinden <strong>"Sakla" → "Yine de sakla"</strong> seçeneğine tıkla.</span>
+                            </li>
+                            <li>
+                                <span class="notice-badge">2</span>
+                                <span data-i18n="ld.dl.guardStep2"><strong>Windows SmartScreen mavi ekranı:</strong> Dosyayı açtığında "Windows bilgisayarınızı korudu" penceresi çıkarsa sol alttaki <strong>"Ek bilgi"</strong> bağlantısına, ardından <strong>"Yine de çalıştır"</strong> butonuna bas.</span>
+                            </li>
+                        </ul>
+                        <div class="notice-foot" data-i18n="ld.dl.guardFoot">Neden çıkıyor? Bağımsız geliştirici (YuzerAcc) sürümü olduğu için Windows yeni kurulum dosyalarında otomatik uyarı gösterir. ThockBox %100 ücretsiz, reklamsız, hesapsız ve yalnızca yerel ağında çalışır; dilersen kurulumsuz Taşınabilir (.exe) sürümü de kullanabilirsin.</div>
                     </div>
                 </div>
             </div>
@@ -167,7 +199,7 @@
         <section class="section" style="padding-top:1.5rem">
             <div class="container">
                 <div class="bento">
-                    <div class="card card-pad col-4 reveal"><div class="step-num">1</div><h3 class="h-2" data-i18n="ld.s1.t">Kur ve stüdyoyu aç</h3><p style="margin-top:0.5rem" data-i18n="ld.s1.b"><code>ThockBox-Setup-2.0.0.exe</code> ile 10 saniyede kur; oyun, yayın, müzik veya ofis şablonlarından birini seç.</p></div>
+                    <div class="card card-pad col-4 reveal"><div class="step-num">1</div><h3 class="h-2" data-i18n="ld.s1.t">Kur ve stüdyoyu aç</h3><p style="margin-top:0.5rem" data-i18n="ld.s1.b"><code>ThockBox-Setup-2.1.0.exe</code> ile 10 saniyede kur; oyun, yayın, müzik veya ofis şablonlarından birini seç.</p></div>
                     <div class="card card-pad col-4 reveal" data-delay="1"><div class="step-num">2</div><h3 class="h-2" data-i18n="ld.s2.t">Tek QR kodu tara</h3><p style="margin-top:0.5rem" data-i18n="ld.s2.b">Masaüstündeki "QR Bağlan" penceresini telefonundan okut. Bağlantı otomatik şifrelenir; istersen USB kablo ile bağlan.</p></div>
                     <div class="card card-pad col-4 reveal" data-delay="2"><div class="step-num">3</div><h3 class="h-2" data-i18n="ld.s3.t">Anında kontrol et</h3><p style="margin-top:0.5rem" data-i18n="ld.s3.b">Stüdyoda sürükle-bırak yaptığın her tuş, tema ve klasör anında telefonuna ve ana ekran widget'ına yansır.</p></div>
                 </div>

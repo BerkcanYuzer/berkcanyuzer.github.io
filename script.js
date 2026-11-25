@@ -81,6 +81,9 @@
     var langBtn = e.target.closest('.lang-switch button');
     if (langBtn) { applyLang(langBtn.getAttribute('data-lang')); return; }
 
+    var langLink = e.target.closest('[data-lang-link]');
+    if (langLink) { applyLang(langLink.getAttribute('data-lang-link')); }
+
     var toggle = e.target.closest('.menu-toggle');
     if (toggle) {
       var nav = document.querySelector('.nav-links');
@@ -153,7 +156,13 @@
   /* ---------------- On ready ---------------- */
   function ready() {
     applyTheme(root.getAttribute('data-theme') || 'dark');
-    applyLang(detectLang());
+    if (location.hash === '#en') applyLang('en');
+    else if (location.hash === '#tr') applyLang('tr');
+    else applyLang(detectLang());
+    window.addEventListener('hashchange', function () {
+      if (location.hash === '#en' && root.getAttribute('lang') !== 'en') applyLang('en');
+      if (location.hash === '#tr' && root.getAttribute('lang') !== 'tr') applyLang('tr');
+    });
 
     var nav = document.querySelector('.navbar');
     function onScroll() { if (nav) nav.classList.toggle('scrolled', window.scrollY > 24); }
